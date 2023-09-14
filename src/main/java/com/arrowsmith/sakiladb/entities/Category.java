@@ -1,5 +1,6 @@
 package com.arrowsmith.sakiladb.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -8,12 +9,14 @@ import java.util.List;
 @Table(name = "category")
 public class Category {
 
-    @ManyToMany(mappedBy = "categories", fetch = FetchType.LAZY)
-    public List<Film> films;
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public Integer category_id;
+    public Byte category_id;
+
+    @ManyToMany(mappedBy = "categories")
+    @JsonIgnoreProperties("categories")
+    public List<Film> films;
+
 
     public String name;
     public java.sql.Timestamp last_update;

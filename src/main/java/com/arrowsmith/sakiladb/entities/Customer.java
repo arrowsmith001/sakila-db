@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public Integer customer_id;
+    public Short customer_id;
     public String first_name;
     public String last_name;
     public String email;

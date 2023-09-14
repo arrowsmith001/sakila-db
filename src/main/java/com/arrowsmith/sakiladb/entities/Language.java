@@ -7,7 +7,9 @@ import jakarta.persistence.*;
 public class Language {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public Integer language_id;
+    public Byte language_id;
+
     public String name;
+
     public java.sql.Timestamp last_update;
 }

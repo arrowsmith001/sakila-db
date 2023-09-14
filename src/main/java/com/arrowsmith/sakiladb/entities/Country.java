@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Country {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public Integer country_id;
+    public Short country_id;
     public String country;
     public java.sql.Timestamp last_update;
 }

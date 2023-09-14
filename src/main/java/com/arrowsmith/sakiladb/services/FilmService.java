@@ -1,6 +1,7 @@
-package com.arrowsmith.sakiladb;
+package com.arrowsmith.sakiladb.services;
 
 import com.arrowsmith.sakiladb.entities.Film;
+import com.arrowsmith.sakiladb.repositories.FilmRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,11 +21,11 @@ public class FilmService {
         return filmRepository.findAll();
     }
 
-    public Film getFilmById(Integer id) {
+    public Film getFilmById(Short id) {
         return filmRepository.findById(id).orElse(null);
     }
 
-    public void deleteFilm(Integer id) {
+    public void deleteFilm(Short id) {
         filmRepository.deleteById(id);
     }
 }

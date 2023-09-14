@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Integer address_id;
+    public Short address_id;
     public String address;
     public String address2;
     public String district;

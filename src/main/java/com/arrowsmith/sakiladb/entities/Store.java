@@ -7,10 +7,13 @@ import jakarta.persistence.*;
 public class Store {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public Integer store_id;
-    public Integer address_id;
+    public Byte store_id;
+
     public java.sql.Timestamp last_update;
 
+    @ManyToOne
+    @JoinColumn(name = "address_id")
+    public Address address;
 
     @ManyToOne
     @JoinColumn(name = "manager_staff_id")

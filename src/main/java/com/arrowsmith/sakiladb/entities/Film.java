@@ -1,57 +1,64 @@
 package com.arrowsmith.sakiladb.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.Getter;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.sql.Date;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
+@Data
 @Entity
 @Table(name = "film")
 public class Film
 {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public Integer film_id;
-    public String title;
-    public String description;
-    public Integer release_year;
-    public Integer rental_duration;
-    public BigDecimal rental_rate;
-    public Integer length;
-    public BigDecimal replacement_cost;
-    public String rating;
-    public String special_features;
-    public java.sql.Date last_update;
+    private Short film_id;
+    private String title;
+    private String description;
+    private Integer release_year;
+    private Integer rental_duration;
+    private BigDecimal rental_rate;
+    private Integer length;
+    private BigDecimal replacement_cost;
+    private String rating;
+    private String special_features;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(
-            name = "film_actor",
+    private Date last_update;
+
+    @ManyToMany
+    @JoinTable(name = "film_actor",
             joinColumns = @JoinColumn(name = "film_id"),
             inverseJoinColumns = @JoinColumn(name = "actor_id")
     )
-    public List<Actor> actors;
+    @JsonIgnoreProperties("films")
+    private List<Actor> actors;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(
-            name = "film_category",
+    @ManyToMany
+    @JoinTable(name = "film_category",
             joinColumns = @JoinColumn(name = "film_id"),
-            inverseJoinColumns = @JoinColumn(name = "category_id"))
-    public List<Category> categories;
+            inverseJoinColumns = @JoinColumn(name = "category_id")
+    )
+
+    @JsonIgnoreProperties("films")
+    private List<Category> categories;
 
     @ManyToOne
     @JoinColumn(name = "language_id")
-    public Language language;
+    private Language language;
 
     @ManyToOne
     @JoinColumn(name = "original_language_id")
-    public Language originalLanguage;
+    private Language originalLanguage;
 
-    public String getTitle() {
-        return title;
-    }
 }
 
 

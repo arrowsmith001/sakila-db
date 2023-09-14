@@ -2,15 +2,17 @@ package com.arrowsmith.sakiladb.entities;
 
 import jakarta.persistence.*;
 
+import java.sql.Blob;
+
 @Entity
 @Table(name = "staff")
 public class Staff {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public Integer staff_id;
+    public Byte staff_id;
     public String first_name;
     public String last_name;
-    public Integer[] picture;
+    public Blob picture;
     public String email;
     public Integer active;
     public String username;
