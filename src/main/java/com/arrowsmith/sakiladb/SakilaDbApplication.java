@@ -1,6 +1,7 @@
 package com.arrowsmith.sakiladb;
 
 import com.arrowsmith.sakiladb.entities.Film;
+import com.arrowsmith.sakiladb.repositories.LanguageRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -24,7 +25,10 @@ public class SakilaDbApplication {
 
 	public static void main(String[] args)
 	{
+
 		SpringApplication.run(SakilaDbApplication.class, args);
+
+
 	}
 
 

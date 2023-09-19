@@ -21,11 +21,11 @@ public class ActorService {
         return actorRepository.findAll();
     }
 
-    public Actor getActorById(Short id) {
+    public Actor getActorById(Integer id) {
         return actorRepository.findById(id).orElse(null);
     }
 
-    public void deleteActor(Short id) {
+    public void deleteActor(Integer id) {
         actorRepository.deleteById(id);
     }
 }

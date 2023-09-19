@@ -6,8 +6,8 @@ import jakarta.persistence.*;
 @Table(name = "country")
 public class Country {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    public Short country_id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Integer country_id;
     public String country;
     public java.sql.Timestamp last_update;
 }

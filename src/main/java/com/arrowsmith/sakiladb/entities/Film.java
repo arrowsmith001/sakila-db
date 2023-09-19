@@ -1,18 +1,15 @@
 package com.arrowsmith.sakiladb.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.Getter;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.Date;
-import java.util.Collection;
+import java.sql.Timestamp;
 import java.util.List;
-import java.util.Set;
 
 @Data
 @Entity
@@ -20,42 +17,60 @@ import java.util.Set;
 public class Film
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Short film_id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer film_id;
     private String title;
     private String description;
-    private Integer release_year;
-    private Integer rental_duration;
+
+
+    private Date release_year; //private Integer release_year;
+    private Byte rental_duration; //private Integer rental_duration;
     private BigDecimal rental_rate;
-    private Integer length;
+    private Short length; //private Integer length;
     private BigDecimal replacement_cost;
-    private String rating;
+
+    @Column(columnDefinition = "enum (Types#CHAR)")
+    public String rating;
+
+    @Column(columnDefinition = "set")
     private String special_features;
 
-    private Date last_update;
+    private Timestamp last_update; //private Date last_update;
+
 
     @ManyToMany
-    @JoinTable(name = "film_actor",
+    @JoinTable(
+            name = "film_actor",
             joinColumns = @JoinColumn(name = "film_id"),
             inverseJoinColumns = @JoinColumn(name = "actor_id")
     )
     @JsonIgnoreProperties("films")
     private List<Actor> actors;
 
+
+//    @OneToMany(
+//            mappedBy = "film",
+//            cascade = CascadeType.ALL,
+//            orphanRemoval = true
+//    )
+//    public List<FilmActor> actors;
+
+
     @ManyToMany
     @JoinTable(name = "film_category",
             joinColumns = @JoinColumn(name = "film_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id")
     )
-
     @JsonIgnoreProperties("films")
     private List<Category> categories;
 
     @ManyToOne
+    @OnDelete(action = OnDeleteAction.RESTRICT)
     @JoinColumn(name = "language_id")
     private Language language;
 
     @ManyToOne
+    @OnDelete(action = OnDeleteAction.RESTRICT)
     @JoinColumn(name = "original_language_id")
     private Language originalLanguage;
 

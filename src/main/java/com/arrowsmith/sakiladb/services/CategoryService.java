@@ -21,11 +21,11 @@ public class CategoryService {
         return categoryRepository.findAll();
     }
 
-    public Category getCategoryById(Byte id) {
+    public Category getCategoryById(Integer id) {
         return categoryRepository.findById(id).orElse(null);
     }
 
-    public void deleteCategory(Byte id) {
+    public void deleteCategory(Integer id) {
         categoryRepository.deleteById(id);
     }
 }

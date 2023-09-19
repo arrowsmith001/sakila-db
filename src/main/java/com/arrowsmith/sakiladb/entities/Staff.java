@@ -8,13 +8,13 @@ import java.sql.Blob;
 @Table(name = "staff")
 public class Staff {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    public Byte staff_id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Integer staff_id;
     public String first_name;
     public String last_name;
     public Blob picture;
     public String email;
-    public Integer active;
+    public Boolean active;
     public String username;
     public String password;
     public java.sql.Timestamp last_update;

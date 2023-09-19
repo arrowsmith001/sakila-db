@@ -3,6 +3,8 @@ package com.arrowsmith.sakiladb.entities;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.List;
 
 @Entity
@@ -10,8 +12,8 @@ import java.util.List;
 public class Category {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    public Byte category_id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Integer category_id;
 
     @ManyToMany(mappedBy = "categories")
     @JsonIgnoreProperties("categories")

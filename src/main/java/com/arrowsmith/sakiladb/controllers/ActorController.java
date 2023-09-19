@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
-@RequestMapping("/actors")
+@RequestMapping("/actor")
 public class ActorController {
 
     @Autowired
@@ -26,12 +26,12 @@ public class ActorController {
     }
 
     @GetMapping("/{id}")
-    public Actor getActorById(@PathVariable Short id) {
+    public Actor getActorById(@PathVariable Integer id) {
         return actorService.getActorById(id);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteActor(@PathVariable Short id) {
+    public void deleteActor(@PathVariable Integer id) {
         actorService.deleteActor(id);
     }
 }

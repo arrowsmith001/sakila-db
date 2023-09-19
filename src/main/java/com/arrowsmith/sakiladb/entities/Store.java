@@ -6,8 +6,8 @@ import jakarta.persistence.*;
 @Table(name = "store")
 public class Store {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    public Byte store_id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Integer store_id;
 
     public java.sql.Timestamp last_update;
 

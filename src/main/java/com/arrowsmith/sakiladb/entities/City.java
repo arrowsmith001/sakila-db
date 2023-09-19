@@ -11,8 +11,8 @@ import java.util.List;
 public class City
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    public Short city_id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Integer city_id;
     public String city;
     public java.sql.Timestamp last_update;
 

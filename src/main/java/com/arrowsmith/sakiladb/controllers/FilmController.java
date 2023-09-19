@@ -8,25 +8,26 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
-@RequestMapping("/films")
+@RequestMapping("/film")
 public class FilmController {
 
     @Autowired
     private FilmService filmService;
 
-    @PostMapping("")
+    @PostMapping(path="")
     public Film saveFilm(@RequestBody Film film) { return filmService.saveFilm(film); }
 
     @GetMapping("")
     public List<Film> getAllFilms() { return filmService.getAllFilms(); }
 
     @GetMapping("/{id}")
-    public Film getFilmById(@PathVariable Short id) {
+    public Film getFilmById(@PathVariable Integer id) {
         return filmService.getFilmById(id);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteFilm(@PathVariable Short id) {
+    public void deleteFilm(@PathVariable Integer id) {
         filmService.deleteFilm(id);
     }
+
 }

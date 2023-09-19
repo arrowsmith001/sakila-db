@@ -2,15 +2,18 @@ package com.arrowsmith.sakiladb.entities;
 
 import jakarta.persistence.*;
 
+import java.sql.Date;
+import java.sql.Timestamp;
+
 @Entity
 @Table(name = "rental")
 public class Rental {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer rental_id;
-    public java.sql.Date rental_date;
-    public java.sql.Date return_date;
-    public java.sql.Timestamp last_update;
+    public Timestamp rental_date;
+    public Timestamp return_date;
+    public Timestamp last_update;
 
 
     @ManyToOne

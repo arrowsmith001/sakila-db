@@ -6,13 +6,14 @@ import jakarta.persistence.*;
 @Table(name = "customer")
 public class Customer {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    public Short customer_id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Integer customer_id;
     public String first_name;
     public String last_name;
     public String email;
-    public Integer active;
-    public java.sql.Date create_date;
+
+    public Boolean active; //public Integer active;
+    public java.sql.Timestamp create_date; //public java.sql.Date create_date;
     public java.sql.Timestamp last_update;
 
 
