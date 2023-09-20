@@ -16,6 +16,9 @@ public interface InventoryRepository extends JpaRepository<Inventory, Integer>
     @Query("SELECT i FROM Inventory i WHERE i.film.film_id=:id")
     List<Inventory> findAllByFilmId(Integer id);
 
+    @Query("SELECT i FROM Inventory i WHERE i.film.film_id=:filmId AND i.store.store_id=:storeId")
+    List<Inventory> findAllByFilmIdAndStoreId(Integer filmId, Integer storeId);
+
     @Modifying
     @Transactional
     @Query("DELETE FROM Inventory i WHERE i.film.film_id=:id")

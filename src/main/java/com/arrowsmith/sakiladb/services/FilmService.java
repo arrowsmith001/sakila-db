@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Objects;
 
 @Service
 public class FilmService {
@@ -15,10 +14,6 @@ public class FilmService {
     private FilmRepository filmRepository;
     @Autowired
     private FilmActorRepository filmActorRepository;
-    @Autowired
-    private FilmCategoryRepository filmCategoryRepository;
-    @Autowired
-    private ActorRepository actorRepository;
     @Autowired
     private InventoryRepository inventoryRepository;
     @Autowired
@@ -39,12 +34,15 @@ public class FilmService {
     public void deleteFilm(Integer id) {
 
         filmActorRepository.deleteByFilmId(id);
-        //filmActorRepository.deleteByActorId(id); // This is nonsense
-
         rentalRepository.deleteByInventoriesWithFilmId(id);
         inventoryRepository.deleteByFilmId(id);
 
         filmRepository.deleteById(id);
     }
 
+
+    public List<Film> getFilmsByCategory(Integer categoryId) {
+
+        return filmRepository.findAllByCategory(categoryId);
+    }
 }

@@ -1,12 +1,19 @@
 package com.arrowsmith.sakiladb.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import java.sql.Blob;
 
 @Entity
 @Table(name = "address")
+@Setter
+@Getter
+@ToString
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,5 +30,6 @@ public class Address {
     public java.sql.Timestamp last_update;
     @ManyToOne
     @JoinColumn(name = "city_id")
+    @JsonIgnoreProperties("address")
     public City city;
 }

@@ -30,4 +30,9 @@ public class FilmController {
         filmService.deleteFilm(id);
     }
 
+    @GetMapping("/category")
+    public List<Film> getFilmsByCategory(@RequestParam Integer id){
+        return filmService.getFilmsByCategory(id);
+    }
+
 }

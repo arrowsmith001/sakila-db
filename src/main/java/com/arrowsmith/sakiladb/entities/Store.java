@@ -1,5 +1,6 @@
 package com.arrowsmith.sakiladb.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -17,5 +18,6 @@ public class Store {
 
     @ManyToOne
     @JoinColumn(name = "manager_staff_id")
+    @JsonIgnore
     public Staff manager;
 }
