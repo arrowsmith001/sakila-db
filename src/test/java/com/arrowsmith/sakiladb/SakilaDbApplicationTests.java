@@ -8,6 +8,7 @@ class SakilaDbApplicationTests {
 
 	@Test
 	void contextLoads() {
+
 	}
 
 }
