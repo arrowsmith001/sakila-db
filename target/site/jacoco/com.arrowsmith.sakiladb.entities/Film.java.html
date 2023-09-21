@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Film.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sakila-db</a> &gt; <a href="index.source.html" class="el_package">com.arrowsmith.sakiladb.entities</a> &gt; <span class="el_source">Film.java</span></div><h1>Film.java</h1><pre class="source lang-java linenums">package com.arrowsmith.sakiladb.entities;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
+import lombok.Data;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import java.math.BigDecimal;
+import java.sql.Date;
+import java.sql.Timestamp;
+import java.util.List;
+
+<span class="pc bnc" id="L14" title="All 126 branches missed.">@Data</span>
+@Entity
+@Table(name = &quot;film&quot;)
+public class Film
+{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+<span class="nc" id="L21">    private Integer film_id;</span>
+<span class="nc" id="L22">    private String title;</span>
+<span class="nc" id="L23">    private String description;</span>
+
+
+<span class="nc" id="L26">    private Date release_year; //private Integer release_year;</span>
+<span class="nc" id="L27">    private Byte rental_duration; //private Integer rental_duration;</span>
+<span class="nc" id="L28">    private BigDecimal rental_rate;</span>
+<span class="nc" id="L29">    private Short length; //private Integer length;</span>
+<span class="nc" id="L30">    private BigDecimal replacement_cost;</span>
+
+    @Column(columnDefinition = &quot;enum (Types#CHAR)&quot;)
+<span class="nc" id="L33">    public String rating;</span>
+
+    @Column(columnDefinition = &quot;set&quot;)
+<span class="nc" id="L36">    private String special_features;</span>
+
+<span class="nc" id="L38">    private Timestamp last_update; //private Date last_update;</span>
+
+
+    @ManyToMany
+    @JoinTable(
+            name = &quot;film_actor&quot;,
+            joinColumns = @JoinColumn(name = &quot;film_id&quot;),
+            inverseJoinColumns = @JoinColumn(name = &quot;actor_id&quot;)
+    )
+    @JsonIgnoreProperties(&quot;films&quot;)
+<span class="nc" id="L48">    private List&lt;Actor&gt; actors;</span>
+
+
+//    @OneToMany(
+//            mappedBy = &quot;film&quot;,
+//            cascade = CascadeType.ALL,
+//            orphanRemoval = true
+//    )
+//    public List&lt;FilmActor&gt; actors;
+
+
+    @ManyToMany
+    @JoinTable(name = &quot;film_category&quot;,
+            joinColumns = @JoinColumn(name = &quot;film_id&quot;),
+            inverseJoinColumns = @JoinColumn(name = &quot;category_id&quot;)
+    )
+    @JsonIgnoreProperties(&quot;films&quot;)
+<span class="nc" id="L65">    private List&lt;Category&gt; categories;</span>
+
+    @ManyToOne
+    @OnDelete(action = OnDeleteAction.RESTRICT)
+    @JoinColumn(name = &quot;language_id&quot;)
+<span class="nc" id="L70">    private Language language;</span>
+
+    @ManyToOne
+    @OnDelete(action = OnDeleteAction.RESTRICT)
+    @JoinColumn(name = &quot;original_language_id&quot;)
+<span class="nc" id="L75">    private Language originalLanguage;</span>
+
+}
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

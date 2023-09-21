@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RentalController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">jacoco.exec</a> &gt; <a href="index.source.html" class="el_package">com.arrowsmith.sakiladb.controllers</a> &gt; <span class="el_source">RentalController.java</span></div><h1>RentalController.java</h1><pre class="source lang-java linenums">package com.arrowsmith.sakiladb.controllers;
+
+import com.arrowsmith.sakiladb.entities.Rental;
+import com.arrowsmith.sakiladb.services.RentalService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@CrossOrigin(origins = &quot;http://localhost:3000&quot;)
+@RequestMapping(&quot;/rental&quot;)
+<span class="fc" id="L13">public class RentalController {</span>
+
+    @Autowired
+    private RentalService rentalService;
+
+    @PostMapping(path=&quot;&quot;)
+<span class="nc" id="L19">    public Rental saveRental(@RequestBody Rental rental) { return rentalService.saveRental(rental); }</span>
+
+    @GetMapping(&quot;&quot;)
+<span class="nc" id="L22">    public List&lt;Rental&gt; getAllRentals() { return rentalService.getAllRentals(); }</span>
+
+    @GetMapping(&quot;/{id}&quot;)
+    public Rental getRentalById(@PathVariable Integer id) {
+<span class="nc" id="L26">        return rentalService.getRentalById(id);</span>
+    }
+
+    @DeleteMapping(&quot;/{id}&quot;)
+    public void deleteRental(@PathVariable Integer id) {
+<span class="nc" id="L31">        rentalService.deleteRental(id);</span>
+<span class="nc" id="L32">    }</span>
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
