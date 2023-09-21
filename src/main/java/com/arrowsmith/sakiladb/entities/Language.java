@@ -13,7 +13,7 @@ public class Language {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer language_id;
 
-    @Column(columnDefinition = "char")
+    //@Column(columnDefinition = "char")
     public String name;
 
     public java.sql.Timestamp last_update;

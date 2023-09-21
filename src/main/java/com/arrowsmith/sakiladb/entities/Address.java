@@ -11,12 +11,11 @@ import java.sql.Blob;
 
 @Entity
 @Table(name = "address")
-@Setter
-@Getter
 @ToString
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     public Integer address_id;
     public String address;
     public String address2;
@@ -28,6 +27,7 @@ public class Address {
 //    public Blob location;
 
     public java.sql.Timestamp last_update;
+
     @ManyToOne
     @JoinColumn(name = "city_id")
     @JsonIgnoreProperties("address")

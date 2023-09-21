@@ -15,11 +15,6 @@ public class Rental {
     public Timestamp return_date;
     public Timestamp last_update;
 
-
-    @ManyToOne
-    @JoinColumn(name = "inventory_id")
-    public Inventory inventory;
-
     @ManyToOne
     @JoinColumn(name = "customer_id")
     public Customer customer;
@@ -27,4 +22,11 @@ public class Rental {
     @ManyToOne
     @JoinColumn(name = "staff_id")
     public Staff staff;
+
+    @ManyToOne
+    @JoinColumn(name = "inventory_id")
+    public Inventory inventory;
+
+    public Integer inventory_inventory_id = 0;
+    public Integer rentals_rental_id = 0;
 }

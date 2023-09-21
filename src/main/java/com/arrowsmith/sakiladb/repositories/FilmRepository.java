@@ -10,9 +10,14 @@ import java.util.List;
 @Repository
 public interface FilmRepository extends JpaRepository<Film, Integer>
 {
+
     @Query("SELECT f FROM Film f WHERE f.film_id IN (SELECT fc.id.film_id FROM FilmCategory fc WHERE fc.id.category_id = :categoryId)")
     List<Film> findAllByCategory(Integer categoryId);
 
-    //@Query
-   // public List<Film> findByGenre(String genre);
+    @Query("SELECT f FROM Film f ORDER BY RAND() LIMIT :limit")
+    List<Film> getRandomSelection(Integer limit);
+
+    @Query("SELECT f FROM Film f JOIN f.inventories i JOIN i.rentals r GROUP BY f ORDER BY COUNT(r) DESC LIMIT :limit")
+    List<Film> getPopularFilms(Integer limit);
+
 }

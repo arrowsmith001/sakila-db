@@ -18,25 +18,28 @@ import java.util.Map;
     private CustomerService customerService;
 
     @PostMapping(path=&quot;&quot;)
-<span class="nc" id="L21">    public Customer saveCustomer(@RequestBody Customer customer) { return customerService.saveCustomer(customer); }</span>
+    public Customer saveCustomer(@RequestBody Customer customer) {
+
+<span class="nc" id="L23">        System.out.println(customer);</span>
+<span class="nc" id="L24">        return customerService.saveCustomer(customer); }</span>
 
     @GetMapping(&quot;&quot;)
-<span class="nc" id="L24">    public List&lt;Customer&gt; getAllCustomers() { return customerService.getAllCustomers(); }</span>
+<span class="nc" id="L27">    public List&lt;Customer&gt; getAllCustomers() { return customerService.getAllCustomers(); }</span>
 
     @GetMapping(&quot;/{id}&quot;)
     public Customer getCustomerById(@PathVariable Integer id) {
-<span class="nc" id="L28">        return customerService.getCustomerById(id);</span>
+<span class="nc" id="L31">        return customerService.getCustomerById(id);</span>
     }
 
     @DeleteMapping(&quot;/{id}&quot;)
     public void deleteCustomer(@PathVariable Integer id) {
-<span class="nc" id="L33">        customerService.deleteCustomer(id);</span>
-<span class="nc" id="L34">    }</span>
+<span class="nc" id="L36">        customerService.deleteCustomer(id);</span>
+<span class="nc" id="L37">    }</span>
 
 
     @PostMapping(&quot;/email&quot;)
     public Customer getCustomerByEmail(@RequestBody Credentials credentials){
-<span class="nc" id="L39">        return customerService.getCustomerByEmail(credentials.email);</span>
+<span class="nc" id="L42">        return customerService.getCustomerByEmail(credentials.email);</span>
     }
 
 }

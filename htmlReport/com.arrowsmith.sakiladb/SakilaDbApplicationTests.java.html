@@ -2,31 +2,64 @@
 
 import com.arrowsmith.sakiladb.controllers.CategoryController;
 import com.arrowsmith.sakiladb.controllers.FilmController;
+import com.arrowsmith.sakiladb.controllers.LanguageController;
 import com.arrowsmith.sakiladb.entities.Category;
+import com.arrowsmith.sakiladb.entities.Film;
+import com.arrowsmith.sakiladb.entities.Language;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.math.BigDecimal;
+import java.sql.Timestamp;
+import java.time.Instant;
+import java.util.ArrayList;
+
 @SpringBootTest
-<span class="fc" id="L11">class SakilaDbApplicationTests {</span>
+<span class="nc" id="L19">class SakilaDbApplicationTests {</span>
 
 	@Autowired
 	FilmController filmController;
-
 	@Autowired
 	CategoryController categoryController;
+	@Autowired
+	LanguageController languageController;
+
 
 
 	@Test
 	void contextLoads() {
 
-<span class="fc" id="L23">	}</span>
+<span class="nc" id="L33">	}</span>
 
 	@Test
 	void canCreateCategory() {
-<span class="fc" id="L27">		Category category = new Category();</span>
-<span class="fc" id="L28">		categoryController.saveCategory(category);</span>
-<span class="fc" id="L29">	}</span>
+<span class="nc" id="L37">		Category category = new Category();</span>
+<span class="nc" id="L38">		categoryController.saveCategory(category);</span>
+<span class="nc" id="L39">	}</span>
+
+	@Test
+	void canCreateFilm() {
+<span class="nc" id="L43">		int id = 999999999;</span>
+<span class="nc" id="L44">		filmController.deleteFilm(id);</span>
+
+<span class="nc" id="L46">		Film film = new Film();</span>
+
+<span class="nc" id="L48">        film.language = languageController.getLanguageById(1);</span>
+<span class="nc" id="L49">		film.rental_duration = ((byte) 0);</span>
+<span class="nc" id="L50">		film.title = (&quot;title&quot;);</span>
+
+<span class="nc" id="L52">		film.film_id = id;</span>
+<span class="nc" id="L53">		film.rating = &quot;PG&quot;;</span>
+<span class="nc" id="L54">		film.description = &quot;desc&quot;;</span>
+<span class="nc" id="L55">		film.last_update = Timestamp.from(Instant.now());</span>
+<span class="nc" id="L56">		film.categories = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L57">		film.replacement_cost = BigDecimal.ONE;</span>
+<span class="nc" id="L58">		film.special_features = &quot;Deleted Scenes&quot;;</span>
+
+
+<span class="nc" id="L61">		filmController.saveFilm(film);</span>
+<span class="nc" id="L62">	}</span>
 
 
 }

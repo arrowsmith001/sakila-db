@@ -15,11 +15,6 @@ import java.sql.Timestamp;
     public Timestamp return_date;
     public Timestamp last_update;
 
-
-    @ManyToOne
-    @JoinColumn(name = &quot;inventory_id&quot;)
-    public Inventory inventory;
-
     @ManyToOne
     @JoinColumn(name = &quot;customer_id&quot;)
     public Customer customer;
@@ -27,5 +22,12 @@ import java.sql.Timestamp;
     @ManyToOne
     @JoinColumn(name = &quot;staff_id&quot;)
     public Staff staff;
+
+    @ManyToOne
+    @JoinColumn(name = &quot;inventory_id&quot;)
+    public Inventory inventory;
+
+<span class="fc" id="L30">    public Integer inventory_inventory_id = 0;</span>
+<span class="fc" id="L31">    public Integer rentals_rental_id = 0;</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

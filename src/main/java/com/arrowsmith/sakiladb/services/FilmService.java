@@ -45,4 +45,13 @@ public class FilmService {
 
         return filmRepository.findAllByCategory(categoryId);
     }
-}
+
+    public List<Film> getRandomFilmSelection(Integer limit) {
+        return filmRepository.getRandomSelection(limit);
+    }
+
+    public List<Film> getPopularFilms(Integer limit){
+        return filmRepository.getPopularFilms(limit);
+    }
+
+  }

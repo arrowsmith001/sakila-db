@@ -15,24 +15,30 @@ import java.util.List;
     private FilmService filmService;
 
     @PostMapping(path=&quot;&quot;)
-<span class="nc" id="L18">    public Film saveFilm(@RequestBody Film film) { return filmService.saveFilm(film); }</span>
+<span class="fc" id="L18">    public Film saveFilm(@RequestBody Film film) { return filmService.saveFilm(film); }</span>
 
     @GetMapping(&quot;&quot;)
 <span class="nc" id="L21">    public List&lt;Film&gt; getAllFilms() { return filmService.getAllFilms(); }</span>
 
+    @GetMapping(&quot;/random/{limit}&quot;)
+<span class="nc" id="L24">    public List&lt;Film&gt; getRandomFilmSelection(@PathVariable Integer limit) { return filmService.getRandomFilmSelection(limit); }</span>
+
+    @GetMapping(&quot;/popular/{limit}&quot;)
+<span class="nc" id="L27">    public List&lt;Film&gt; getPopularFilms(@PathVariable Integer limit) { return filmService.getPopularFilms(limit); }</span>
+
     @GetMapping(&quot;/{id}&quot;)
     public Film getFilmById(@PathVariable Integer id) {
-<span class="nc" id="L25">        return filmService.getFilmById(id);</span>
+<span class="nc" id="L31">        return filmService.getFilmById(id);</span>
     }
 
     @DeleteMapping(&quot;/{id}&quot;)
     public void deleteFilm(@PathVariable Integer id) {
-<span class="nc" id="L30">        filmService.deleteFilm(id);</span>
-<span class="nc" id="L31">    }</span>
+<span class="nc" id="L36">        filmService.deleteFilm(id);</span>
+<span class="nc" id="L37">    }</span>
 
     @GetMapping(&quot;/category&quot;)
     public List&lt;Film&gt; getFilmsByCategory(@RequestParam Integer id){
-<span class="nc" id="L35">        return filmService.getFilmsByCategory(id);</span>
+<span class="nc" id="L41">        return filmService.getFilmsByCategory(id);</span>
     }
 
 }

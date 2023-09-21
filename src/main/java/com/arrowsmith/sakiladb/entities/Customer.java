@@ -2,9 +2,11 @@ package com.arrowsmith.sakiladb.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+import lombok.ToString;
 
 @Entity
 @Table(name = "customer")
+@ToString
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +22,6 @@ public class Customer {
 
     @ManyToOne
     @JoinColumn(name = "address_id")
-    @JsonIgnoreProperties("")
     public Address address;
 
     @ManyToOne

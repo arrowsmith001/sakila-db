@@ -20,6 +20,12 @@ public class FilmController {
     @GetMapping("")
     public List<Film> getAllFilms() { return filmService.getAllFilms(); }
 
+    @GetMapping("/random/{limit}")
+    public List<Film> getRandomFilmSelection(@PathVariable Integer limit) { return filmService.getRandomFilmSelection(limit); }
+
+    @GetMapping("/popular/{limit}")
+    public List<Film> getPopularFilms(@PathVariable Integer limit) { return filmService.getPopularFilms(limit); }
+
     @GetMapping("/{id}")
     public Film getFilmById(@PathVariable Integer id) {
         return filmService.getFilmById(id);

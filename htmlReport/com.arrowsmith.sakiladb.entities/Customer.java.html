@@ -2,10 +2,12 @@
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+import lombok.ToString;
 
 @Entity
 @Table(name = &quot;customer&quot;)
-<span class="fc" id="L8">public class Customer {</span>
+<span class="nc" id="L9">@ToString</span>
+<span class="fc" id="L10">public class Customer {</span>
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer customer_id;
@@ -20,7 +22,6 @@ import jakarta.persistence.*;
 
     @ManyToOne
     @JoinColumn(name = &quot;address_id&quot;)
-    @JsonIgnoreProperties(&quot;&quot;)
     public Address address;
 
     @ManyToOne

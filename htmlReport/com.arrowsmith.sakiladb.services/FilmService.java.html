@@ -20,7 +20,7 @@ import java.util.List;
     private RentalRepository rentalRepository;
 
     public Film saveFilm(Film Film) {
-<span class="nc" id="L23">        return filmRepository.save(Film);</span>
+<span class="fc" id="L23">        return filmRepository.save(Film);</span>
     }
 
     public List&lt;Film&gt; getAllFilms() {
@@ -45,5 +45,14 @@ import java.util.List;
 
 <span class="nc" id="L46">        return filmRepository.findAllByCategory(categoryId);</span>
     }
-}
+
+    public List&lt;Film&gt; getRandomFilmSelection(Integer limit) {
+<span class="nc" id="L50">        return filmRepository.getRandomSelection(limit);</span>
+    }
+
+    public List&lt;Film&gt; getPopularFilms(Integer limit){
+<span class="nc" id="L54">        return filmRepository.getPopularFilms(limit);</span>
+    }
+
+  }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

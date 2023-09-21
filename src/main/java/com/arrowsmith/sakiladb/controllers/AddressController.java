@@ -16,10 +16,7 @@ public class AddressController {
     private AddressService addressService;
 
     @PostMapping("")
-    public Address saveAddress(@RequestBody Address address) {
-        System.out.println(address.toString());
-        return addressService.saveAddress(address);
-    }
+    public Address saveAddress(@RequestBody Address address) {return addressService.saveAddress(address);}
 
     @GetMapping("")
     public List<Address> getAllAddresses() { return addressService.getAllAddresses(); }

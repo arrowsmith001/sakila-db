@@ -16,22 +16,25 @@ import java.util.List;
     private InventoryService inventoryService;
 
     @PostMapping(path=&quot;&quot;)
-<span class="nc" id="L19">    public Inventory saveInventory(@RequestBody Inventory inventory) { return inventoryService.saveInventory(inventory); }</span>
+    public Inventory saveInventory(@RequestBody Inventory inventory) {
+
+<span class="nc" id="L21">        System.out.println(inventory);</span>
+<span class="nc" id="L22">        return inventoryService.saveInventory(inventory); }</span>
 
 
     @GetMapping(&quot;/{id}&quot;)
     public Inventory getInventoryById(@PathVariable Integer id) {
-<span class="nc" id="L24">        return inventoryService.getInventoryById(id);</span>
+<span class="nc" id="L27">        return inventoryService.getInventoryById(id);</span>
     }
 
     @DeleteMapping(&quot;/{id}&quot;)
     public void deleteInventory(@PathVariable Integer id) {
-<span class="nc" id="L29">        inventoryService.deleteInventory(id);</span>
-<span class="nc" id="L30">    }</span>
+<span class="nc" id="L32">        inventoryService.deleteInventory(id);</span>
+<span class="nc" id="L33">    }</span>
 
     @GetMapping(&quot;&quot;)
     public List&lt;Inventory&gt; getInventoriesByFilmIdAndStoreId(@RequestParam Integer filmId, @RequestParam Integer storeId){
-<span class="nc" id="L34">        return inventoryService.findAllByFilmIdAndStoreId(filmId, storeId);</span>
+<span class="nc" id="L37">        return inventoryService.findAllByFilmIdAndStoreId(filmId, storeId);</span>
     }
 
 }

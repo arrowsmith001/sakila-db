@@ -18,7 +18,10 @@ public class CustomerController {
     private CustomerService customerService;
 
     @PostMapping(path="")
-    public Customer saveCustomer(@RequestBody Customer customer) { return customerService.saveCustomer(customer); }
+    public Customer saveCustomer(@RequestBody Customer customer) {
+
+        System.out.println(customer);
+        return customerService.saveCustomer(customer); }
 
     @GetMapping("")
     public List<Customer> getAllCustomers() { return customerService.getAllCustomers(); }

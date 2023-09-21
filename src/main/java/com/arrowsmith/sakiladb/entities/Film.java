@@ -1,5 +1,6 @@
 package com.arrowsmith.sakiladb.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -11,31 +12,31 @@ import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.List;
 
-@Data
+
 @Entity
 @Table(name = "film")
 public class Film
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer film_id;
-    private String title;
-    private String description;
+    public Integer film_id;
+    public String title;
+    public String description;
 
 
-    private Date release_year; //private Integer release_year;
-    private Byte rental_duration; //private Integer rental_duration;
-    private BigDecimal rental_rate;
-    private Short length; //private Integer length;
-    private BigDecimal replacement_cost;
+    public Date release_year; //private Integer release_year;
+    public Byte rental_duration; //private Integer rental_duration;
+    public BigDecimal rental_rate;
+    public Short length; //private Integer length;
+    public BigDecimal replacement_cost;
 
-    @Column(columnDefinition = "enum (Types#CHAR)")
+    //@Column(columnDefinition = "enum (Types#CHAR)")
     public String rating;
 
-    @Column(columnDefinition = "set")
-    private String special_features;
+    //@Column(columnDefinition = "set")
+    public String special_features;
 
-    private Timestamp last_update; //private Date last_update;
+    public Timestamp last_update; //private Date last_update;
 
 
     @ManyToMany
@@ -45,16 +46,7 @@ public class Film
             inverseJoinColumns = @JoinColumn(name = "actor_id")
     )
     @JsonIgnoreProperties("films")
-    private List<Actor> actors;
-
-
-//    @OneToMany(
-//            mappedBy = "film",
-//            cascade = CascadeType.ALL,
-//            orphanRemoval = true
-//    )
-//    public List<FilmActor> actors;
-
+    public List<Actor> actors;
 
     @ManyToMany
     @JoinTable(name = "film_category",
@@ -62,17 +54,22 @@ public class Film
             inverseJoinColumns = @JoinColumn(name = "category_id")
     )
     @JsonIgnoreProperties("films")
-    private List<Category> categories;
+    public List<Category> categories;
 
     @ManyToOne
     @OnDelete(action = OnDeleteAction.RESTRICT)
     @JoinColumn(name = "language_id")
-    private Language language;
+    public Language language;
 
     @ManyToOne
     @OnDelete(action = OnDeleteAction.RESTRICT)
     @JoinColumn(name = "original_language_id")
-    private Language originalLanguage;
+    public Language originalLanguage;
+
+
+    @OneToMany(mappedBy = "film")
+    @JsonIgnore
+    public List<Inventory> inventories;
 
 }
 

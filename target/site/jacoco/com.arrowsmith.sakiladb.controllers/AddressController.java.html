@@ -17,7 +17,7 @@ import java.util.List;
 
     @PostMapping(&quot;&quot;)
     public Address saveAddress(@RequestBody Address address) {
-<span class="nc" id="L20">        System.out.println(address.toString());</span>
+<span class="nc" id="L20">        System.out.println(address);</span>
 <span class="nc" id="L21">        return addressService.saveAddress(address);</span>
     }
 

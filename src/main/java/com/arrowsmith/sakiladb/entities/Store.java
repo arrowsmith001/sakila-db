@@ -1,6 +1,7 @@
 package com.arrowsmith.sakiladb.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 @Entity
@@ -18,6 +19,6 @@ public class Store {
 
     @ManyToOne
     @JoinColumn(name = "manager_staff_id")
-    @JsonIgnore
+    @JsonIgnoreProperties({"store", "address"})
     public Staff manager;
 }

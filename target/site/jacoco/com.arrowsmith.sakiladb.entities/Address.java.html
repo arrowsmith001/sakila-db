@@ -28,9 +28,10 @@ import java.sql.Blob;
 //    public Blob location;
 
 <span class="nc" id="L30">    public java.sql.Timestamp last_update;</span>
+
     @ManyToOne
     @JoinColumn(name = &quot;city_id&quot;)
     @JsonIgnoreProperties(&quot;address&quot;)
-<span class="nc" id="L34">    public City city;</span>
+<span class="nc" id="L35">    public City city;</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
