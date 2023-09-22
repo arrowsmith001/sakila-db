@@ -5,26 +5,23 @@ import com.arrowsmith.sakiladb.controllers.FilmController;
 import com.arrowsmith.sakiladb.controllers.LanguageController;
 import com.arrowsmith.sakiladb.entities.Category;
 import com.arrowsmith.sakiladb.entities.Film;
-import com.arrowsmith.sakiladb.entities.Language;
+import com.arrowsmith.sakiladb.repositories.FilmRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.testng.Assert;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.List;
 
 @SpringBootTest
-class SakilaDbApplicationTests {
+class CategoryTests {
 
-	@Autowired
-	FilmController filmController;
 	@Autowired
 	CategoryController categoryController;
-	@Autowired
-	LanguageController languageController;
-
 
 
 	@Test
@@ -38,27 +35,6 @@ class SakilaDbApplicationTests {
 		categoryController.saveCategory(category);
 	}
 
-	@Test
-	void canCreateFilm() {
-		int id = 999999999;
-		filmController.deleteFilm(id);
-
-		Film film = new Film();
-
-        film.language = languageController.getLanguageById(1);
-		film.rental_duration = ((byte) 0);
-		film.title = ("title");
-
-		film.film_id = id;
-		film.rating = "PG";
-		film.description = "desc";
-		film.last_update = Timestamp.from(Instant.now());
-		film.categories = new ArrayList<>();
-		film.replacement_cost = BigDecimal.ONE;
-		film.special_features = "Deleted Scenes";
-
-		filmController.saveFilm(film);
-	}
 
 
 }

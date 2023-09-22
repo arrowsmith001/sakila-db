@@ -48,7 +48,7 @@ import java.util.List;
     @JsonIgnoreProperties(&quot;films&quot;)
     public List&lt;Actor&gt; actors;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = &quot;film_category&quot;,
             joinColumns = @JoinColumn(name = &quot;film_id&quot;),
             inverseJoinColumns = @JoinColumn(name = &quot;category_id&quot;)
