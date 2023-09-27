@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CategoryController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sakila-db</a> &gt; <a href="index.source.html" class="el_package">com.arrowsmith.sakiladb.controllers</a> &gt; <span class="el_source">CategoryController.java</span></div><h1>CategoryController.java</h1><pre class="source lang-java linenums">package com.arrowsmith.sakiladb.controllers;
+
+import com.arrowsmith.sakiladb.entities.Category;
+import com.arrowsmith.sakiladb.services.CategoryService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@CrossOrigin(origins = &quot;http://localhost:3000&quot;)
+@RequestMapping(&quot;/category&quot;)
+<span class="nc" id="L13">public class CategoryController {</span>
+
+    @Autowired
+    private CategoryService categoryService;
+
+    @PostMapping(&quot;&quot;)
+<span class="nc" id="L19">    public Category saveCategory(@RequestBody Category category) { return categoryService.saveCategory(category); }</span>
+
+    @GetMapping(&quot;&quot;)
+<span class="nc" id="L22">    public List&lt;Category&gt; getAllCategories() { return categoryService.getAllCategories(); }</span>
+
+    @GetMapping(&quot;/{id}&quot;)
+    public Category getCategoryById(@PathVariable Integer id) {
+<span class="nc" id="L26">        return categoryService.getCategoryById(id);</span>
+    }
+
+    @DeleteMapping(&quot;/{id}&quot;)
+    public void deleteCategory(@PathVariable Integer id) {
+<span class="nc" id="L31">        categoryService.deleteCategory(id);</span>
+<span class="nc" id="L32">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

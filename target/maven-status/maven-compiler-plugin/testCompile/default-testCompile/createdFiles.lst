@@ -1,5 +1,2 @@
-com\arrowsmith\sakiladb\base\ServiceTests.class
-com\arrowsmith\sakiladb\services\CategoryServiceTests.class
 com\arrowsmith\sakiladb\services\FilmServiceTests.class
-com\arrowsmith\sakiladb\base\TestTests.class
 com\arrowsmith\sakiladb\controllers\FilmControllerTests.class
