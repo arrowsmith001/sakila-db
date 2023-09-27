@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FilmServiceTests.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">jacoco.exec</a> &gt; <a href="index.source.html" class="el_package">com.arrowsmith.sakiladb.services</a> &gt; <span class="el_source">FilmServiceTests.java</span></div><h1>FilmServiceTests.java</h1><pre class="source lang-java linenums">package com.arrowsmith.sakiladb.services;
+
+import com.arrowsmith.sakiladb.base.ServiceTests;
+import com.arrowsmith.sakiladb.entities.Category;
+import com.arrowsmith.sakiladb.entities.Film;
+import com.arrowsmith.sakiladb.repositories.CategoryRepository;
+import com.arrowsmith.sakiladb.repositories.FilmRepository;
+import com.arrowsmith.sakiladb.repositories.LanguageRepository;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
+
+
+@WebMvcTest(Film.class)
+<span class="fc" id="L26">class FilmServiceTests {</span>
+
+//	@BeforeEach
+//	void setUp() {
+//
+//		MockitoAnnotations.initMocks(this);
+//
+//		final Category newCategory = new Category();
+//		newCategory.category_id = 1;
+//		newCategory.name = &quot;My category&quot;;
+//
+//		when(filmRepository.existsById(1)).thenReturn(true);
+//	}
+
+	@Mock
+	private FilmRepository filmRepository;
+
+	@InjectMocks
+	private FilmService filmService;
+
+
+	@Test
+	void contextLoads() {
+
+<span class="fc" id="L50">	}</span>
+
+//	@Test
+//	public void canCreate() {
+//
+//		Film film = getBasic();
+//		addAdditional(film);
+//
+//		final Film newFilm = filmController.saveFilm(film);
+//
+//		Assert.assertTrue(filmService.existsById(newFilm.film_id), &quot;Film doesn't exist&quot;);
+//	}
+//
+//	@Test
+//	public void canDelete() {
+//
+//		final Film film = getBasic();
+//		final Film newFilm = filmController.saveFilm(film);
+//
+//		final Integer id = newFilm.film_id;
+//
+//		Assert.assertTrue(filmRepository.existsById(id));
+//
+//		filmController.deleteFilm(id);
+//
+//		Assert.assertFalse(filmRepository.existsById(id));
+//	}
+//
+//	@Override
+//	public void canUpdate() {
+//
+//		final Film film = getBasic();
+//		final Film savedFilm = filmController.saveFilm(film);
+//		final Integer filmId = savedFilm.film_id;
+//
+//		final String newTitle = savedFilm.title + &quot;1&quot;;
+//		savedFilm.title = newTitle;
+//
+//		filmController.saveFilm(savedFilm);
+//
+//		final Film readFilm = filmController.getFilmById(filmId);
+//
+//		Assert.assertEquals(readFilm.title, newTitle);
+//	}
+//
+//	@Override @Test
+//	public void canRead() {
+//		final Film film = getBasic();
+//
+//		final Film savedFilm = filmController.saveFilm(film);
+//
+//		final Film readFilm = filmController.getFilmById(film.film_id);
+//
+//		Assert.assertEquals(readFilm.film_id, savedFilm.film_id);
+//	}
+//
+//	@Test
+//	void canCreateCategory() {
+//		Category category = new Category();
+//		categoryController.saveCategory(category);
+//	}
+//
+//
+//
+//	@Test
+//	void getFilmsByCategoryWorks() {
+//		int categoryId = 1;
+//
+//		List&lt;Film&gt; films = filmController.getFilmsByCategory(categoryId);
+//
+//		boolean allContainCategory = films.stream().allMatch(f -&gt; {
+//			final List&lt;Category&gt; categories = f.categories;
+//			return categories.stream().anyMatch(c -&gt; c.category_id == categoryId);
+//		});
+//
+//		Assert.assertTrue(allContainCategory, &quot;Category not found in at least 1 film&quot;);
+//	}
+//
+//
+//	@Override
+//	public Film getBasic() {
+//
+//		final Film film = new Film();
+//
+//		film.language = languageController.getLanguageById(1);
+//		film.rental_duration = ((byte) 0);
+//		film.title = (&quot;title&quot;);
+//
+//		return film;
+//	}
+//
+//	protected void addAdditional(Film film) {
+//		film.rating = &quot;PG&quot;;
+//		film.description = &quot;desc&quot;;
+//		film.last_update = Timestamp.from(Instant.now());
+//		film.categories = new ArrayList&lt;&gt;();
+//		film.replacement_cost = BigDecimal.ONE;
+//		film.special_features = &quot;Deleted Scenes&quot;;
+//	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

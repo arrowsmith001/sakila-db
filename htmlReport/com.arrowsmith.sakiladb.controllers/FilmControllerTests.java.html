@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FilmControllerTests.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">jacoco.exec</a> &gt; <a href="index.source.html" class="el_package">com.arrowsmith.sakiladb.controllers</a> &gt; <span class="el_source">FilmControllerTests.java</span></div><h1>FilmControllerTests.java</h1><pre class="source lang-java linenums">package com.arrowsmith.sakiladb.controllers;
+
+import com.arrowsmith.sakiladb.base.ServiceTests;
+import com.arrowsmith.sakiladb.entities.Film;
+import com.arrowsmith.sakiladb.repositories.FilmRepository;
+import com.arrowsmith.sakiladb.services.FilmService;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+import org.testng.Assert;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.*;
+
+
+@WebMvcTest(FilmController.class)
+<span class="fc" id="L32">class FilmControllerTests {</span>
+
+	@Autowired
+	private MockMvc mvc;
+
+	@Autowired
+	private ObjectMapper objectMapper;
+
+	@MockBean
+	private FilmService filmService;
+
+
+	@Test
+	@DisplayName(&quot;Context Loads&quot;)
+	void contextLoads() {
+
+<span class="fc" id="L48">	}</span>
+
+
+	@Test
+	@DisplayName(&quot;Get Film by Id&quot;)
+	public void testGetFilmSuccess() throws Exception {
+
+<span class="fc" id="L55">		final Film film = new Film();</span>
+<span class="fc" id="L56">		final int id = 1;</span>
+
+<span class="fc" id="L58">		film.film_id = id;</span>
+
+<span class="fc" id="L60">		when(filmService.getFilmById(id)).thenReturn(film);</span>
+
+<span class="fc" id="L62">		MvcResult result = mvc.perform(MockMvcRequestBuilders</span>
+<span class="fc" id="L63">				.get(&quot;/film/&quot; + id)</span>
+<span class="fc" id="L64">				.contentType(MediaType.APPLICATION_JSON))</span>
+<span class="fc" id="L65">				.andExpect(MockMvcResultMatchers.status().isOk())</span>
+<span class="fc" id="L66">				.andReturn();</span>
+
+<span class="fc" id="L68">		verify(filmService, times(1)).getFilmById(1);</span>
+
+<span class="fc" id="L70">		String responseJSON = result.getResponse().getContentAsString();</span>
+<span class="fc" id="L71">		assertTrue(responseJSON.contains(&quot;\&quot;film_id\&quot;:&quot; + id));</span>
+<span class="fc" id="L72">	}</span>
+
+	@Test
+	@DisplayName(&quot;Add New Film&quot;)
+	public void testAddNewFilmSuccess() throws Exception {
+
+<span class="fc" id="L78">		final Film film = new Film();</span>
+<span class="fc" id="L79">		final int id = 999;</span>
+
+<span class="fc" id="L81">		film.film_id = id;</span>
+
+<span class="fc" id="L83">		when(filmService.saveFilm(any(Film.class))).thenReturn(film);</span>
+
+<span class="fc" id="L85">		MvcResult result = mvc</span>
+<span class="fc" id="L86">				.perform(MockMvcRequestBuilders.post(&quot;/film&quot;)</span>
+<span class="fc" id="L87">						.contentType(MediaType.APPLICATION_JSON)</span>
+<span class="fc" id="L88">						.content(objectMapper.writeValueAsString(new Film())))</span>
+<span class="fc" id="L89">				.andExpect(MockMvcResultMatchers.status().isOk())</span>
+<span class="fc" id="L90">				.andReturn();</span>
+
+
+<span class="fc" id="L93">		verify(filmService, times(1)).saveFilm(any(Film.class));</span>
+
+<span class="fc" id="L95">		String responseJSON = result.getResponse().getContentAsString();</span>
+<span class="fc" id="L96">		assertTrue(responseJSON.contains(&quot;\&quot;film_id\&quot;:&quot; + id));</span>
+
+<span class="fc" id="L98">	}</span>
+
+	@Test
+	@DisplayName(&quot;Get All Films&quot;)
+	public void testGetAllFilmsSuccess() throws Exception {
+
+<span class="fc" id="L104">		final List&lt;Film&gt; films = new ArrayList&lt;&gt;();</span>
+
+<span class="fc bfc" id="L106" title="All 2 branches covered.">		for (int i = 0; i &lt; 3; i++)</span>
+		{
+<span class="fc" id="L108">			final Film newFilm = new Film();</span>
+<span class="fc" id="L109">			newFilm.film_id = i;</span>
+<span class="fc" id="L110">			films.add(newFilm);</span>
+		}
+
+<span class="fc" id="L113">		when(filmService.getAllFilms()).thenReturn(films);</span>
+
+<span class="fc" id="L115">		MvcResult result = mvc</span>
+<span class="fc" id="L116">				.perform(MockMvcRequestBuilders.get(&quot;/film&quot;)</span>
+<span class="fc" id="L117">						.contentType(MediaType.APPLICATION_JSON))</span>
+<span class="fc" id="L118">				.andExpect(MockMvcResultMatchers.status().isOk())</span>
+<span class="fc" id="L119">				.andReturn();</span>
+
+
+<span class="fc" id="L122">		verify(filmService, times(1)).getAllFilms();</span>
+<span class="fc" id="L123">		String responseJSON = result.getResponse().getContentAsString();</span>
+
+<span class="fc bfc" id="L125" title="All 2 branches covered.">		for (int i = 0; i &lt; 3; i++)</span>
+		{
+<span class="fc" id="L127">			assertTrue(responseJSON.contains(&quot;\&quot;film_id\&quot;:&quot; + i));</span>
+		}
+
+<span class="fc" id="L130">	}</span>
+
+
+	@Test
+	@DisplayName(&quot;Delete film&quot;)
+	public void testDeleteFilmSuccess() throws Exception {
+
+<span class="fc" id="L137">		final int id = 999;</span>
+
+<span class="fc" id="L139">		mvc</span>
+<span class="fc" id="L140">				.perform(MockMvcRequestBuilders.delete(&quot;/film/&quot; + id)</span>
+<span class="fc" id="L141">				.contentType(MediaType.APPLICATION_JSON))</span>
+<span class="fc" id="L142">				.andExpect(MockMvcResultMatchers.status().isOk())</span>
+<span class="fc" id="L143">				.andReturn();</span>
+
+
+<span class="fc" id="L146">		verify(filmService, times(1)).deleteFilm(id);</span>
+<span class="fc" id="L147">	}</span>
+
+
+
+	@Test
+	@DisplayName(&quot;Get Random Selection&quot;)
+	public void testRandomSelectionSuccess() throws Exception {
+
+<span class="fc" id="L155">		final int limit = 10;</span>
+
+<span class="fc" id="L157">		when(filmService.getRandomFilmSelection(limit)).thenReturn(new ArrayList&lt;&gt;(limit));</span>
+
+<span class="fc" id="L159">		MvcResult result = mvc</span>
+<span class="fc" id="L160">				.perform(MockMvcRequestBuilders.get(&quot;/film/random/&quot; + limit)</span>
+<span class="fc" id="L161">						.contentType(MediaType.APPLICATION_JSON))</span>
+<span class="fc" id="L162">				.andExpect(MockMvcResultMatchers.status().isOk())</span>
+<span class="fc" id="L163">				.andReturn();</span>
+
+
+<span class="fc" id="L166">		verify(filmService, times(1)).getRandomFilmSelection(limit);</span>
+
+<span class="fc" id="L168">	}</span>
+
+	@Test
+	@DisplayName(&quot;Get Popular Selection&quot;)
+	public void testPopularSelectionSuccess() throws Exception {
+
+<span class="fc" id="L174">		final int limit = 10;</span>
+
+<span class="fc" id="L176">		when(filmService.getPopularFilms(limit)).thenReturn(new ArrayList&lt;&gt;(limit));</span>
+
+<span class="fc" id="L178">		MvcResult result = mvc</span>
+<span class="fc" id="L179">				.perform(MockMvcRequestBuilders.get(&quot;/film/popular/&quot; + limit)</span>
+<span class="fc" id="L180">						.contentType(MediaType.APPLICATION_JSON))</span>
+<span class="fc" id="L181">				.andExpect(MockMvcResultMatchers.status().isOk())</span>
+<span class="fc" id="L182">				.andReturn();</span>
+
+
+<span class="fc" id="L185">		verify(filmService, times(1)).getPopularFilms(limit);</span>
+
+<span class="fc" id="L187">	}</span>
+
+	@Test
+	@DisplayName(&quot;Get Films by Category&quot;)
+	public void getFilmsByCategorySuccess() throws Exception {
+
+<span class="fc" id="L193">		final Film film = new Film();</span>
+
+<span class="fc" id="L195">		final int categoryId = 0;</span>
+
+<span class="fc" id="L197">		when(filmService.getFilmsByCategory(categoryId)).thenReturn(new ArrayList&lt;&gt;());</span>
+
+<span class="fc" id="L199">		MvcResult result = mvc</span>
+<span class="fc" id="L200">				.perform(MockMvcRequestBuilders.get(&quot;/film/category?id=&quot; + categoryId)</span>
+<span class="fc" id="L201">						.contentType(MediaType.APPLICATION_JSON))</span>
+<span class="fc" id="L202">				.andExpect(MockMvcResultMatchers.status().isOk())</span>
+<span class="fc" id="L203">				.andReturn();</span>
+
+
+<span class="fc" id="L206">		verify(filmService, times(1)).getFilmsByCategory(categoryId);</span>
+
+<span class="fc" id="L208">	}</span>
+
+//	@Test
+//	public void canCreate() {
+//
+//		Film film = getBasic();
+//		addAdditional(film);
+//
+//		final Film newFilm = filmController.saveFilm(film);
+//
+//		Assert.assertTrue(filmService.existsById(newFilm.film_id), &quot;Film doesn't exist&quot;);
+//	}
+//
+//	@Test
+//	public void canDelete() {
+//
+//		final Film film = getBasic();
+//		final Film newFilm = filmController.saveFilm(film);
+//
+//		final Integer id = newFilm.film_id;
+//
+//		Assert.assertTrue(filmRepository.existsById(id));
+//
+//		filmController.deleteFilm(id);
+//
+//		Assert.assertFalse(filmRepository.existsById(id));
+//	}
+//
+//	@Override
+//	public void canUpdate() {
+//
+//		final Film film = getBasic();
+//		final Film savedFilm = filmController.saveFilm(film);
+//		final Integer filmId = savedFilm.film_id;
+//
+//		final String newTitle = savedFilm.title + &quot;1&quot;;
+//		savedFilm.title = newTitle;
+//
+//		filmController.saveFilm(savedFilm);
+//
+//		final Film readFilm = filmController.getFilmById(filmId);
+//
+//		Assert.assertEquals(readFilm.title, newTitle);
+//	}
+//
+//	@Override @Test
+//	public void canRead() {
+//		final Film film = getBasic();
+//
+//		final Film savedFilm = filmController.saveFilm(film);
+//
+//		final Film readFilm = filmController.getFilmById(film.film_id);
+//
+//		Assert.assertEquals(readFilm.film_id, savedFilm.film_id);
+//	}
+//
+//	@Test
+//	void canCreateCategory() {
+//		Category category = new Category();
+//		categoryController.saveCategory(category);
+//	}
+//
+//
+//
+//	@Test
+//	void getFilmsByCategoryWorks() {
+//		int categoryId = 1;
+//
+//		List&lt;Film&gt; films = filmController.getFilmsByCategory(categoryId);
+//
+//		boolean allContainCategory = films.stream().allMatch(f -&gt; {
+//			final List&lt;Category&gt; categories = f.categories;
+//			return categories.stream().anyMatch(c -&gt; c.category_id == categoryId);
+//		});
+//
+//		Assert.assertTrue(allContainCategory, &quot;Category not found in at least 1 film&quot;);
+//	}
+//
+//
+//	@Override
+//	public Film getBasic() {
+//
+//		final Film film = new Film();
+//
+//		film.language = languageController.getLanguageById(1);
+//		film.rental_duration = ((byte) 0);
+//		film.title = (&quot;title&quot;);
+//
+//		return film;
+//	}
+//
+//	protected void addAdditional(Film film) {
+//		film.rating = &quot;PG&quot;;
+//		film.description = &quot;desc&quot;;
+//		film.last_update = Timestamp.from(Instant.now());
+//		film.categories = new ArrayList&lt;&gt;();
+//		film.replacement_cost = BigDecimal.ONE;
+//		film.special_features = &quot;Deleted Scenes&quot;;
+//	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

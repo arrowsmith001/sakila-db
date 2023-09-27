@@ -1,3 +1,5 @@
-D:\Documents\TSI\Projects\Java\sakila-db\src\test\java\com\arrowsmith\sakiladb\CategoryTests.java
-D:\Documents\TSI\Projects\Java\sakila-db\src\test\java\com\arrowsmith\sakiladb\FilmTests.java
-D:\Documents\TSI\Projects\Java\sakila-db\src\test\java\com\arrowsmith\sakiladb\base\EntityTest.java
+D:\Documents\TSI\Projects\Java\sakila-db\src\test\java\com\arrowsmith\sakiladb\services\FilmServiceTests.java
+D:\Documents\TSI\Projects\Java\sakila-db\src\test\java\com\arrowsmith\sakiladb\base\ServiceTests.java
+D:\Documents\TSI\Projects\Java\sakila-db\src\test\java\com\arrowsmith\sakiladb\base\TestTests.java
+D:\Documents\TSI\Projects\Java\sakila-db\src\test\java\com\arrowsmith\sakiladb\controllers\FilmControllerTests.java
+D:\Documents\TSI\Projects\Java\sakila-db\src\test\java\com\arrowsmith\sakiladb\services\CategoryServiceTests.java
