@@ -51,12 +51,12 @@ public class TestTest {
 
 
 
-    @Test
-    public void test()
-    {
-        final Category cat = categoryService.getCategoryById(1); // categoryController.getCategoryById(1);
-        final Category cat2 = categoryController.getCategoryById(1); // categoryController.getCategoryById(1);
-
-        System.out.println(cat2);
-    }
+//    @Test
+//    public void test()
+//    {
+//        final Category cat = categoryService.getCategoryById(1); // categoryController.getCategoryById(1);
+//        final Category cat2 = categoryController.getCategoryById(1); // categoryController.getCategoryById(1);
+//
+//        System.out.println(cat2);
+//    }
 }
