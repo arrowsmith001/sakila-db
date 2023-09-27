@@ -1,1 +1,3 @@
-com\arrowsmith\sakiladb\SakilaDbApplicationTests.class
+com\arrowsmith\sakiladb\base\EntityTest.class
+com\arrowsmith\sakiladb\CategoryTests.class
+com\arrowsmith\sakiladb\FilmTests.class

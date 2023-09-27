@@ -8,7 +8,13 @@ import com.arrowsmith.sakiladb.entities.Category;
 import com.arrowsmith.sakiladb.entities.Film;
 import com.arrowsmith.sakiladb.repositories.FilmRepository;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.testng.Assert;
 
 import java.math.BigDecimal;
@@ -17,15 +23,18 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
+
+@RunWith(MockitoJUnitRunner.class)
+@ExtendWith(MockitoExtension.class)
 class FilmTests extends EntityTest<Film> {
 
-	@Autowired
+	@Mock
 	FilmController filmController;
-	@Autowired
+	@Mock
 	FilmRepository filmRepository;
-	@Autowired
+	@Mock
 	CategoryController categoryController;
-	@Autowired
+	@Mock
 	LanguageController languageController;
 
 
