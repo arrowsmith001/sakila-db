@@ -44,7 +44,7 @@ class CityControllerTests {
 		final City city = new City();
 		final int id = 1;
 
-		city.setCity_id(id);
+		city.setCityId(id);
 
 		when(cityService.getCityById(id)).thenReturn(city);
 
@@ -57,7 +57,7 @@ class CityControllerTests {
 		verify(cityService, times(1)).getCityById(1);
 
 		String responseJSON = result.getResponse().getContentAsString();
-		assertTrue(responseJSON.contains("\"city_id\":" + id));
+		assertTrue(responseJSON.contains("\"cityId\":" + id));
 	}
 
 	@Test
@@ -67,7 +67,7 @@ class CityControllerTests {
 		final City city = new City();
 		final int id = 999;
 
-		city.setCity_id(id);
+		city.setCityId(id);
 
 		when(cityService.saveCity(any(City.class))).thenReturn(city);
 
@@ -82,7 +82,7 @@ class CityControllerTests {
 		verify(cityService, times(1)).saveCity(any(City.class));
 
 		String responseJSON = result.getResponse().getContentAsString();
-		assertTrue(responseJSON.contains("\"city_id\":" + id));
+		assertTrue(responseJSON.contains("\"cityId\":" + id));
 
 	}
 
@@ -95,7 +95,7 @@ class CityControllerTests {
 		for (int i = 0; i < 3; i++)
 		{
 			final City newCity = new City();
-			newCity.setCity_id(i);
+			newCity.setCityId(i);
 			citys.add(newCity);
 		}
 
@@ -113,7 +113,7 @@ class CityControllerTests {
 
 		for (int i = 0; i < 3; i++)
 		{
-			assertTrue(responseJSON.contains("\"city_id\":" + i));
+			assertTrue(responseJSON.contains("\"cityId\":" + i));
 		}
 
 	}

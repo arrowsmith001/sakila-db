@@ -55,7 +55,7 @@ class LanguageControllerTests {
 		verify(languageService, times(1)).getLanguageById(1);
 
 		String responseJSON = result.getResponse().getContentAsString();
-		assertTrue(responseJSON.contains("\"language_id\":" + id));
+		assertTrue(responseJSON.contains("\"languageId\":" + id));
 	}
 
 	@Test
@@ -80,7 +80,7 @@ class LanguageControllerTests {
 		verify(languageService, times(1)).saveLanguage(any(Language.class));
 
 		String responseJSON = result.getResponse().getContentAsString();
-		assertTrue(responseJSON.contains("\"language_id\":" + id));
+		assertTrue(responseJSON.contains("\"languageId\":" + id));
 
 	}
 
@@ -111,7 +111,7 @@ class LanguageControllerTests {
 
 		for (int i = 0; i < 3; i++)
 		{
-			assertTrue(responseJSON.contains("\"language_id\":" + i));
+			assertTrue(responseJSON.contains("\"languageId\":" + i));
 		}
 
 	}

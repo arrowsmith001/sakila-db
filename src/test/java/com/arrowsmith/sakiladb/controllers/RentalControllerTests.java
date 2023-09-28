@@ -55,7 +55,7 @@ class RentalControllerTests {
 		verify(rentalService, times(1)).getRentalById(1);
 
 		String responseJSON = result.getResponse().getContentAsString();
-		assertTrue(responseJSON.contains("\"rental_id\":" + id));
+		assertTrue(responseJSON.contains("\"rentalId\":" + id));
 	}
 
 	@Test
@@ -80,7 +80,7 @@ class RentalControllerTests {
 		verify(rentalService, times(1)).saveRental(any(Rental.class));
 
 		String responseJSON = result.getResponse().getContentAsString();
-		assertTrue(responseJSON.contains("\"rental_id\":" + id));
+		assertTrue(responseJSON.contains("\"rentalId\":" + id));
 
 	}
 
@@ -111,7 +111,7 @@ class RentalControllerTests {
 
 		for (int i = 0; i < 3; i++)
 		{
-			assertTrue(responseJSON.contains("\"rental_id\":" + i));
+			assertTrue(responseJSON.contains("\"rentalId\":" + i));
 		}
 
 	}

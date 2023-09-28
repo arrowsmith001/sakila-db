@@ -55,7 +55,7 @@ class CustomerControllerTests {
 		verify(customerService, times(1)).getCustomerById(1);
 
 		String responseJSON = result.getResponse().getContentAsString();
-		assertTrue(responseJSON.contains("\"customer_id\":" + id));
+		assertTrue(responseJSON.contains("\"customerId\":" + id));
 	}
 
 	@Test
@@ -80,7 +80,7 @@ class CustomerControllerTests {
 		verify(customerService, times(1)).saveCustomer(any(Customer.class));
 
 		String responseJSON = result.getResponse().getContentAsString();
-		assertTrue(responseJSON.contains("\"customer_id\":" + id));
+		assertTrue(responseJSON.contains("\"customerId\":" + id));
 
 	}
 
@@ -111,11 +111,9 @@ class CustomerControllerTests {
 
 		for (int i = 0; i < 3; i++)
 		{
-			assertTrue(responseJSON.contains("\"customer_id\":" + i));
+			assertTrue(responseJSON.contains("\"customerId\":" + i));
 		}
-
 	}
-
 
 	@Test
 	@DisplayName("Delete customer")
