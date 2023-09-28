@@ -13,8 +13,8 @@ public class InventoryService {
     @Autowired
     private InventoryRepository inventoryRepository;
     
-    public Inventory saveInventory(Inventory Inventory) {
-        return inventoryRepository.save(Inventory);
+    public Inventory saveInventory(Inventory inventory) {
+        return inventoryRepository.save(inventory);
     }
 
     public List<Inventory> getAllInventorys() {

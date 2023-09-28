@@ -13,8 +13,8 @@ public class ActorService {
     @Autowired
     private ActorRepository actorRepository;
 
-    public Actor saveActor(Actor Actor) {
-        return actorRepository.save(Actor);
+    public Actor saveActor(Actor actor) {
+        return actorRepository.save(actor);
     }
 
     public List<Actor> getAllActors() {

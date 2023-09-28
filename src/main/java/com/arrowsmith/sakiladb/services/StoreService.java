@@ -13,8 +13,8 @@ public class StoreService {
     @Autowired
     private StoreRepository storeRepository;
 
-    public Store saveStore(Store Store) {
-        return storeRepository.save(Store);
+    public Store saveStore(Store store) {
+        return storeRepository.save(store);
     }
 
     public List<Store> getAllStores() {

@@ -13,8 +13,8 @@ public class RentalService {
     @Autowired
     private RentalRepository rentalRepository;
 
-    public Rental saveRental(Rental Rental) {
-        return rentalRepository.save(Rental);
+    public Rental saveRental(Rental rental) {
+        return rentalRepository.save(rental);
     }
 
     public List<Rental> getAllRentals() {

@@ -35,7 +35,7 @@ public class CustomerController {
 
     @PostMapping("/email")
     public Customer getCustomerByEmail(@RequestBody Credentials credentials){
-        return customerService.getCustomerByEmail(credentials.email);
+        return customerService.getCustomerByEmail(credentials.getEmail());
     }
 
 }

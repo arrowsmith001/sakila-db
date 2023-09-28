@@ -19,8 +19,8 @@ public class CityService {
     @Autowired
     private RentalRepository rentalRepository;
 
-    public City saveCity(City City) {
-        return cityRepository.save(City);
+    public City saveCity(City city) {
+        return cityRepository.save(city);
     }
 
     public List<City> getAllCitys() {

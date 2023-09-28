@@ -136,7 +136,7 @@ class CustomerControllerTests {
 
 		final String email = "a@a.a";
 		final Credentials credentials = new Credentials();
-		credentials.email = email;
+		credentials.setEmail(email);
 
 		mvc
 				.perform(MockMvcRequestBuilders.post("/customer/email")

@@ -13,8 +13,8 @@ public class CategoryService {
     @Autowired
     private CategoryRepository categoryRepository;
 
-    public Category saveCategory(Category Category) {
-        return categoryRepository.save(Category);
+    public Category saveCategory(Category category) {
+        return categoryRepository.save(category);
     }
 
     public List<Category> getAllCategories() {

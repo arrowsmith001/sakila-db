@@ -19,8 +19,8 @@ public class FilmService {
     @Autowired
     private RentalRepository rentalRepository;
 
-    public Film saveFilm(Film Film) {
-        return filmRepository.save(Film);
+    public Film saveFilm(Film film) {
+        return filmRepository.save(film);
     }
 
     public List<Film> getAllFilms() {
