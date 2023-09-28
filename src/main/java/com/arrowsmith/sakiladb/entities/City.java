@@ -16,10 +16,11 @@ public class City
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "city_id")
     private Integer city_id;
 
     @Column(name = "city")
-    private String city_name;
+    private String cityName;
 
     @Column(name = "last_update")
     private java.sql.Timestamp lastUpdate;

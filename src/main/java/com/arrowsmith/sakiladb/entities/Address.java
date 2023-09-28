@@ -32,7 +32,8 @@ public class Address {
 
     private String phone;
 
-    private Timestamp last_update;
+    @Column(name = "last_update")
+    private Timestamp lastUpdate;
 
     @ManyToOne
     @JoinColumn(name = "city_id")

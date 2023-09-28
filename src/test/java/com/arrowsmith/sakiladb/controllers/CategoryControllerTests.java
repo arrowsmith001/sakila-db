@@ -23,7 +23,7 @@ import static org.mockito.Mockito.*;
 
 
 @WebMvcTest(CategoryController.class)
-class CategoryControllerTests {
+public class CategoryControllerTests {
 
 	@Autowired
 	private MockMvc mvc;

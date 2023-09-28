@@ -23,7 +23,7 @@ import static org.mockito.Mockito.*;
 
 
 @WebMvcTest(ActorController.class)
-class ActorControllerTests {
+public class ActorControllerTests {
 
 	@Autowired
 	private MockMvc mvc;

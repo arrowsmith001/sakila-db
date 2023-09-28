@@ -16,7 +16,8 @@ import java.sql.Timestamp;
 public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer payment_id;
+    @Column(name = "payment_id")
+    private Integer paymentId;
 
     private BigDecimal amount;
 

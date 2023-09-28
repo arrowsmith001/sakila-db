@@ -42,7 +42,7 @@ class CustomerControllerTests {
 		final Customer customer = new Customer();
 		final int id = 1;
 
-		customer.setCustomer_id(id);
+		customer.setCustomerId(id);
 
 		when(customerService.getCustomerById(id)).thenReturn(customer);
 
@@ -65,7 +65,7 @@ class CustomerControllerTests {
 		final Customer customer = new Customer();
 		final int id = 999;
 
-		customer.setCustomer_id(id);
+		customer.setCustomerId(id);
 
 		when(customerService.saveCustomer(any(Customer.class))).thenReturn(customer);
 
@@ -93,7 +93,7 @@ class CustomerControllerTests {
 		for (int i = 0; i < 3; i++)
 		{
 			final Customer newCustomer = new Customer();
-			newCustomer.setCustomer_id(i);
+			newCustomer.setCustomerId(i);
 			customers.add(newCustomer);
 		}
 

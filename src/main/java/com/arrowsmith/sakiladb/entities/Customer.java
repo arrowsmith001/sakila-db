@@ -13,7 +13,8 @@ import lombok.ToString;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer customer_id;
+    @Column(name = "customer_id")
+    private Integer customerId;
 
     @Column(name = "first_name")
     private String firstName;

@@ -42,7 +42,7 @@ class LanguageControllerTests {
 		final Language language = new Language();
 		final int id = 1;
 
-		language.setLanguage_id(id);
+		language.setLanguageId(id);
 
 		when(languageService.getLanguageById(id)).thenReturn(language);
 
@@ -65,7 +65,7 @@ class LanguageControllerTests {
 		final Language language = new Language();
 		final int id = 999;
 
-		language.setLanguage_id(id);
+		language.setLanguageId(id);
 
 		when(languageService.saveLanguage(any(Language.class))).thenReturn(language);
 
@@ -93,7 +93,7 @@ class LanguageControllerTests {
 		for (int i = 0; i < 3; i++)
 		{
 			final Language newLanguage = new Language();
-			newLanguage.setLanguage_id(i);
+			newLanguage.setLanguageId(i);
 			languages.add(newLanguage);
 		}
 
