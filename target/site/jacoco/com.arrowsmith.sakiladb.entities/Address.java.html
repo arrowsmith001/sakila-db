@@ -3,34 +3,39 @@
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+
+import java.sql.Blob;
+import java.sql.Timestamp;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.sql.Blob;
-
 @Entity
 @Table(name = &quot;address&quot;)
-<span class="nc" id="L14">@ToString</span>
-<span class="fc" id="L15">public class Address {</span>
+@ToString
+@Getter
+@Setter
+<span class="fc" id="L19">public class Address {</span>
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer address_id;
 
-    public Integer address_id;
-    public String address;
-    public String address2;
-    public String district;
-    public String postal_code;
-    public String phone;
+    private String address;
+    private String address2;
+    private String district;
+    private String postal_code;
+    private String phone;
 
-//    @JsonIgnore
-//    public Blob location;
+    @Transient
+    private Blob location;
 
-    public java.sql.Timestamp last_update;
+    private Timestamp last_update;
 
     @ManyToOne
     @JoinColumn(name = &quot;city_id&quot;)
     @JsonIgnoreProperties(&quot;address&quot;)
-    public City city;
+    private City city;
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

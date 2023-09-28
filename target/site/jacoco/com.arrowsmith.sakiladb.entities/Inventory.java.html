@@ -2,33 +2,37 @@
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 import java.util.List;
 
 @Entity
 @Table(name = &quot;inventory&quot;)
-<span class="nc" id="L11">@ToString</span>
-<span class="fc" id="L12">public class Inventory {</span>
+@ToString
+@Getter
+@Setter
+<span class="fc" id="L16">public class Inventory {</span>
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Integer inventory_id;
+    private Integer inventory_id;
 
     @ManyToOne
     @JoinColumn(name = &quot;film_id&quot;)
-    public Film film;
+    private Film film;
 
     @ManyToOne
     @JoinColumn(name = &quot;store_id&quot;)
-    public Store store;
+    private Store store;
 
-    public java.sql.Timestamp last_update;
+    private java.sql.Timestamp last_update;
 
     @OneToMany(mappedBy = &quot;inventory&quot;)
     @JsonIgnore
-    public List&lt;Rental&gt; rentals;
+    private List&lt;Rental&gt; rentals;
 
-<span class="fc" id="L31">    public Integer film_film_id = 0;</span>
-<span class="fc" id="L32">    public Integer inventories_inventory_id = 0;</span>
+<span class="fc" id="L35">    private Integer film_film_id = 0;</span>
+<span class="fc" id="L36">    private Integer inventories_inventory_id = 0;</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

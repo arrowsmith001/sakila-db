@@ -8,27 +8,27 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-<span class="nc" id="L11">public class InventoryService {</span>
+<span class="fc" id="L11">public class InventoryService {</span>
 
     @Autowired
     private InventoryRepository inventoryRepository;
     
     public Inventory saveInventory(Inventory Inventory) {
-<span class="nc" id="L17">        return inventoryRepository.save(Inventory);</span>
+<span class="fc" id="L17">        return inventoryRepository.save(Inventory);</span>
     }
 
     public List&lt;Inventory&gt; getAllInventorys() {
-<span class="nc" id="L21">        return inventoryRepository.findAll();</span>
+<span class="fc" id="L21">        return inventoryRepository.findAll();</span>
     }
 
     public Inventory getInventoryById(Integer id) {
-<span class="nc" id="L25">        return inventoryRepository.findById(id).orElse(null);</span>
+<span class="fc" id="L25">        return inventoryRepository.findById(id).orElse(null);</span>
     }
 
     public void deleteInventory(Integer id) {
 
-<span class="nc" id="L30">        inventoryRepository.deleteById(id);</span>
-<span class="nc" id="L31">    }</span>
+<span class="fc" id="L30">        inventoryRepository.deleteById(id);</span>
+<span class="fc" id="L31">    }</span>
 
     public List&lt;Inventory&gt; findAllByFilmIdAndStoreId(Integer filmId, Integer storeId)
     {

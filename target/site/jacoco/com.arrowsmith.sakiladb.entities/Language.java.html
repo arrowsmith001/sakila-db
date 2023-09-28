@@ -2,20 +2,24 @@
 
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 @Entity
 @Table(name = &quot;language&quot;)
-<span class="nc" id="L9">@ToString</span>
-<span class="fc" id="L10">public class Language {</span>
+@ToString
+@Getter
+@Setter
+<span class="fc" id="L14">public class Language {</span>
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Integer language_id;
+    private Integer language_id;
 
     //@Column(columnDefinition = &quot;char&quot;)
-    public String name;
+    private String name;
 
-    public java.sql.Timestamp last_update;
+    private java.sql.Timestamp last_update;
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

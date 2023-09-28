@@ -1,30 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Staff.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sakila-db</a> &gt; <a href="index.source.html" class="el_package">com.arrowsmith.sakiladb.entities</a> &gt; <span class="el_source">Staff.java</span></div><h1>Staff.java</h1><pre class="source lang-java linenums">package com.arrowsmith.sakiladb.entities;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import java.sql.Blob;
 
 @Entity
 @Table(name = &quot;staff&quot;)
-<span class="nc" id="L9">public class Staff {</span>
+@ToString
+@Getter
+@Setter
+<span class="nc" id="L15">public class Staff {</span>
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Integer staff_id;
-    public String first_name;
-    public String last_name;
-    public Blob picture;
-    public String email;
-    public Boolean active;
-    public String username;
-    public String password;
-    public java.sql.Timestamp last_update;
+    private Integer staff_id;
+    private String first_name;
+    private String last_name;
+    //private Blob picture;
+    private String email;
+    private Boolean active;
+    private String username;
+    private String password;
+    private java.sql.Timestamp last_update;
 
     @ManyToOne
     @JoinColumn(name = &quot;address_id&quot;)
-    public Address address;
+    private Address address;
 
     @ManyToOne
     @JoinColumn(name = &quot;store_id&quot;)
-    public Store store;
+    private Store store;
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

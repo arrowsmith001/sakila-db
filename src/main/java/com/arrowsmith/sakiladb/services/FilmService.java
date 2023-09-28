@@ -55,4 +55,7 @@ public class FilmService {
         return filmRepository.getPopularFilms(limit);
     }
 
-  }
+    public List<Film> getFilmsBySearchTerm(String term, Integer limit) {
+        return filmRepository.getFilmsBySearchTerm(term, limit);
+    }
+}

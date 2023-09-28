@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "https://main.d34jypsxbhc933.amplifyapp.com")
+@CrossOrigin(origins = {"http://localhost:3000", "https://main.d34jypsxbhc933.amplifyapp.com"})
 @RequestMapping("/film")
 public class FilmController {
 
@@ -30,6 +30,10 @@ public class FilmController {
         filmService.deleteFilm(id);
     }
 
+    @GetMapping("/search")
+    public List<Film> getFilmsBySearchTerm(@RequestParam String term, @RequestParam Integer limit) {
+        return filmService.getFilmsBySearchTerm(term, limit);
+    }
 
     @GetMapping("/random/{limit}")
     public List<Film> getRandomFilmSelection(@PathVariable Integer limit) { return filmService.getRandomFilmSelection(limit); }

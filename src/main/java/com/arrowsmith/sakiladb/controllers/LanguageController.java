@@ -11,7 +11,7 @@ import javax.print.attribute.standard.Media;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "https://main.d34jypsxbhc933.amplifyapp.com")
+@CrossOrigin(origins = {"http://localhost:3000", "https://main.d34jypsxbhc933.amplifyapp.com"})
 @RequestMapping(path = "/language")
 public class LanguageController {
 

@@ -1,7 +1,10 @@
 package com.arrowsmith.sakiladb.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+
+import java.sql.Blob;
 import java.sql.Timestamp;
 
 import lombok.Getter;
@@ -25,8 +28,8 @@ public class Address {
     private String postal_code;
     private String phone;
 
-//    @JsonIgnore
-//    private Blob location;
+    @Transient
+    private Blob location;
 
     private Timestamp last_update;
 

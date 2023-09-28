@@ -10,28 +10,28 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-<span class="nc" id="L13">public class RentalService {</span>
+<span class="fc" id="L13">public class RentalService {</span>
 
     @Autowired
     private RentalRepository rentalRepository;
 
     public Rental saveRental(Rental Rental) {
-<span class="nc" id="L19">        return rentalRepository.save(Rental);</span>
+<span class="fc" id="L19">        return rentalRepository.save(Rental);</span>
     }
 
     public List&lt;Rental&gt; getAllRentals() {
-<span class="nc" id="L23">        return rentalRepository.findAll();</span>
+<span class="fc" id="L23">        return rentalRepository.findAll();</span>
     }
 
     public Rental getRentalById(Integer id) {
-<span class="nc" id="L27">        return rentalRepository.findById(id).orElse(null);</span>
+<span class="fc" id="L27">        return rentalRepository.findById(id).orElse(null);</span>
     }
 
     public void deleteRental(Integer id) {
 
 
-<span class="nc" id="L33">        rentalRepository.deleteById(id);</span>
-<span class="nc" id="L34">    }</span>
+<span class="fc" id="L33">        rentalRepository.deleteById(id);</span>
+<span class="fc" id="L34">    }</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

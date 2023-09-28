@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-<span class="nc" id="L13">public class CityService {</span>
+<span class="fc" id="L13">public class CityService {</span>
 
     @Autowired
     private CityRepository cityRepository;
@@ -20,21 +20,21 @@ import java.util.List;
     private RentalRepository rentalRepository;
 
     public City saveCity(City City) {
-<span class="nc" id="L23">        return cityRepository.save(City);</span>
+<span class="fc" id="L23">        return cityRepository.save(City);</span>
     }
 
     public List&lt;City&gt; getAllCitys() {
-<span class="nc" id="L27">        return cityRepository.findAll();</span>
+<span class="fc" id="L27">        return cityRepository.findAll();</span>
     }
 
     public City getCityById(Integer id) {
-<span class="nc" id="L31">        return cityRepository.findById(id).orElse(null);</span>
+<span class="fc" id="L31">        return cityRepository.findById(id).orElse(null);</span>
     }
 
     public void deleteCity(Integer id) {
 
-<span class="nc" id="L36">        cityRepository.deleteById(id);</span>
-<span class="nc" id="L37">    }</span>
+<span class="fc" id="L36">        cityRepository.deleteById(id);</span>
+<span class="fc" id="L37">    }</span>
 
 
 }

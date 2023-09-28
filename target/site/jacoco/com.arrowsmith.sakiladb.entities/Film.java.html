@@ -3,6 +3,9 @@
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -14,28 +17,31 @@ import java.util.List;
 
 @Entity
 @Table(name = &quot;film&quot;)
-<span class="fc" id="L17">public class Film</span>
+@ToString
+@Getter
+@Setter
+<span class="fc" id="L23">public class Film</span>
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Integer film_id;
-    public String title;
-    public String description;
+    private Integer film_id;
+    private String title;
+    private String description;
 
 
-    public Date release_year; //private Integer release_year;
-    public Byte rental_duration; //private Integer rental_duration;
-    public BigDecimal rental_rate;
-    public Short length; //private Integer length;
-    public BigDecimal replacement_cost;
+    private Date release_year; //private Integer release_year;
+    private Byte rental_duration; //private Integer rental_duration;
+    private BigDecimal rental_rate;
+    private Short length; //private Integer length;
+    private BigDecimal replacement_cost;
 
     //@Column(columnDefinition = &quot;enum (Types#CHAR)&quot;)
-    public String rating;
+    private String rating;
 
     //@Column(columnDefinition = &quot;set&quot;)
-    public String special_features;
+    private String special_features;
 
-    public Timestamp last_update; //private Date last_update;
+    private Timestamp last_update; //private Date last_update;
 
 
     @ManyToMany
@@ -45,7 +51,7 @@ import java.util.List;
             inverseJoinColumns = @JoinColumn(name = &quot;actor_id&quot;)
     )
     @JsonIgnoreProperties(&quot;films&quot;)
-    public List&lt;Actor&gt; actors;
+    private List&lt;Actor&gt; actors;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = &quot;film_category&quot;,
@@ -53,22 +59,22 @@ import java.util.List;
             inverseJoinColumns = @JoinColumn(name = &quot;category_id&quot;)
     )
     @JsonIgnoreProperties(&quot;films&quot;)
-    public List&lt;Category&gt; categories;
+    private List&lt;Category&gt; categories;
 
     @ManyToOne
     @OnDelete(action = OnDeleteAction.RESTRICT)
     @JoinColumn(name = &quot;language_id&quot;)
-    public Language language;
+    private Language language;
 
     @ManyToOne
     @OnDelete(action = OnDeleteAction.RESTRICT)
     @JoinColumn(name = &quot;original_language_id&quot;)
-    public Language originalLanguage;
+    private Language originalLanguage;
 
 
     @OneToMany(mappedBy = &quot;film&quot;)
     @JsonIgnore
-    public List&lt;Inventory&gt; inventories;
+    private List&lt;Inventory&gt; inventories;
 
 }
 

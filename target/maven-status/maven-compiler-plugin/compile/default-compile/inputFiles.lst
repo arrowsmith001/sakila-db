@@ -4,7 +4,6 @@ D:\Documents\TSI\Projects\Java\sakila-db\src\main\java\com\arrowsmith\sakiladb\s
 D:\Documents\TSI\Projects\Java\sakila-db\src\main\java\com\arrowsmith\sakiladb\controllers\Credentials.java
 D:\Documents\TSI\Projects\Java\sakila-db\src\main\java\com\arrowsmith\sakiladb\entities\City.java
 D:\Documents\TSI\Projects\Java\sakila-db\src\main\java\com\arrowsmith\sakiladb\services\ActorService.java
-D:\Documents\TSI\Projects\Java\sakila-db\src\main\java\com\arrowsmith\sakiladb\CorsConfig.java
 D:\Documents\TSI\Projects\Java\sakila-db\src\main\java\com\arrowsmith\sakiladb\controllers\InventoryController.java
 D:\Documents\TSI\Projects\Java\sakila-db\src\main\java\com\arrowsmith\sakiladb\controllers\AddressController.java
 D:\Documents\TSI\Projects\Java\sakila-db\src\main\java\com\arrowsmith\sakiladb\entities\FilmCategoryId.java
@@ -24,7 +23,6 @@ D:\Documents\TSI\Projects\Java\sakila-db\src\main\java\com\arrowsmith\sakiladb\e
 D:\Documents\TSI\Projects\Java\sakila-db\src\main\java\com\arrowsmith\sakiladb\controllers\RentalController.java
 D:\Documents\TSI\Projects\Java\sakila-db\src\main\java\com\arrowsmith\sakiladb\entities\Address.java
 D:\Documents\TSI\Projects\Java\sakila-db\src\main\java\com\arrowsmith\sakiladb\controllers\CustomerController.java
-D:\Documents\TSI\Projects\Java\sakila-db\src\main\java\com\arrowsmith\sakiladb\entities\Rating.java
 D:\Documents\TSI\Projects\Java\sakila-db\src\main\java\com\arrowsmith\sakiladb\entities\Actor.java
 D:\Documents\TSI\Projects\Java\sakila-db\src\main\java\com\arrowsmith\sakiladb\services\CustomerService.java
 D:\Documents\TSI\Projects\Java\sakila-db\src\main\java\com\arrowsmith\sakiladb\repositories\AddressRepository.java

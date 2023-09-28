@@ -2,30 +2,34 @@
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 @Entity
 @Table(name = &quot;customer&quot;)
-<span class="fc" id="L9">@ToString</span>
-<span class="fc" id="L10">public class Customer {</span>
+@ToString
+@Getter
+@Setter
+<span class="fc" id="L14">public class Customer {</span>
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Integer customer_id;
-    public String first_name;
-    public String last_name;
-    public String email;
+    private Integer customer_id;
+    private String first_name;
+    private String last_name;
+    private String email;
 
-    public Boolean active; //public Integer active;
-    public java.sql.Timestamp create_date; //public java.sql.Date create_date;
-    public java.sql.Timestamp last_update;
+    private Boolean active; //private Integer active;
+    private java.sql.Timestamp create_date; //private java.sql.Date create_date;
+    private java.sql.Timestamp last_update;
 
 
     @ManyToOne
     @JoinColumn(name = &quot;address_id&quot;)
-    public Address address;
+    private Address address;
 
     @ManyToOne
     @JoinColumn(name = &quot;store_id&quot;)
-    public Store store;
+    private Store store;
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

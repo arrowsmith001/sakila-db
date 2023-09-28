@@ -10,26 +10,26 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-<span class="nc" id="L13">public class CustomerService {</span>
+<span class="fc" id="L13">public class CustomerService {</span>
 
     @Autowired
     private CustomerRepository customerRepository;
 
     public Customer saveCustomer(Customer Customer) {
-<span class="nc" id="L19">        return customerRepository.save(Customer);</span>
+<span class="fc" id="L19">        return customerRepository.save(Customer);</span>
     }
 
     public List&lt;Customer&gt; getAllCustomers() {
-<span class="nc" id="L23">        return customerRepository.findAll();</span>
+<span class="fc" id="L23">        return customerRepository.findAll();</span>
     }
 
     public Customer getCustomerById(Integer id) {
-<span class="nc" id="L27">        return customerRepository.findById(id).orElse(null);</span>
+<span class="fc" id="L27">        return customerRepository.findById(id).orElse(null);</span>
     }
 
     public void deleteCustomer(Integer id) {
-<span class="nc" id="L31">        customerRepository.deleteById(id);</span>
-<span class="nc" id="L32">    }</span>
+<span class="fc" id="L31">        customerRepository.deleteById(id);</span>
+<span class="fc" id="L32">    }</span>
 
 
 

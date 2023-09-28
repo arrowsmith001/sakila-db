@@ -9,24 +9,12 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Embeddable
-<span class="nc" id="L12">public class FilmActorId implements Serializable {</span>
+<span class="nc" id="L12">public class FilmActorId {</span>
 
     @OnDelete(action = OnDeleteAction.RESTRICT)
-    public Integer film_id;
+    private Integer film_id;
     @OnDelete(action = OnDeleteAction.RESTRICT)
-    public Integer actor_id;
+    private Integer actor_id;
 
-    @Override
-    public boolean equals(Object o) {
-<span class="nc bnc" id="L21" title="All 2 branches missed.">        if (this == o) return true;</span>
-<span class="nc bnc" id="L22" title="All 4 branches missed.">        if (o == null || getClass() != o.getClass()) return false;</span>
-<span class="nc" id="L23">        FilmActorId that = (FilmActorId) o;</span>
-<span class="nc bnc" id="L24" title="All 4 branches missed.">        return Objects.equals(film_id, that.film_id) &amp;&amp; Objects.equals(actor_id, that.actor_id);</span>
-    }
-
-    @Override
-    public int hashCode() {
-<span class="nc" id="L29">        return Objects.hash(film_id, actor_id);</span>
-    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -1,6 +1,5 @@
 package com.arrowsmith.sakiladb.controllers;
 
-import com.arrowsmith.sakiladb.CorsConfig;
 import com.arrowsmith.sakiladb.entities.Actor;
 import com.arrowsmith.sakiladb.services.ActorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +10,7 @@ import java.util.List;
 
 
 @RestController
-@CrossOrigin(origins = "https://main.d34jypsxbhc933.amplifyapp.com")
+@CrossOrigin(origins = {"http://localhost:3000", "https://main.d34jypsxbhc933.amplifyapp.com"})
 @RequestMapping("/actor")
 public class ActorController {
 

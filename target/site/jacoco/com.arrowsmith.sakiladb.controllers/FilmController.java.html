@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = &quot;https://main.d34jypsxbhc933.amplifyapp.com&quot;)
+@CrossOrigin(origins = {&quot;http://localhost:3000&quot;, &quot;https://main.d34jypsxbhc933.amplifyapp.com&quot;})
 @RequestMapping(&quot;/film&quot;)
 <span class="fc" id="L12">public class FilmController {</span>
 
@@ -30,18 +30,22 @@ import java.util.List;
 <span class="fc" id="L30">        filmService.deleteFilm(id);</span>
 <span class="fc" id="L31">    }</span>
 
+    @GetMapping(&quot;/search&quot;)
+    public List&lt;Film&gt; getFilmsBySearchTerm(@RequestParam String term, @RequestParam Integer limit) {
+<span class="nc" id="L35">        return filmService.getFilmsBySearchTerm(term, limit);</span>
+    }
 
     @GetMapping(&quot;/random/{limit}&quot;)
-<span class="fc" id="L35">    public List&lt;Film&gt; getRandomFilmSelection(@PathVariable Integer limit) { return filmService.getRandomFilmSelection(limit); }</span>
+<span class="fc" id="L39">    public List&lt;Film&gt; getRandomFilmSelection(@PathVariable Integer limit) { return filmService.getRandomFilmSelection(limit); }</span>
 
     @GetMapping(&quot;/popular/{limit}&quot;)
-<span class="fc" id="L38">    public List&lt;Film&gt; getPopularFilms(@PathVariable Integer limit) { return filmService.getPopularFilms(limit); }</span>
+<span class="fc" id="L42">    public List&lt;Film&gt; getPopularFilms(@PathVariable Integer limit) { return filmService.getPopularFilms(limit); }</span>
 
 
 
     @GetMapping(&quot;/category&quot;)
     public List&lt;Film&gt; getFilmsByCategory(@RequestParam Integer id){
-<span class="fc" id="L44">        return filmService.getFilmsByCategory(id);</span>
+<span class="fc" id="L48">        return filmService.getFilmsByCategory(id);</span>
     }
 
 }

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-<span class="nc" id="L13">public class AddressService {</span>
+<span class="fc" id="L13">public class AddressService {</span>
 
     @Autowired
     private AddressRepository addressRepository;
@@ -20,19 +20,19 @@ import java.util.List;
     public Address saveAddress(Address address) {
 //        final City city = cityRepository.findById(address.city.city_id).orElse(null);
 //        address.setCity(city);
-<span class="nc" id="L23">        return addressRepository.save(address);</span>
+<span class="fc" id="L23">        return addressRepository.save(address);</span>
     }
 
     public List&lt;Address&gt; getAllAddresses() {
-<span class="nc" id="L27">        return addressRepository.findAll();</span>
+<span class="fc" id="L27">        return addressRepository.findAll();</span>
     }
 
     public Address getAddressById(Integer id) {
-<span class="nc" id="L31">        return addressRepository.findById(id).orElse(null);</span>
+<span class="fc" id="L31">        return addressRepository.findById(id).orElse(null);</span>
     }
 
     public void deleteAddress(Integer id) {
-<span class="nc" id="L35">        addressRepository.deleteById(id);</span>
-<span class="nc" id="L36">    }</span>
+<span class="fc" id="L35">        addressRepository.deleteById(id);</span>
+<span class="fc" id="L36">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

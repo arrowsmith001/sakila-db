@@ -55,5 +55,8 @@ import java.util.List;
 <span class="fc" id="L55">        return filmRepository.getPopularFilms(limit);</span>
     }
 
-  }
+    public List&lt;Film&gt; getFilmsBySearchTerm(String term, Integer limit) {
+<span class="nc" id="L59">        return filmRepository.getFilmsBySearchTerm(term, limit);</span>
+    }
+}
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

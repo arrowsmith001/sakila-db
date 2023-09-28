@@ -6,7 +6,6 @@ com\arrowsmith\sakiladb\entities\FilmActorId.class
 com\arrowsmith\sakiladb\repositories\FilmActorRepository.class
 com\arrowsmith\sakiladb\entities\Actor.class
 com\arrowsmith\sakiladb\repositories\CityRepository.class
-com\arrowsmith\sakiladb\entities\Rating.class
 com\arrowsmith\sakiladb\entities\Store.class
 com\arrowsmith\sakiladb\controllers\CategoryController.class
 com\arrowsmith\sakiladb\repositories\InventoryRepository.class
@@ -14,7 +13,6 @@ com\arrowsmith\sakiladb\services\CustomerService.class
 com\arrowsmith\sakiladb\controllers\RootController.class
 com\arrowsmith\sakiladb\repositories\ActorRepository.class
 com\arrowsmith\sakiladb\entities\Category.class
-com\arrowsmith\sakiladb\CorsConfig.class
 com\arrowsmith\sakiladb\entities\Address.class
 com\arrowsmith\sakiladb\SakilaDbApplication.class
 com\arrowsmith\sakiladb\entities\Payment.class
@@ -26,7 +24,6 @@ com\arrowsmith\sakiladb\controllers\CityController.class
 com\arrowsmith\sakiladb\services\LanguageService.class
 com\arrowsmith\sakiladb\entities\Customer.class
 com\arrowsmith\sakiladb\services\StoreService.class
-com\arrowsmith\sakiladb\entities\RatingConverter.class
 com\arrowsmith\sakiladb\entities\Country.class
 com\arrowsmith\sakiladb\entities\Language.class
 com\arrowsmith\sakiladb\controllers\Credentials.class

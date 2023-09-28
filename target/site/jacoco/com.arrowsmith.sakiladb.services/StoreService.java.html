@@ -8,26 +8,26 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-<span class="nc" id="L11">public class StoreService {</span>
+<span class="fc" id="L11">public class StoreService {</span>
 
     @Autowired
     private StoreRepository storeRepository;
 
     public Store saveStore(Store Store) {
-<span class="nc" id="L17">        return storeRepository.save(Store);</span>
+<span class="fc" id="L17">        return storeRepository.save(Store);</span>
     }
 
     public List&lt;Store&gt; getAllStores() {
-<span class="nc" id="L21">        return storeRepository.findAll();</span>
+<span class="fc" id="L21">        return storeRepository.findAll();</span>
     }
 
     public Store getStoreById(Integer id) {
-<span class="nc" id="L25">        return storeRepository.findById(id).orElse(null);</span>
+<span class="fc" id="L25">        return storeRepository.findById(id).orElse(null);</span>
     }
 
     public void deleteStore(Integer id) {
-<span class="nc" id="L29">        storeRepository.deleteById(id);</span>
-<span class="nc" id="L30">    }</span>
+<span class="fc" id="L29">        storeRepository.deleteById(id);</span>
+<span class="fc" id="L30">    }</span>
 
 
 }

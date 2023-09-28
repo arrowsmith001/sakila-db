@@ -2,6 +2,9 @@
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import java.sql.Timestamp;
 import java.time.Instant;
@@ -9,18 +12,21 @@ import java.util.List;
 
 @Entity
 @Table(name = &quot;category&quot;)
-<span class="fc" id="L12">public class Category {</span>
+@ToString
+@Getter
+@Setter
+<span class="fc" id="L18">public class Category {</span>
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Integer category_id;
+    private Integer category_id;
 
     @ManyToMany(mappedBy = &quot;categories&quot;)
     @JsonIgnoreProperties(&quot;categories&quot;)
-    public List&lt;Film&gt; films;
+    private List&lt;Film&gt; films;
 
 
-    public String name;
-    public java.sql.Timestamp last_update;
+    private String name;
+    private java.sql.Timestamp last_update;
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

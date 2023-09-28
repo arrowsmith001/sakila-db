@@ -8,25 +8,25 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-<span class="nc" id="L11">public class ActorService {</span>
+<span class="fc" id="L11">public class ActorService {</span>
 
     @Autowired
     private ActorRepository actorRepository;
 
     public Actor saveActor(Actor Actor) {
-<span class="nc" id="L17">        return actorRepository.save(Actor);</span>
+<span class="fc" id="L17">        return actorRepository.save(Actor);</span>
     }
 
     public List&lt;Actor&gt; getAllActors() {
-<span class="nc" id="L21">        return actorRepository.findAll();</span>
+<span class="fc" id="L21">        return actorRepository.findAll();</span>
     }
 
     public Actor getActorById(Integer id) {
-<span class="nc" id="L25">        return actorRepository.findById(id).orElse(null);</span>
+<span class="fc" id="L25">        return actorRepository.findById(id).orElse(null);</span>
     }
 
     public void deleteActor(Integer id) {
-<span class="nc" id="L29">        actorRepository.deleteById(id);</span>
-<span class="nc" id="L30">    }</span>
+<span class="fc" id="L29">        actorRepository.deleteById(id);</span>
+<span class="fc" id="L30">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -8,25 +8,25 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-<span class="nc" id="L11">public class CategoryService {</span>
+<span class="fc" id="L11">public class CategoryService {</span>
 
     @Autowired
     private CategoryRepository categoryRepository;
 
     public Category saveCategory(Category Category) {
-<span class="nc" id="L17">        return categoryRepository.save(Category);</span>
+<span class="fc" id="L17">        return categoryRepository.save(Category);</span>
     }
 
     public List&lt;Category&gt; getAllCategories() {
-<span class="nc" id="L21">        return categoryRepository.findAll();</span>
+<span class="fc" id="L21">        return categoryRepository.findAll();</span>
     }
 
     public Category getCategoryById(Integer id) {
-<span class="nc" id="L25">        return categoryRepository.findById(id).orElse(null);</span>
+<span class="fc" id="L25">        return categoryRepository.findById(id).orElse(null);</span>
     }
 
     public void deleteCategory(Integer id) {
-<span class="nc" id="L29">        categoryRepository.deleteById(id);</span>
-<span class="nc" id="L30">    }</span>
+<span class="fc" id="L29">        categoryRepository.deleteById(id);</span>
+<span class="fc" id="L30">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
