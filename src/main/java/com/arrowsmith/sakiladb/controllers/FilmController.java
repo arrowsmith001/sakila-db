@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://main.d34jypsxbhc933.amplifyapp.com")
 @RequestMapping("/film")
 public class FilmController {
 

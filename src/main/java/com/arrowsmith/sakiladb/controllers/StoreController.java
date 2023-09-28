@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://main.d34jypsxbhc933.amplifyapp.com")
 @RequestMapping("/store")
 public class StoreController {
 
