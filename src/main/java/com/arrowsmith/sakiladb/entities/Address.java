@@ -28,8 +28,8 @@ public class Address {
     private String postal_code;
     private String phone;
 
-    @Transient
-    private Blob location;
+    @JsonIgnore
+    private byte[] location = new byte[0];
 
     private Timestamp last_update;
 
