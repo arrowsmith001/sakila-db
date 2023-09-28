@@ -1,2 +1,11 @@
 D:\Documents\TSI\Projects\Java\sakila-db\src\test\java\com\arrowsmith\sakiladb\services\FilmServiceTests.java
+D:\Documents\TSI\Projects\Java\sakila-db\src\test\java\com\arrowsmith\sakiladb\controllers\InventoryControllerTests.java
+D:\Documents\TSI\Projects\Java\sakila-db\src\test\java\com\arrowsmith\sakiladb\controllers\LanguageControllerTests.java
+D:\Documents\TSI\Projects\Java\sakila-db\src\test\java\com\arrowsmith\sakiladb\controllers\RentalControllerTests.java
+D:\Documents\TSI\Projects\Java\sakila-db\src\test\java\com\arrowsmith\sakiladb\controllers\CityControllerTests.java
+D:\Documents\TSI\Projects\Java\sakila-db\src\test\java\com\arrowsmith\sakiladb\controllers\AddressControllerTests.java
+D:\Documents\TSI\Projects\Java\sakila-db\src\test\java\com\arrowsmith\sakiladb\controllers\CustomerControllerTests.java
+D:\Documents\TSI\Projects\Java\sakila-db\src\test\java\com\arrowsmith\sakiladb\controllers\CategoryControllerTests.java
 D:\Documents\TSI\Projects\Java\sakila-db\src\test\java\com\arrowsmith\sakiladb\controllers\FilmControllerTests.java
+D:\Documents\TSI\Projects\Java\sakila-db\src\test\java\com\arrowsmith\sakiladb\controllers\ActorControllerTests.java
+D:\Documents\TSI\Projects\Java\sakila-db\src\test\java\com\arrowsmith\sakiladb\controllers\StoreControllerTests.java

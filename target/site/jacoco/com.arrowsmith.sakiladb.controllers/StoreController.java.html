@@ -10,26 +10,26 @@ import java.util.List;
 @RestController
 @CrossOrigin(origins = &quot;http://localhost:3000&quot;)
 @RequestMapping(&quot;/store&quot;)
-<span class="nc" id="L13">public class StoreController {</span>
+<span class="fc" id="L13">public class StoreController {</span>
 
     @Autowired
     private StoreService storeService;
 
     @PostMapping(path=&quot;&quot;)
-<span class="nc" id="L19">    public Store saveStore(@RequestBody Store store) { return storeService.saveStore(store); }</span>
+<span class="fc" id="L19">    public Store saveStore(@RequestBody Store store) { return storeService.saveStore(store); }</span>
 
     @GetMapping(&quot;&quot;)
-<span class="nc" id="L22">    public List&lt;Store&gt; getAllStores() { return storeService.getAllStores(); }</span>
+<span class="fc" id="L22">    public List&lt;Store&gt; getAllStores() { return storeService.getAllStores(); }</span>
 
     @GetMapping(&quot;/{id}&quot;)
     public Store getStoreById(@PathVariable Integer id) {
-<span class="nc" id="L26">        return storeService.getStoreById(id);</span>
+<span class="fc" id="L26">        return storeService.getStoreById(id);</span>
     }
 
     @DeleteMapping(&quot;/{id}&quot;)
     public void deleteStore(@PathVariable Integer id) {
-<span class="nc" id="L31">        storeService.deleteStore(id);</span>
-<span class="nc" id="L32">    }</span>
+<span class="fc" id="L31">        storeService.deleteStore(id);</span>
+<span class="fc" id="L32">    }</span>
 
 
 }

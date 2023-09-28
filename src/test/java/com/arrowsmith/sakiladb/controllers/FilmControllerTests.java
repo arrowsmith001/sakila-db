@@ -184,8 +184,6 @@ class FilmControllerTests {
 	@DisplayName("Get Films by Category")
 	public void getFilmsByCategorySuccess() throws Exception {
 
-		final Film film = new Film();
-
 		final int categoryId = 0;
 
 		when(filmService.getFilmsByCategory(categoryId)).thenReturn(new ArrayList<>());

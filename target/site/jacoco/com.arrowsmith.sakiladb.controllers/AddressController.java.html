@@ -10,25 +10,25 @@ import java.util.List;
 @RestController
 @CrossOrigin(origins = &quot;http://localhost:3000&quot;)
 @RequestMapping(&quot;/address&quot;)
-<span class="nc" id="L13">public class AddressController {</span>
+<span class="fc" id="L13">public class AddressController {</span>
 
     @Autowired
     private AddressService addressService;
 
     @PostMapping(&quot;&quot;)
-<span class="nc" id="L19">    public Address saveAddress(@RequestBody Address address) {return addressService.saveAddress(address);}</span>
+<span class="fc" id="L19">    public Address saveAddress(@RequestBody Address address) {return addressService.saveAddress(address);}</span>
 
     @GetMapping(&quot;&quot;)
-<span class="nc" id="L22">    public List&lt;Address&gt; getAllAddresses() { return addressService.getAllAddresses(); }</span>
+<span class="fc" id="L22">    public List&lt;Address&gt; getAllAddresses() { return addressService.getAllAddresses(); }</span>
 
     @GetMapping(&quot;/{id}&quot;)
     public Address getAddressById(@PathVariable Integer id) {
-<span class="nc" id="L26">        return addressService.getAddressById(id);</span>
+<span class="fc" id="L26">        return addressService.getAddressById(id);</span>
     }
 
     @DeleteMapping(&quot;/{id}&quot;)
     public void deleteAddress(@PathVariable Integer id) {
-<span class="nc" id="L31">        addressService.deleteAddress(id);</span>
-<span class="nc" id="L32">    }</span>
+<span class="fc" id="L31">        addressService.deleteAddress(id);</span>
+<span class="fc" id="L32">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

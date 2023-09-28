@@ -18,7 +18,6 @@ public class InventoryController {
     @PostMapping(path="")
     public Inventory saveInventory(@RequestBody Inventory inventory) {
 
-        System.out.println(inventory);
         return inventoryService.saveInventory(inventory); }
 
 

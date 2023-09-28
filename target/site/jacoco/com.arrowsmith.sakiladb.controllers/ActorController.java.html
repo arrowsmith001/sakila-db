@@ -10,29 +10,29 @@ import java.util.List;
 @RestController
 @CrossOrigin(origins = &quot;http://localhost:3000&quot;)
 @RequestMapping(&quot;/actor&quot;)
-<span class="nc" id="L13">public class ActorController {</span>
+<span class="fc" id="L13">public class ActorController {</span>
 
     @Autowired
     private ActorService actorService;
 
     @PostMapping(&quot;&quot;)
     public Actor saveActor(@RequestBody Actor actor) {
-<span class="nc" id="L20">        return actorService.saveActor(actor);</span>
+<span class="fc" id="L20">        return actorService.saveActor(actor);</span>
     }
 
     @GetMapping(&quot;&quot;)
     public List&lt;Actor&gt; getAllActors() {
-<span class="nc" id="L25">            return actorService.getAllActors();</span>
+<span class="fc" id="L25">            return actorService.getAllActors();</span>
     }
 
     @GetMapping(&quot;/{id}&quot;)
     public Actor getActorById(@PathVariable Integer id) {
-<span class="nc" id="L30">        return actorService.getActorById(id);</span>
+<span class="fc" id="L30">        return actorService.getActorById(id);</span>
     }
 
     @DeleteMapping(&quot;/{id}&quot;)
     public void deleteActor(@PathVariable Integer id) {
-<span class="nc" id="L35">        actorService.deleteActor(id);</span>
-<span class="nc" id="L36">    }</span>
+<span class="fc" id="L35">        actorService.deleteActor(id);</span>
+<span class="fc" id="L36">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

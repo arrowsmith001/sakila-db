@@ -11,6 +11,7 @@ com\arrowsmith\sakiladb\entities\Store.class
 com\arrowsmith\sakiladb\controllers\CategoryController.class
 com\arrowsmith\sakiladb\repositories\InventoryRepository.class
 com\arrowsmith\sakiladb\services\CustomerService.class
+com\arrowsmith\sakiladb\controllers\RootController.class
 com\arrowsmith\sakiladb\repositories\ActorRepository.class
 com\arrowsmith\sakiladb\entities\Category.class
 com\arrowsmith\sakiladb\CorsConfig.class

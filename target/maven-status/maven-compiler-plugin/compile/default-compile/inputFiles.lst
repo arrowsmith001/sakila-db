@@ -19,6 +19,7 @@ D:\Documents\TSI\Projects\Java\sakila-db\src\main\java\com\arrowsmith\sakiladb\c
 D:\Documents\TSI\Projects\Java\sakila-db\src\main\java\com\arrowsmith\sakiladb\controllers\LanguageController.java
 D:\Documents\TSI\Projects\Java\sakila-db\src\main\java\com\arrowsmith\sakiladb\controllers\CityController.java
 D:\Documents\TSI\Projects\Java\sakila-db\src\main\java\com\arrowsmith\sakiladb\controllers\CategoryController.java
+D:\Documents\TSI\Projects\Java\sakila-db\src\main\java\com\arrowsmith\sakiladb\controllers\RootController.java
 D:\Documents\TSI\Projects\Java\sakila-db\src\main\java\com\arrowsmith\sakiladb\entities\FilmActorId.java
 D:\Documents\TSI\Projects\Java\sakila-db\src\main\java\com\arrowsmith\sakiladb\controllers\RentalController.java
 D:\Documents\TSI\Projects\Java\sakila-db\src\main\java\com\arrowsmith\sakiladb\entities\Address.java

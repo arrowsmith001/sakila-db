@@ -10,7 +10,7 @@ import java.util.List;
 @RestController
 @CrossOrigin(origins = &quot;http://localhost:3000&quot;)
 @RequestMapping(&quot;/inventory&quot;)
-<span class="nc" id="L13">public class InventoryController {</span>
+<span class="fc" id="L13">public class InventoryController {</span>
 
     @Autowired
     private InventoryService inventoryService;
@@ -18,23 +18,22 @@ import java.util.List;
     @PostMapping(path=&quot;&quot;)
     public Inventory saveInventory(@RequestBody Inventory inventory) {
 
-<span class="nc" id="L21">        System.out.println(inventory);</span>
-<span class="nc" id="L22">        return inventoryService.saveInventory(inventory); }</span>
+<span class="fc" id="L21">        return inventoryService.saveInventory(inventory); }</span>
 
 
     @GetMapping(&quot;/{id}&quot;)
     public Inventory getInventoryById(@PathVariable Integer id) {
-<span class="nc" id="L27">        return inventoryService.getInventoryById(id);</span>
+<span class="fc" id="L26">        return inventoryService.getInventoryById(id);</span>
     }
 
     @DeleteMapping(&quot;/{id}&quot;)
     public void deleteInventory(@PathVariable Integer id) {
-<span class="nc" id="L32">        inventoryService.deleteInventory(id);</span>
-<span class="nc" id="L33">    }</span>
+<span class="fc" id="L31">        inventoryService.deleteInventory(id);</span>
+<span class="fc" id="L32">    }</span>
 
     @GetMapping(&quot;&quot;)
     public List&lt;Inventory&gt; getInventoriesByFilmIdAndStoreId(@RequestParam Integer filmId, @RequestParam Integer storeId){
-<span class="nc" id="L37">        return inventoryService.findAllByFilmIdAndStoreId(filmId, storeId);</span>
+<span class="fc" id="L36">        return inventoryService.findAllByFilmIdAndStoreId(filmId, storeId);</span>
     }
 
 }

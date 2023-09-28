@@ -33,6 +33,7 @@ public class FilmService {
 
     public void deleteFilm(Integer id) {
 
+
         filmActorRepository.deleteByFilmId(id);
         rentalRepository.deleteByInventoriesWithFilmId(id);
         inventoryRepository.deleteByFilmId(id);

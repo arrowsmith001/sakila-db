@@ -12,7 +12,7 @@ import java.util.Map;
 @RestController
 @CrossOrigin(origins = &quot;http://localhost:3000&quot;)
 @RequestMapping(&quot;/customer&quot;)
-<span class="nc" id="L15">public class CustomerController {</span>
+<span class="fc" id="L15">public class CustomerController {</span>
 
     @Autowired
     private CustomerService customerService;
@@ -20,21 +20,21 @@ import java.util.Map;
     @PostMapping(path=&quot;&quot;)
     public Customer saveCustomer(@RequestBody Customer customer) {
 
-<span class="nc" id="L23">        System.out.println(customer);</span>
-<span class="nc" id="L24">        return customerService.saveCustomer(customer); }</span>
+<span class="fc" id="L23">        System.out.println(customer);</span>
+<span class="fc" id="L24">        return customerService.saveCustomer(customer); }</span>
 
     @GetMapping(&quot;&quot;)
-<span class="nc" id="L27">    public List&lt;Customer&gt; getAllCustomers() { return customerService.getAllCustomers(); }</span>
+<span class="fc" id="L27">    public List&lt;Customer&gt; getAllCustomers() { return customerService.getAllCustomers(); }</span>
 
     @GetMapping(&quot;/{id}&quot;)
     public Customer getCustomerById(@PathVariable Integer id) {
-<span class="nc" id="L31">        return customerService.getCustomerById(id);</span>
+<span class="fc" id="L31">        return customerService.getCustomerById(id);</span>
     }
 
     @DeleteMapping(&quot;/{id}&quot;)
     public void deleteCustomer(@PathVariable Integer id) {
-<span class="nc" id="L36">        customerService.deleteCustomer(id);</span>
-<span class="nc" id="L37">    }</span>
+<span class="fc" id="L36">        customerService.deleteCustomer(id);</span>
+<span class="fc" id="L37">    }</span>
 
 
     @PostMapping(&quot;/email&quot;)
