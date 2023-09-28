@@ -15,5 +15,6 @@ public class FilmCategory {
     @EmbeddedId
     private FilmCategoryId id;
 
-    private java.sql.Timestamp last_update;
+    @Column(name = "last_update")
+    private java.sql.Timestamp lastUpdate;
 }

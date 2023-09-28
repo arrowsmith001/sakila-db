@@ -21,7 +21,8 @@ public class City
     @Column(name = "city")
     private String city_name;
 
-    private java.sql.Timestamp last_update;
+    @Column(name = "last_update")
+    private java.sql.Timestamp lastUpdate;
 
     @OneToMany(mappedBy = "city")
     private List<Address> address;

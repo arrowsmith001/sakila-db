@@ -14,12 +14,12 @@ public interface FilmActorRepository extends JpaRepository<FilmActor, FilmActorI
 {
     @Modifying
     @Transactional
-    @Query("DELETE FROM FilmActor fa WHERE fa.id.film_id=:id")
+    @Query("DELETE FROM FilmActor fa WHERE fa.id.filmId=:id")
     void deleteByFilmId(Integer id);
 
     @Modifying
     @Transactional
-    @Query("DELETE FROM FilmActor fa WHERE fa.id.actor_id=:id")
+    @Query("DELETE FROM FilmActor fa WHERE fa.id.actorId=:id")
     void deleteByActorId(Integer id);
 }
 

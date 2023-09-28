@@ -13,6 +13,6 @@ public interface RentalRepository extends JpaRepository<Rental, Integer>
 {
     @Modifying
     @Transactional
-    @Query("DELETE FROM Rental r WHERE r.inventory.inventory_id IN (SELECT inventory_id from Inventory i where i.film.film_id = :id)")
+    @Query("DELETE FROM Rental r WHERE r.inventory.inventoryId IN (SELECT inventoryId from Inventory i where i.film.filmId = :id)")
     void deleteByInventoriesWithFilmId(Integer id);
 }

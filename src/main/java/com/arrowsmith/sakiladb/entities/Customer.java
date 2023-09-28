@@ -14,13 +14,22 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer customer_id;
-    private String first_name;
-    private String last_name;
+
+    @Column(name = "first_name")
+    private String firstName;
+
+    @Column(name = "last_name")
+    private String lastName;
     private String email;
 
     private Boolean active;
-    private java.sql.Timestamp create_date;
-    private java.sql.Timestamp last_update;
+
+    @Column(name = "create_date")
+    private java.sql.Timestamp createDate;
+
+
+    @Column(name = "last_update")
+    private java.sql.Timestamp lastUpdate;
 
 
     @ManyToOne

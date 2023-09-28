@@ -16,8 +16,8 @@ public class Language {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer language_id;
 
-    //@Column(columnDefinition = "char")
     private String name;
 
-    private java.sql.Timestamp last_update;
+    @Column(name = "last_update")
+    private java.sql.Timestamp lastUpdate;
 }

@@ -17,7 +17,8 @@ public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer category_id;
+    @Column(name = "category_id")
+    private Integer categoryId;
 
     @ManyToMany(mappedBy = "categories")
     @JsonIgnoreProperties("categories")
@@ -25,5 +26,6 @@ public class Category {
 
 
     private String name;
-    private java.sql.Timestamp last_update;
+    @Column(name = "last_update")
+    private java.sql.Timestamp lastUpdate;
 }

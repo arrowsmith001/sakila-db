@@ -43,7 +43,7 @@ class AddressControllerTests {
 		final Address address = new Address();
 		final int id = 1;
 
-		address.setAddress_id(id);
+		address.setAddressId(id);
 
 		when(addressService.getAddressById(id)).thenReturn(address);
 
@@ -56,7 +56,7 @@ class AddressControllerTests {
 		verify(addressService, times(1)).getAddressById(1);
 
 		String responseJSON = result.getResponse().getContentAsString();
-		assertTrue(responseJSON.contains("\"address_id\":" + id));
+		assertTrue(responseJSON.contains("\"addressId\":" + id));
 	}
 
 	@Test
@@ -66,7 +66,7 @@ class AddressControllerTests {
 		final Address address = new Address();
 		final int id = 999;
 
-		address.setAddress_id(id);
+		address.setAddressId(id);
 
 		when(addressService.saveAddress(any(Address.class))).thenReturn(address);
 
@@ -81,7 +81,7 @@ class AddressControllerTests {
 		verify(addressService, times(1)).saveAddress(any(Address.class));
 
 		String responseJSON = result.getResponse().getContentAsString();
-		assertTrue(responseJSON.contains("\"address_id\":" + id));
+		assertTrue(responseJSON.contains("\"addressId\":" + id));
 
 	}
 
@@ -94,7 +94,7 @@ class AddressControllerTests {
 		for (int i = 0; i < 3; i++)
 		{
 			final Address newAddress = new Address();
-			newAddress.setAddress_id(i);
+			newAddress.setAddressId(i);
 			addresss.add(newAddress);
 		}
 
@@ -112,7 +112,7 @@ class AddressControllerTests {
 
 		for (int i = 0; i < 3; i++)
 		{
-			assertTrue(responseJSON.contains("\"address_id\":" + i));
+			assertTrue(responseJSON.contains("\"addressId\":" + i));
 		}
 
 	}

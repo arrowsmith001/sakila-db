@@ -19,8 +19,12 @@ public class Payment {
     private Integer payment_id;
 
     private BigDecimal amount;
-    private Timestamp payment_date;
-    private Timestamp last_update;
+
+    @Column(name = "payment_date")
+    private Timestamp paymentDate;
+
+    @Column(name = "last_update")
+    private Timestamp lastUpdate;
 
     @ManyToOne
     @JoinColumn(name = "customer_id")

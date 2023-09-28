@@ -42,7 +42,7 @@ class StoreControllerTests {
 		final Store store = new Store();
 		final int id = 1;
 
-		store.setStore_id(id);
+		store.setStoreId(id);
 
 		when(storeService.getStoreById(id)).thenReturn(store);
 
@@ -55,7 +55,7 @@ class StoreControllerTests {
 		verify(storeService, times(1)).getStoreById(1);
 
 		String responseJSON = result.getResponse().getContentAsString();
-		assertTrue(responseJSON.contains("\"store_id\":" + id));
+		assertTrue(responseJSON.contains("\"storeId\":" + id));
 	}
 
 	@Test
@@ -65,7 +65,7 @@ class StoreControllerTests {
 		final Store store = new Store();
 		final int id = 999;
 
-		store.setStore_id(id);
+		store.setStoreId(id);
 
 		when(storeService.saveStore(any(Store.class))).thenReturn(store);
 
@@ -80,7 +80,7 @@ class StoreControllerTests {
 		verify(storeService, times(1)).saveStore(any(Store.class));
 
 		String responseJSON = result.getResponse().getContentAsString();
-		assertTrue(responseJSON.contains("\"store_id\":" + id));
+		assertTrue(responseJSON.contains("\"storeId\":" + id));
 
 	}
 
@@ -93,7 +93,7 @@ class StoreControllerTests {
 		for (int i = 0; i < 3; i++)
 		{
 			final Store newStore = new Store();
-			newStore.setStore_id(i);
+			newStore.setStoreId(i);
 			stores.add(newStore);
 		}
 
@@ -111,7 +111,7 @@ class StoreControllerTests {
 
 		for (int i = 0; i < 3; i++)
 		{
-			assertTrue(responseJSON.contains("\"store_id\":" + i));
+			assertTrue(responseJSON.contains("\"storeId\":" + i));
 		}
 
 	}

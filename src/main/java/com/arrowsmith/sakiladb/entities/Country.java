@@ -13,12 +13,14 @@ import java.sql.Timestamp;
 @Getter
 @Setter
 public class Country {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer country_id;
 
     @Column(name = "country")
-    private String country_name;
+    private String countryName;
 
-    private Timestamp last_update;
+    @Column(name = "last_update")
+    private Timestamp lastUpdate;
 }

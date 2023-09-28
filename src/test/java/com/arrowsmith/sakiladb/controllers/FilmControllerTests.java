@@ -43,7 +43,7 @@ class FilmControllerTests {
 		final Film film = new Film();
 		final int id = 1;
 
-		film.setFilm_id(id);
+		film.setFilmId(id);
 
 		when(filmService.getFilmById(id)).thenReturn(film);
 
@@ -56,7 +56,7 @@ class FilmControllerTests {
 		verify(filmService, times(1)).getFilmById(1);
 
 		String responseJSON = result.getResponse().getContentAsString();
-		assertTrue(responseJSON.contains("\"film_id\":" + id));
+		assertTrue(responseJSON.contains("\"filmId\":" + id));
 	}
 
 	@Test
@@ -66,7 +66,7 @@ class FilmControllerTests {
 		final Film film = new Film();
 		final int id = 999;
 
-		film.setFilm_id(id);
+		film.setFilmId(id);
 
 		when(filmService.saveFilm(any(Film.class))).thenReturn(film);
 
@@ -81,7 +81,7 @@ class FilmControllerTests {
 		verify(filmService, times(1)).saveFilm(any(Film.class));
 
 		String responseJSON = result.getResponse().getContentAsString();
-		assertTrue(responseJSON.contains("\"film_id\":" + id));
+		assertTrue(responseJSON.contains("\"filmId\":" + id));
 
 	}
 
@@ -94,7 +94,7 @@ class FilmControllerTests {
 		for (int i = 0; i < 3; i++)
 		{
 			final Film newFilm = new Film();
-			newFilm.setFilm_id(i);
+			newFilm.setFilmId(i);
 			films.add(newFilm);
 		}
 
@@ -112,7 +112,7 @@ class FilmControllerTests {
 
 		for (int i = 0; i < 3; i++)
 		{
-			assertTrue(responseJSON.contains("\"film_id\":" + i));
+			assertTrue(responseJSON.contains("\"filmId\":" + i));
 		}
 
 	}

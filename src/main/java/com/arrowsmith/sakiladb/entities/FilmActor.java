@@ -15,7 +15,8 @@ public class FilmActor
     @EmbeddedId
     private FilmActorId id;
 
-    private java.sql.Timestamp last_update;
+    @Column(name = "last_update")
+    private java.sql.Timestamp lastUpdate;
 
 
 }

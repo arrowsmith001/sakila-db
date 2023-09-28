@@ -14,9 +14,11 @@ import java.util.List;
 @Getter
 @Setter
 public class Inventory {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer inventory_id;
+    @Column(name = "inventory_id")
+    private Integer inventoryId;
 
     @ManyToOne
     @JoinColumn(name = "film_id")
@@ -26,12 +28,16 @@ public class Inventory {
     @JoinColumn(name = "store_id")
     private Store store;
 
-    private java.sql.Timestamp last_update;
+    @Column(name = "last_update")
+    private java.sql.Timestamp lastUpdate;
 
     @OneToMany(mappedBy = "inventory")
     @JsonIgnore
     private List<Rental> rentals;
 
-    private Integer film_film_id = 0;
-    private Integer inventories_inventory_id = 0;
+    @Column(name = "film_film_id")
+    private Integer filmFilmId = 0;
+
+    @Column(name = "inventories_inventory_id")
+    private Integer inventoriesInventoryId = 0;
 }

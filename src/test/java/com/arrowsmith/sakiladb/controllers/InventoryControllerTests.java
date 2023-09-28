@@ -39,7 +39,7 @@ class InventoryControllerTests {
 		final Inventory inventory = new Inventory();
 		final int id = 1;
 
-		inventory.setInventory_id(id);
+		inventory.setInventoryId(id);
 
 		when(inventoryService.getInventoryById(id)).thenReturn(inventory);
 
@@ -52,7 +52,7 @@ class InventoryControllerTests {
 		verify(inventoryService, times(1)).getInventoryById(1);
 
 		String responseJSON = result.getResponse().getContentAsString();
-		assertTrue(responseJSON.contains("\"inventory_id\":" + id));
+		assertTrue(responseJSON.contains("\"inventoryId\":" + id));
 	}
 
 	@Test
@@ -62,7 +62,7 @@ class InventoryControllerTests {
 		final Inventory inventory = new Inventory();
 		final int id = 999;
 
-		inventory.setInventory_id(id);
+		inventory.setInventoryId(id);
 
 		when(inventoryService.saveInventory(any(Inventory.class))).thenReturn(inventory);
 
@@ -77,7 +77,7 @@ class InventoryControllerTests {
 		verify(inventoryService, times(1)).saveInventory(any(Inventory.class));
 
 		String responseJSON = result.getResponse().getContentAsString();
-		assertTrue(responseJSON.contains("\"inventory_id\":" + id));
+		assertTrue(responseJSON.contains("\"inventoryId\":" + id));
 
 	}
 

@@ -24,23 +24,34 @@ public class Film
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer film_id;
+    @Column(name = "film_id")
+    private Integer filmId;
     private String title;
     private String description;
 
 
-    private Date release_year;
-    private Byte rental_duration;
-    private BigDecimal rental_rate;
+    @Column(name = "release_year")
+    private Date releaseYear;
+
+    @Column(name = "rental_duration")
+    private Byte rentalDuration;
+
+    @Column(name = "rental_rate")
+    private BigDecimal rentalRate;
+
     private Short length;
-    private BigDecimal replacement_cost;
+
+    @Column(name = "replacement_cost")
+    private BigDecimal replacementCost;
 
 
     private String rating;
 
-    private String special_features;
+    @Column(name = "special_features")
+    private String specialFeatures;
 
-    private Timestamp last_update;
+    @Column(name = "last_update")
+    private Timestamp lastUpdate;
 
 
     @ManyToMany

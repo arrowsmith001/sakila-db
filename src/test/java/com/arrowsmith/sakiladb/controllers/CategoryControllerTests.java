@@ -43,7 +43,7 @@ class CategoryControllerTests {
 		final Category category = new Category();
 		final int id = 1;
 
-		category.setCategory_id(id);
+		category.setCategoryId(id);
 
 		when(categoryService.getCategoryById(id)).thenReturn(category);
 
@@ -56,7 +56,7 @@ class CategoryControllerTests {
 		verify(categoryService, times(1)).getCategoryById(1);
 
 		String responseJSON = result.getResponse().getContentAsString();
-		assertTrue(responseJSON.contains("\"category_id\":" + id));
+		assertTrue(responseJSON.contains("\"categoryId\":" + id));
 	}
 
 	@Test
@@ -66,7 +66,7 @@ class CategoryControllerTests {
 		final Category category = new Category();
 		final int id = 999;
 
-		category.setCategory_id(id);
+		category.setCategoryId(id);
 
 		when(categoryService.saveCategory(any(Category.class))).thenReturn(category);
 
@@ -81,7 +81,7 @@ class CategoryControllerTests {
 		verify(categoryService, times(1)).saveCategory(any(Category.class));
 
 		String responseJSON = result.getResponse().getContentAsString();
-		assertTrue(responseJSON.contains("\"category_id\":" + id));
+		assertTrue(responseJSON.contains("\"categoryId\":" + id));
 
 	}
 
@@ -94,7 +94,7 @@ class CategoryControllerTests {
 		for (int i = 0; i < 3; i++)
 		{
 			final Category newCategory = new Category();
-			newCategory.setCategory_id(i);
+			newCategory.setCategoryId(i);
 			categorys.add(newCategory);
 		}
 
@@ -112,7 +112,7 @@ class CategoryControllerTests {
 
 		for (int i = 0; i < 3; i++)
 		{
-			assertTrue(responseJSON.contains("\"category_id\":" + i));
+			assertTrue(responseJSON.contains("\"categoryId\":" + i));
 		}
 
 	}

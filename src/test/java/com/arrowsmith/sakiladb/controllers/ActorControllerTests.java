@@ -43,7 +43,7 @@ class ActorControllerTests {
 		final Actor actor = new Actor();
 		final int id = 1;
 
-		actor.setActor_id(id);
+		actor.setActorId(id);
 
 		when(actorService.getActorById(id)).thenReturn(actor);
 
@@ -56,7 +56,7 @@ class ActorControllerTests {
 		verify(actorService, times(1)).getActorById(1);
 
 		String responseJSON = result.getResponse().getContentAsString();
-		assertTrue(responseJSON.contains("\"actor_id\":" + id));
+		assertTrue(responseJSON.contains("\"actorId\":" + id));
 	}
 
 	@Test
@@ -66,7 +66,7 @@ class ActorControllerTests {
 		final Actor actor = new Actor();
 		final int id = 999;
 
-		actor.setActor_id(id);
+		actor.setActorId(id);
 
 		when(actorService.saveActor(any(Actor.class))).thenReturn(actor);
 
@@ -81,7 +81,7 @@ class ActorControllerTests {
 		verify(actorService, times(1)).saveActor(any(Actor.class));
 
 		String responseJSON = result.getResponse().getContentAsString();
-		assertTrue(responseJSON.contains("\"actor_id\":" + id));
+		assertTrue(responseJSON.contains("\"actorId\":" + id));
 
 	}
 
@@ -94,7 +94,7 @@ class ActorControllerTests {
 		for (int i = 0; i < 3; i++)
 		{
 			final Actor newActor = new Actor();
-			newActor.setActor_id(i);
+			newActor.setActorId(i);
 
 			actors.add(newActor);
 		}
@@ -113,7 +113,7 @@ class ActorControllerTests {
 
 		for (int i = 0; i < 3; i++)
 		{
-			assertTrue(responseJSON.contains("\"actor_id\":" + i));
+			assertTrue(responseJSON.contains("\"actorId\":" + i));
 		}
 
 	}

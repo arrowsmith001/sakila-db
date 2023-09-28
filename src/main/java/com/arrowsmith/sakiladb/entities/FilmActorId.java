@@ -1,5 +1,6 @@
 package com.arrowsmith.sakiladb.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,9 +15,12 @@ import org.hibernate.annotations.OnDeleteAction;
 @Setter
 public class FilmActorId {
 
+    @Column(name = "film_id")
     @OnDelete(action = OnDeleteAction.RESTRICT)
-    private Integer film_id;
+    private Integer filmId;
+
+    @Column(name = "actor_id")
     @OnDelete(action = OnDeleteAction.RESTRICT)
-    private Integer actor_id;
+    private Integer actorId;
 
 }

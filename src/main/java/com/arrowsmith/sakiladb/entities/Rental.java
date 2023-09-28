@@ -16,9 +16,15 @@ public class Rental {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer rental_id;
-    private Timestamp rental_date;
-    private Timestamp return_date;
-    private Timestamp last_update;
+
+    @Column(name = "rental_date")
+    private Timestamp rentalDate;
+
+    @Column(name = "return_date")
+    private Timestamp returnDate;
+
+    @Column(name = "last_update")
+    private Timestamp lastUpdate;
 
     @ManyToOne
     @JoinColumn(name = "customer_id")
@@ -32,6 +38,9 @@ public class Rental {
     @JoinColumn(name = "inventory_id")
     private Inventory inventory;
 
-    private Integer inventory_inventory_id = 0;
-    private Integer rentals_rental_id = 0;
+    @Column(name = "inventory_inventory_id")
+    private Integer inventoryInventoryId = 0;
+
+    @Column(name = "rentals_rental_id")
+    private Integer rentalsRentalId = 0;
 }

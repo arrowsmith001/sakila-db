@@ -11,7 +11,7 @@ import java.util.List;
 public interface FilmRepository extends JpaRepository<Film, Integer>
 {
 
-    @Query("SELECT f FROM Film f WHERE f.film_id IN (SELECT fc.id.film_id FROM FilmCategory fc WHERE fc.id.category_id = :categoryId)")
+    @Query("SELECT f FROM Film f WHERE f.filmId IN (SELECT fc.id.filmId FROM FilmCategory fc WHERE fc.id.categoryId = :categoryId)")
     List<Film> findAllByCategory(Integer categoryId);
 
     @Query("SELECT f FROM Film f ORDER BY RAND() LIMIT :limit")

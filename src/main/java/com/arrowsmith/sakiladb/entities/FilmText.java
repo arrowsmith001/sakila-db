@@ -12,7 +12,9 @@ import lombok.ToString;
 @Setter
 public class FilmText {
 
-    private Integer film_id;
+    @Column(name = "film_id")
+    private Integer filmId;
+
     private String title;
     private String description;
 }

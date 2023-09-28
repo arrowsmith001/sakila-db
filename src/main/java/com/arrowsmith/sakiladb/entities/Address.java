@@ -18,14 +18,18 @@ public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer address_id;
+    @Column(name = "address_id")
+    private Integer addressId;
 
     @Column(name = "address")
     private String address1;
-    
+
     private String address2;
     private String district;
-    private String postal_code;
+
+    @Column(name = "postal_code")
+    private String postalCode;
+
     private String phone;
 
     private Timestamp last_update;

@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.sql.Timestamp;
+
 @Entity
 @Table(name = "store")
 @ToString
@@ -15,9 +17,11 @@ import lombok.ToString;
 public class Store {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer store_id;
+    @Column(name = "store_id")
+    private Integer storeId;
 
-    private java.sql.Timestamp last_update;
+    @Column(name = "last_update")
+    private Timestamp lastUpdate;
 
     @ManyToOne
     @JoinColumn(name = "address_id")

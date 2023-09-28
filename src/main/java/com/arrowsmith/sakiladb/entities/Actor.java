@@ -14,20 +14,27 @@ import java.util.List;
 @ToString
 @Getter
 @Setter
-public class Actor {
+public class Actor
+{
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer actor_id;
+    @Column(name = "actor_id")
+    private Integer actorId;
 
-    private String first_name;
-    private String last_name;
+    @Column(name = "first_name")
+    private String firstName;
+
+    @Column(name = "last_name")
+    private String lastName;
 
     @ManyToMany(mappedBy = "actors")
     @JsonIgnoreProperties("actors")
     private List<Film> films;
 
 
-    private Timestamp last_update;
+    @Column(name = "last_update")
+    private Timestamp lastUpdate;
 
 
 }
