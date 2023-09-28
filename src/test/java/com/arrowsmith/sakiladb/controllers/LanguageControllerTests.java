@@ -37,7 +37,7 @@ class LanguageControllerTests {
 
 	@Test
 	@DisplayName("Get Language by Id")
-	public void testGetLanguageSuccess() throws Exception {
+	void testGetLanguageSuccess() throws Exception {
 
 		final Language language = new Language();
 		final int id = 1;
@@ -60,7 +60,7 @@ class LanguageControllerTests {
 
 	@Test
 	@DisplayName("Add New Language")
-	public void testAddNewLanguageSuccess() throws Exception {
+	void testAddNewLanguageSuccess() throws Exception {
 
 		final Language language = new Language();
 		final int id = 999;
@@ -86,7 +86,7 @@ class LanguageControllerTests {
 
 	@Test
 	@DisplayName("Get All Languages")
-	public void testGetAllLanguagesSuccess() throws Exception {
+	void testGetAllLanguagesSuccess() throws Exception {
 
 		final List<Language> languages = new ArrayList<>();
 
@@ -119,7 +119,7 @@ class LanguageControllerTests {
 
 	@Test
 	@DisplayName("Delete language")
-	public void testDeleteLanguageSuccess() throws Exception {
+	void testDeleteLanguageSuccess() throws Exception {
 
 		final int id = 999;
 

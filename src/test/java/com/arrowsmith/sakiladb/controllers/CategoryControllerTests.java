@@ -23,7 +23,7 @@ import static org.mockito.Mockito.*;
 
 
 @WebMvcTest(CategoryController.class)
-public class CategoryControllerTests {
+class CategoryControllerTests {
 
 	@Autowired
 	private MockMvc mvc;
@@ -38,7 +38,7 @@ public class CategoryControllerTests {
 
 	@Test
 	@DisplayName("Get Category by Id")
-	public void testGetCategorySuccess() throws Exception {
+	void testGetCategorySuccess() throws Exception {
 
 		final Category category = new Category();
 		final int id = 1;
@@ -61,7 +61,7 @@ public class CategoryControllerTests {
 
 	@Test
 	@DisplayName("Add New Category")
-	public void testAddNewCategorySuccess() throws Exception {
+	void testAddNewCategorySuccess() throws Exception {
 
 		final Category category = new Category();
 		final int id = 999;
@@ -87,7 +87,7 @@ public class CategoryControllerTests {
 
 	@Test
 	@DisplayName("Get All Categorys")
-	public void testGetAllCategorysSuccess() throws Exception {
+	void testGetAllCategorysSuccess() throws Exception {
 
 		final List<Category> categorys = new ArrayList<>();
 
@@ -120,7 +120,7 @@ public class CategoryControllerTests {
 
 	@Test
 	@DisplayName("Delete category")
-	public void testDeleteCategorySuccess() throws Exception {
+	void testDeleteCategorySuccess() throws Exception {
 
 		final int id = 999;
 

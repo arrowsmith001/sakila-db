@@ -23,7 +23,7 @@ import static org.mockito.Mockito.*;
 
 
 @WebMvcTest(ActorController.class)
-public class ActorControllerTests {
+class ActorControllerTests {
 
 	@Autowired
 	private MockMvc mvc;
@@ -38,7 +38,7 @@ public class ActorControllerTests {
 
 	@Test
 	@DisplayName("Get Actor by Id")
-	public void testGetActorSuccess() throws Exception {
+	void testGetActorSuccess() throws Exception {
 
 		final Actor actor = new Actor();
 		final int id = 1;
@@ -61,7 +61,7 @@ public class ActorControllerTests {
 
 	@Test
 	@DisplayName("Add New Actor")
-	public void testAddNewActorSuccess() throws Exception {
+	void testAddNewActorSuccess() throws Exception {
 
 		final Actor actor = new Actor();
 		final int id = 999;
@@ -87,7 +87,7 @@ public class ActorControllerTests {
 
 	@Test
 	@DisplayName("Get All Actors")
-	public void testGetAllActorsSuccess() throws Exception {
+	void testGetAllActorsSuccess() throws Exception {
 
 		final List<Actor> actors = new ArrayList<>();
 
@@ -121,7 +121,7 @@ public class ActorControllerTests {
 
 	@Test
 	@DisplayName("Delete actor")
-	public void testDeleteActorSuccess() throws Exception {
+	void testDeleteActorSuccess() throws Exception {
 
 		final int id = 999;
 

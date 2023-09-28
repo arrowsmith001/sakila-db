@@ -38,7 +38,7 @@ class FilmControllerTests {
 
 	@Test
 	@DisplayName("Get Film by Id")
-	public void testGetFilmSuccess() throws Exception {
+	void testGetFilmSuccess() throws Exception {
 
 		final Film film = new Film();
 		final int id = 1;
@@ -61,7 +61,7 @@ class FilmControllerTests {
 
 	@Test
 	@DisplayName("Add New Film")
-	public void testAddNewFilmSuccess() throws Exception {
+	void testAddNewFilmSuccess() throws Exception {
 
 		final Film film = new Film();
 		final int id = 999;
@@ -87,7 +87,7 @@ class FilmControllerTests {
 
 	@Test
 	@DisplayName("Get All Films")
-	public void testGetAllFilmsSuccess() throws Exception {
+	void testGetAllFilmsSuccess() throws Exception {
 
 		final List<Film> films = new ArrayList<>();
 
@@ -120,7 +120,7 @@ class FilmControllerTests {
 
 	@Test
 	@DisplayName("Delete film")
-	public void testDeleteFilmSuccess() throws Exception {
+	void testDeleteFilmSuccess() throws Exception {
 
 		final int id = 999;
 
@@ -138,7 +138,7 @@ class FilmControllerTests {
 
 	@Test
 	@DisplayName("Get Random Selection")
-	public void testRandomSelectionSuccess() throws Exception {
+	void testRandomSelectionSuccess() throws Exception {
 
 		final int limit = 10;
 
@@ -157,7 +157,7 @@ class FilmControllerTests {
 
 	@Test
 	@DisplayName("Get Popular Selection")
-	public void testPopularSelectionSuccess() throws Exception {
+	void testPopularSelectionSuccess() throws Exception {
 
 		final int limit = 10;
 
@@ -176,7 +176,7 @@ class FilmControllerTests {
 
 	@Test
 	@DisplayName("Get Films by Category")
-	public void getFilmsByCategorySuccess() throws Exception {
+	void getFilmsByCategorySuccess() throws Exception {
 
 		final int categoryId = 0;
 
@@ -195,7 +195,7 @@ class FilmControllerTests {
 
 	@Test
 	@DisplayName("Get Films by Search term")
-	public void getFilmsBySearchTermSuccess() throws Exception {
+	void getFilmsBySearchTermSuccess() throws Exception {
 
 		final String term = "";
 		final int limit = 0;

@@ -23,7 +23,7 @@ import static org.mockito.Mockito.*;
 
 
 @WebMvcTest(AddressController.class)
-public class AddressControllerTests {
+class AddressControllerTests {
 
 	@Autowired
 	private MockMvc mvc;
@@ -38,7 +38,7 @@ public class AddressControllerTests {
 
 	@Test
 	@DisplayName("Get Address by Id")
-	public void testGetAddressSuccess() throws Exception {
+	void testGetAddressSuccess() throws Exception {
 
 		final Address address = new Address();
 		final int id = 1;
@@ -61,7 +61,7 @@ public class AddressControllerTests {
 
 	@Test
 	@DisplayName("Add New Address")
-	public void testAddNewAddressSuccess() throws Exception {
+	void testAddNewAddressSuccess() throws Exception {
 
 		final Address address = new Address();
 		final int id = 999;
@@ -87,7 +87,7 @@ public class AddressControllerTests {
 
 	@Test
 	@DisplayName("Get All Addresss")
-	public void testGetAllAddresssSuccess() throws Exception {
+	void testGetAllAddresssSuccess() throws Exception {
 
 		final List<Address> addresss = new ArrayList<>();
 
@@ -120,7 +120,7 @@ public class AddressControllerTests {
 
 	@Test
 	@DisplayName("Delete address")
-	public void testDeleteAddressSuccess() throws Exception {
+	void testDeleteAddressSuccess() throws Exception {
 
 		final int id = 999;
 

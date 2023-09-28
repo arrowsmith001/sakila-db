@@ -34,7 +34,7 @@ class InventoryControllerTests {
 
 	@Test
 	@DisplayName("Get Inventory by Id")
-	public void testGetInventorySuccess() throws Exception {
+	void testGetInventorySuccess() throws Exception {
 
 		final Inventory inventory = new Inventory();
 		final int id = 1;
@@ -57,7 +57,7 @@ class InventoryControllerTests {
 
 	@Test
 	@DisplayName("Add New Inventory")
-	public void testAddNewInventorySuccess() throws Exception {
+	void testAddNewInventorySuccess() throws Exception {
 
 		final Inventory inventory = new Inventory();
 		final int id = 999;
@@ -83,7 +83,7 @@ class InventoryControllerTests {
 
 	@Test
 	@DisplayName("Get Inventories by Film and Store")
-	public void testGetAllInventorysSuccess() throws Exception {
+	void testGetAllInventorysSuccess() throws Exception {
 
 		final int filmId = 999;
 		final int storeId = 777;
@@ -102,7 +102,7 @@ class InventoryControllerTests {
 
 	@Test
 	@DisplayName("Delete inventory")
-	public void testDeleteInventorySuccess() throws Exception {
+	void testDeleteInventorySuccess() throws Exception {
 
 		final int id = 999;
 

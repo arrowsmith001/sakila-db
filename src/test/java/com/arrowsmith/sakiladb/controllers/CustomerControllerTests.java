@@ -37,7 +37,7 @@ class CustomerControllerTests {
 
 	@Test
 	@DisplayName("Get Customer by Id")
-	public void testGetCustomerSuccess() throws Exception {
+	void testGetCustomerSuccess() throws Exception {
 
 		final Customer customer = new Customer();
 		final int id = 1;
@@ -60,7 +60,7 @@ class CustomerControllerTests {
 
 	@Test
 	@DisplayName("Add New Customer")
-	public void testAddNewCustomerSuccess() throws Exception {
+	void testAddNewCustomerSuccess() throws Exception {
 
 		final Customer customer = new Customer();
 		final int id = 999;
@@ -86,7 +86,7 @@ class CustomerControllerTests {
 
 	@Test
 	@DisplayName("Get All Customers")
-	public void testGetAllCustomersSuccess() throws Exception {
+	void testGetAllCustomersSuccess() throws Exception {
 
 		final List<Customer> customers = new ArrayList<>();
 
@@ -117,7 +117,7 @@ class CustomerControllerTests {
 
 	@Test
 	@DisplayName("Delete customer")
-	public void testDeleteCustomerSuccess() throws Exception {
+	void testDeleteCustomerSuccess() throws Exception {
 
 		final int id = 999;
 
@@ -132,7 +132,7 @@ class CustomerControllerTests {
 	}
 	@Test
 	@DisplayName("Get customer by email")
-	public void getCustomerByEmail() throws Exception {
+	void getCustomerByEmail() throws Exception {
 
 		final String email = "a@a.a";
 		final Credentials credentials = new Credentials();

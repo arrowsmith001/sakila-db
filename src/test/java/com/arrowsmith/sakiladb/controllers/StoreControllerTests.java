@@ -37,7 +37,7 @@ class StoreControllerTests {
 
 	@Test
 	@DisplayName("Get Store by Id")
-	public void testGetStoreSuccess() throws Exception {
+	void testGetStoreSuccess() throws Exception {
 
 		final Store store = new Store();
 		final int id = 1;
@@ -60,7 +60,7 @@ class StoreControllerTests {
 
 	@Test
 	@DisplayName("Add New Store")
-	public void testAddNewStoreSuccess() throws Exception {
+	void testAddNewStoreSuccess() throws Exception {
 
 		final Store store = new Store();
 		final int id = 999;
@@ -86,7 +86,7 @@ class StoreControllerTests {
 
 	@Test
 	@DisplayName("Get All Stores")
-	public void testGetAllStoresSuccess() throws Exception {
+	void testGetAllStoresSuccess() throws Exception {
 
 		final List<Store> stores = new ArrayList<>();
 
@@ -119,7 +119,7 @@ class StoreControllerTests {
 
 	@Test
 	@DisplayName("Delete store")
-	public void testDeleteStoreSuccess() throws Exception {
+	void testDeleteStoreSuccess() throws Exception {
 
 		final int id = 999;
 

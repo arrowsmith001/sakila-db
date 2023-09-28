@@ -37,7 +37,7 @@ class RentalControllerTests {
 
 	@Test
 	@DisplayName("Get Rental by Id")
-	public void testGetRentalSuccess() throws Exception {
+	void testGetRentalSuccess() throws Exception {
 
 		final Rental rental = new Rental();
 		final int id = 1;
@@ -60,7 +60,7 @@ class RentalControllerTests {
 
 	@Test
 	@DisplayName("Add New Rental")
-	public void testAddNewRentalSuccess() throws Exception {
+	void testAddNewRentalSuccess() throws Exception {
 
 		final Rental rental = new Rental();
 		final int id = 999;
@@ -86,7 +86,7 @@ class RentalControllerTests {
 
 	@Test
 	@DisplayName("Get All Rentals")
-	public void testGetAllRentalsSuccess() throws Exception {
+	void testGetAllRentalsSuccess() throws Exception {
 
 		final List<Rental> rentals = new ArrayList<>();
 
@@ -119,7 +119,7 @@ class RentalControllerTests {
 
 	@Test
 	@DisplayName("Delete rental")
-	public void testDeleteRentalSuccess() throws Exception {
+	void testDeleteRentalSuccess() throws Exception {
 
 		final int id = 999;
 

@@ -39,7 +39,7 @@ class CityControllerTests {
 
 	@Test
 	@DisplayName("Get City by Id")
-	public void testGetCitySuccess() throws Exception {
+	void testGetCitySuccess() throws Exception {
 
 		final City city = new City();
 		final int id = 1;
@@ -62,7 +62,7 @@ class CityControllerTests {
 
 	@Test
 	@DisplayName("Add New City")
-	public void testAddNewCitySuccess() throws Exception {
+	void testAddNewCitySuccess() throws Exception {
 
 		final City city = new City();
 		final int id = 999;
@@ -88,7 +88,7 @@ class CityControllerTests {
 
 	@Test
 	@DisplayName("Get All Citys")
-	public void testGetAllCitysSuccess() throws Exception {
+	void testGetAllCitysSuccess() throws Exception {
 
 		final List<City> citys = new ArrayList<>();
 
@@ -121,7 +121,7 @@ class CityControllerTests {
 
 	@Test
 	@DisplayName("Delete city")
-	public void testDeleteCitySuccess() throws Exception {
+	void testDeleteCitySuccess() throws Exception {
 
 		final int id = 999;
 
