@@ -49,7 +49,7 @@ class CategoryControllerTests {
 		final Category category = new Category();
 		final int id = 1;
 
-		category.category_id = id;
+		category.setCategory_id(id);
 
 		when(categoryService.getCategoryById(id)).thenReturn(category);
 
@@ -72,7 +72,7 @@ class CategoryControllerTests {
 		final Category category = new Category();
 		final int id = 999;
 
-		category.category_id = id;
+		category.setCategory_id(id);
 
 		when(categoryService.saveCategory(any(Category.class))).thenReturn(category);
 
@@ -100,7 +100,7 @@ class CategoryControllerTests {
 		for (int i = 0; i < 3; i++)
 		{
 			final Category newCategory = new Category();
-			newCategory.category_id = i;
+			newCategory.setCategory_id(i);
 			categorys.add(newCategory);
 		}
 

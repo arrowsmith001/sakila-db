@@ -49,7 +49,7 @@ class CityControllerTests {
 		final City city = new City();
 		final int id = 1;
 
-		city.city_id = id;
+		city.setCity_id(id);
 
 		when(cityService.getCityById(id)).thenReturn(city);
 
@@ -72,7 +72,7 @@ class CityControllerTests {
 		final City city = new City();
 		final int id = 999;
 
-		city.city_id = id;
+		city.setCity_id(id);
 
 		when(cityService.saveCity(any(City.class))).thenReturn(city);
 
@@ -100,7 +100,7 @@ class CityControllerTests {
 		for (int i = 0; i < 3; i++)
 		{
 			final City newCity = new City();
-			newCity.city_id = i;
+			newCity.setCity_id(i);
 			citys.add(newCity);
 		}
 

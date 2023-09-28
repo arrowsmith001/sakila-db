@@ -1,13 +1,19 @@
 package com.arrowsmith.sakiladb.entities;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name = "film_category")
+@ToString
+@Getter
+@Setter
 public class FilmCategory {
 
     @EmbeddedId
-    public FilmCategoryId id;
+    private FilmCategoryId id;
 
-    public java.sql.Timestamp last_update;
+    private java.sql.Timestamp last_update;
 }

@@ -1,35 +1,37 @@
 package com.arrowsmith.sakiladb.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+import java.sql.Timestamp;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.sql.Blob;
-
 @Entity
 @Table(name = "address")
 @ToString
+@Getter
+@Setter
 public class Address {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer address_id;
 
-    public Integer address_id;
-    public String address;
-    public String address2;
-    public String district;
-    public String postal_code;
-    public String phone;
+    private String address;
+    private String address2;
+    private String district;
+    private String postal_code;
+    private String phone;
 
 //    @JsonIgnore
-//    public Blob location;
+//    private Blob location;
 
-    public java.sql.Timestamp last_update;
+    private Timestamp last_update;
 
     @ManyToOne
     @JoinColumn(name = "city_id")
     @JsonIgnoreProperties("address")
-    public City city;
+    private City city;
 }

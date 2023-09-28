@@ -41,5 +41,5 @@ sakila-db,com.arrowsmith.sakiladb.entities,Customer,0,23,0,0,0,2,0,2,0,2
 sakila-db,com.arrowsmith.sakiladb.entities,Payment,3,0,0,0,1,0,1,0,1,0
 sakila-db,com.arrowsmith.sakiladb.entities,Category,0,3,0,0,0,1,0,1,0,1
 sakila-db,com.arrowsmith.sakiladb.entities,Country,3,0,0,0,1,0,1,0,1,0
-sakila-db,com.arrowsmith.sakiladb,CorsConfig,39,0,0,0,11,0,2,0,2,0
+sakila-db,com.arrowsmith.sakiladb,CorsConfig,42,0,0,0,12,0,3,0,3,0
 sakila-db,com.arrowsmith.sakiladb,SakilaDbApplication,5,3,0,0,2,1,1,1,1,1

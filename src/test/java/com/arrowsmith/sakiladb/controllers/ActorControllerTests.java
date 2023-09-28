@@ -49,7 +49,7 @@ class ActorControllerTests {
 		final Actor actor = new Actor();
 		final int id = 1;
 
-		actor.actor_id = id;
+		actor.setActor_id(id);
 
 		when(actorService.getActorById(id)).thenReturn(actor);
 
@@ -72,7 +72,7 @@ class ActorControllerTests {
 		final Actor actor = new Actor();
 		final int id = 999;
 
-		actor.actor_id = id;
+		actor.setActor_id(id);
 
 		when(actorService.saveActor(any(Actor.class))).thenReturn(actor);
 
@@ -100,7 +100,7 @@ class ActorControllerTests {
 		for (int i = 0; i < 3; i++)
 		{
 			final Actor newActor = new Actor();
-			newActor.actor_id = i;
+			newActor.setActor_id(i);
 			actors.add(newActor);
 		}
 

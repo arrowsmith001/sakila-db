@@ -49,7 +49,7 @@ class StoreControllerTests {
 		final Store store = new Store();
 		final int id = 1;
 
-		store.store_id = id;
+		store.setStore_id(id);
 
 		when(storeService.getStoreById(id)).thenReturn(store);
 
@@ -72,7 +72,7 @@ class StoreControllerTests {
 		final Store store = new Store();
 		final int id = 999;
 
-		store.store_id = id;
+		store.setStore_id(id);
 
 		when(storeService.saveStore(any(Store.class))).thenReturn(store);
 
@@ -100,7 +100,7 @@ class StoreControllerTests {
 		for (int i = 0; i < 3; i++)
 		{
 			final Store newStore = new Store();
-			newStore.store_id = i;
+			newStore.setStore_id(i);
 			stores.add(newStore);
 		}
 

@@ -49,7 +49,7 @@ class RentalControllerTests {
 		final Rental rental = new Rental();
 		final int id = 1;
 
-		rental.rental_id = id;
+		rental.setRental_id(id);
 
 		when(rentalService.getRentalById(id)).thenReturn(rental);
 
@@ -72,7 +72,7 @@ class RentalControllerTests {
 		final Rental rental = new Rental();
 		final int id = 999;
 
-		rental.rental_id = id;
+		rental.setRental_id(id);
 
 		when(rentalService.saveRental(any(Rental.class))).thenReturn(rental);
 
@@ -100,7 +100,7 @@ class RentalControllerTests {
 		for (int i = 0; i < 3; i++)
 		{
 			final Rental newRental = new Rental();
-			newRental.rental_id = i;
+			newRental.setRental_id(i);
 			rentals.add(newRental);
 		}
 

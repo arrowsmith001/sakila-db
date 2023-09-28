@@ -49,7 +49,7 @@ class FilmControllerTests {
 		final Film film = new Film();
 		final int id = 1;
 
-		film.film_id = id;
+		film.setFilm_id(id);
 
 		when(filmService.getFilmById(id)).thenReturn(film);
 
@@ -72,7 +72,7 @@ class FilmControllerTests {
 		final Film film = new Film();
 		final int id = 999;
 
-		film.film_id = id;
+		film.setFilm_id(id);
 
 		when(filmService.saveFilm(any(Film.class))).thenReturn(film);
 
@@ -100,7 +100,7 @@ class FilmControllerTests {
 		for (int i = 0; i < 3; i++)
 		{
 			final Film newFilm = new Film();
-			newFilm.film_id = i;
+			newFilm.setFilm_id(i);
 			films.add(newFilm);
 		}
 

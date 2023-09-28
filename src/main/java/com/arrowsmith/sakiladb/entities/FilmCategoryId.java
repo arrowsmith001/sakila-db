@@ -6,6 +6,6 @@ import jakarta.persistence.Id;
 @Embeddable
 public class FilmCategoryId {
 
-    public Integer film_id;
-    public Integer category_id;
+    private Integer film_id;
+    private Integer category_id;
 }

@@ -2,19 +2,23 @@ package com.arrowsmith.sakiladb.entities;
 
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 @Entity
 @Table(name = "language")
 @ToString
+@Getter
+@Setter
 public class Language {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Integer language_id;
+    private Integer language_id;
 
     //@Column(columnDefinition = "char")
-    public String name;
+    private String name;
 
-    public java.sql.Timestamp last_update;
+    private java.sql.Timestamp last_update;
 }

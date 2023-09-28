@@ -1,6 +1,9 @@
 package com.arrowsmith.sakiladb.entities;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -8,14 +11,17 @@ import java.util.List;
 
 @Entity
 @Table(name = "city")
+@ToString
+@Getter
+@Setter
 public class City
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Integer city_id;
-    public String city;
-    public java.sql.Timestamp last_update;
+    private Integer city_id;
+    private String city;
+    private java.sql.Timestamp last_update;
 
     @OneToMany(mappedBy = "city")
-    public List<Address> address;
+    private List<Address> address;
 }

@@ -2,29 +2,33 @@ package com.arrowsmith.sakiladb.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 @Entity
 @Table(name = "customer")
 @ToString
+@Getter
+@Setter
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Integer customer_id;
-    public String first_name;
-    public String last_name;
-    public String email;
+    private Integer customer_id;
+    private String first_name;
+    private String last_name;
+    private String email;
 
-    public Boolean active; //public Integer active;
-    public java.sql.Timestamp create_date; //public java.sql.Date create_date;
-    public java.sql.Timestamp last_update;
+    private Boolean active; //private Integer active;
+    private java.sql.Timestamp create_date; //private java.sql.Date create_date;
+    private java.sql.Timestamp last_update;
 
 
     @ManyToOne
     @JoinColumn(name = "address_id")
-    public Address address;
+    private Address address;
 
     @ManyToOne
     @JoinColumn(name = "store_id")
-    public Store store;
+    private Store store;
 }

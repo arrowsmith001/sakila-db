@@ -49,7 +49,7 @@ class InventoryControllerTests {
 		final Inventory inventory = new Inventory();
 		final int id = 1;
 
-		inventory.inventory_id = id;
+		inventory.setInventory_id(id);
 
 		when(inventoryService.getInventoryById(id)).thenReturn(inventory);
 
@@ -72,7 +72,7 @@ class InventoryControllerTests {
 		final Inventory inventory = new Inventory();
 		final int id = 999;
 
-		inventory.inventory_id = id;
+		inventory.setInventory_id(id);
 
 		when(inventoryService.saveInventory(any(Inventory.class))).thenReturn(inventory);
 

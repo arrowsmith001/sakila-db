@@ -49,7 +49,7 @@ class AddressControllerTests {
 		final Address address = new Address();
 		final int id = 1;
 
-		address.address_id = id;
+		address.setAddress_id(id);
 
 		when(addressService.getAddressById(id)).thenReturn(address);
 
@@ -72,7 +72,7 @@ class AddressControllerTests {
 		final Address address = new Address();
 		final int id = 999;
 
-		address.address_id = id;
+		address.setAddress_id(id);
 
 		when(addressService.saveAddress(any(Address.class))).thenReturn(address);
 
@@ -100,7 +100,7 @@ class AddressControllerTests {
 		for (int i = 0; i < 3; i++)
 		{
 			final Address newAddress = new Address();
-			newAddress.address_id = i;
+			newAddress.setAddress_id(i);
 			addresss.add(newAddress);
 		}
 

@@ -3,6 +3,9 @@ package com.arrowsmith.sakiladb.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -14,28 +17,31 @@ import java.util.List;
 
 @Entity
 @Table(name = "film")
+@ToString
+@Getter
+@Setter
 public class Film
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Integer film_id;
-    public String title;
-    public String description;
+    private Integer film_id;
+    private String title;
+    private String description;
 
 
-    public Date release_year; //private Integer release_year;
-    public Byte rental_duration; //private Integer rental_duration;
-    public BigDecimal rental_rate;
-    public Short length; //private Integer length;
-    public BigDecimal replacement_cost;
+    private Date release_year; //private Integer release_year;
+    private Byte rental_duration; //private Integer rental_duration;
+    private BigDecimal rental_rate;
+    private Short length; //private Integer length;
+    private BigDecimal replacement_cost;
 
     //@Column(columnDefinition = "enum (Types#CHAR)")
-    public String rating;
+    private String rating;
 
     //@Column(columnDefinition = "set")
-    public String special_features;
+    private String special_features;
 
-    public Timestamp last_update; //private Date last_update;
+    private Timestamp last_update; //private Date last_update;
 
 
     @ManyToMany
@@ -45,7 +51,7 @@ public class Film
             inverseJoinColumns = @JoinColumn(name = "actor_id")
     )
     @JsonIgnoreProperties("films")
-    public List<Actor> actors;
+    private List<Actor> actors;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "film_category",
@@ -53,22 +59,22 @@ public class Film
             inverseJoinColumns = @JoinColumn(name = "category_id")
     )
     @JsonIgnoreProperties("films")
-    public List<Category> categories;
+    private List<Category> categories;
 
     @ManyToOne
     @OnDelete(action = OnDeleteAction.RESTRICT)
     @JoinColumn(name = "language_id")
-    public Language language;
+    private Language language;
 
     @ManyToOne
     @OnDelete(action = OnDeleteAction.RESTRICT)
     @JoinColumn(name = "original_language_id")
-    public Language originalLanguage;
+    private Language originalLanguage;
 
 
     @OneToMany(mappedBy = "film")
     @JsonIgnore
-    public List<Inventory> inventories;
+    private List<Inventory> inventories;
 
 }
 

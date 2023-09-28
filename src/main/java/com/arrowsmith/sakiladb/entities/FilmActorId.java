@@ -12,9 +12,9 @@ import java.util.Objects;
 public class FilmActorId implements Serializable {
 
     @OnDelete(action = OnDeleteAction.RESTRICT)
-    public Integer film_id;
+    private Integer film_id;
     @OnDelete(action = OnDeleteAction.RESTRICT)
-    public Integer actor_id;
+    private Integer actor_id;
 
     @Override
     public boolean equals(Object o) {

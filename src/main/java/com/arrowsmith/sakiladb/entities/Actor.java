@@ -6,45 +6,35 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.annotations.NaturalIdCache;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Set;
 
 @Entity
 @Table(name = "actor")
+@ToString
+@Getter
+@Setter
 public class Actor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Integer actor_id;
+    private Integer actor_id;
 
-    public String first_name;
-    public String last_name;
+    private String first_name;
+    private String last_name;
 
     @ManyToMany(mappedBy = "actors")
     @JsonIgnoreProperties("actors")
-    public List<Film> films;
+    private List<Film> films;
 
 
-//    @OneToMany(
-//            mappedBy = "actor",
-//            cascade = CascadeType.ALL,
-//            orphanRemoval = true
-//    )
-//    @OnDelete(action = OnDeleteAction.RESTRICT)
-//    private List<FilmActor> films;
+    private Timestamp last_update;
 
 
-    public java.sql.Timestamp last_update;
-
-
-//    @PreRemove
-//    private void removeActorsFromFilms() {
-//        for(Film f : films)
-//        {
-//            f.getActors().remove(this);
-//        }
-//    }
 }
