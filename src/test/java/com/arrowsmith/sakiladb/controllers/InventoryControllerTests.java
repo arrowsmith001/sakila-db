@@ -14,9 +14,6 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
@@ -33,13 +30,6 @@ class InventoryControllerTests {
 
 	@MockBean
 	private InventoryService inventoryService;
-
-
-	@Test
-	@DisplayName("Context Loads")
-	void contextLoads() {
-
-	}
 
 
 	@Test

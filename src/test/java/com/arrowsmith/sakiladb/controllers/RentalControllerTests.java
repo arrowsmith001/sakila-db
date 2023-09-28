@@ -36,13 +36,6 @@ class RentalControllerTests {
 
 
 	@Test
-	@DisplayName("Context Loads")
-	void contextLoads() {
-
-	}
-
-
-	@Test
 	@DisplayName("Get Rental by Id")
 	public void testGetRentalSuccess() throws Exception {
 

@@ -29,19 +29,18 @@ public class Film
     private String description;
 
 
-    private Date release_year; //private Integer release_year;
-    private Byte rental_duration; //private Integer rental_duration;
+    private Date release_year;
+    private Byte rental_duration;
     private BigDecimal rental_rate;
-    private Short length; //private Integer length;
+    private Short length;
     private BigDecimal replacement_cost;
 
-    //@Column(columnDefinition = "enum (Types#CHAR)")
+
     private String rating;
 
-    //@Column(columnDefinition = "set")
     private String special_features;
 
-    private Timestamp last_update; //private Date last_update;
+    private Timestamp last_update;
 
 
     @ManyToMany

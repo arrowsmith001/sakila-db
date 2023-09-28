@@ -31,11 +31,6 @@ class StoreServiceTests {
 
 
 	@Test
-	void contextLoads() {
-
-	}
-
-	@Test
 	void getAllSuccess() {
 		storeService.getAllStores();
 

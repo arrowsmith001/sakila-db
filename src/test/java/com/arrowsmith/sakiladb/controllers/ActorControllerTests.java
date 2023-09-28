@@ -35,12 +35,6 @@ class ActorControllerTests {
 	private ActorService actorService;
 
 
-	@Test
-	@DisplayName("Context Loads")
-	void contextLoads() {
-
-	}
-
 
 	@Test
 	@DisplayName("Get Actor by Id")
@@ -101,6 +95,7 @@ class ActorControllerTests {
 		{
 			final Actor newActor = new Actor();
 			newActor.setActor_id(i);
+
 			actors.add(newActor);
 		}
 

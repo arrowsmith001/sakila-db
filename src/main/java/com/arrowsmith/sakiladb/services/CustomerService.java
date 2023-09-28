@@ -2,8 +2,6 @@ package com.arrowsmith.sakiladb.services;
 
 import com.arrowsmith.sakiladb.entities.Customer;
 import com.arrowsmith.sakiladb.repositories.CustomerRepository;
-import com.arrowsmith.sakiladb.repositories.InventoryRepository;
-import com.arrowsmith.sakiladb.repositories.RentalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

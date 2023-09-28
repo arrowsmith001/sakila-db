@@ -29,12 +29,6 @@ class LanguageServiceTests {
 	@InjectMocks
 	private LanguageService languageService;
 
-
-	@Test
-	void contextLoads() {
-
-	}
-
 	@Test
 	void getAllSuccess() {
 		languageService.getAllLanguages();

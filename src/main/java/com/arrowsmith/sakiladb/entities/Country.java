@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.sql.Timestamp;
+
 @Entity
 @Table(name = "country")
 @ToString
@@ -14,6 +16,9 @@ public class Country {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer country_id;
-    private String country;
-    private java.sql.Timestamp last_update;
+
+    @Column(name = "country")
+    private String country_name;
+
+    private Timestamp last_update;
 }

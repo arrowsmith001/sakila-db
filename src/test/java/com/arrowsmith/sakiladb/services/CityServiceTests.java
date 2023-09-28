@@ -31,11 +31,6 @@ class CityServiceTests {
 
 
 	@Test
-	void contextLoads() {
-
-	}
-
-	@Test
 	void getAllSuccess() {
 		cityService.getAllCitys();
 

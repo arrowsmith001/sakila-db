@@ -30,10 +30,6 @@ class InventoryServiceTests {
 	private InventoryService inventoryService;
 
 
-	@Test
-	void contextLoads() {
-
-	}
 
 	@Test
 	void getAllSuccess() {

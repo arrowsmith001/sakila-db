@@ -1,7 +1,6 @@
 package com.arrowsmith.sakiladb.services;
 
 import com.arrowsmith.sakiladb.entities.Address;
-import com.arrowsmith.sakiladb.entities.City;
 import com.arrowsmith.sakiladb.repositories.AddressRepository;
 import com.arrowsmith.sakiladb.repositories.CityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +17,6 @@ public class AddressService {
     private CityRepository cityRepository;
 
     public Address saveAddress(Address address) {
-//        final City city = cityRepository.findById(address.city.city_id).orElse(null);
-//        address.setCity(city);
         return addressRepository.save(address);
     }
 

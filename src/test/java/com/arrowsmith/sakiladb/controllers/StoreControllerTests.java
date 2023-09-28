@@ -36,13 +36,6 @@ class StoreControllerTests {
 
 
 	@Test
-	@DisplayName("Context Loads")
-	void contextLoads() {
-
-	}
-
-
-	@Test
 	@DisplayName("Get Store by Id")
 	public void testGetStoreSuccess() throws Exception {
 

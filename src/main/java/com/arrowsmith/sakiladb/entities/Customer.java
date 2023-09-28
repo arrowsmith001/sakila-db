@@ -1,6 +1,5 @@
 package com.arrowsmith.sakiladb.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,8 +18,8 @@ public class Customer {
     private String last_name;
     private String email;
 
-    private Boolean active; //private Integer active;
-    private java.sql.Timestamp create_date; //private java.sql.Date create_date;
+    private Boolean active;
+    private java.sql.Timestamp create_date;
     private java.sql.Timestamp last_update;
 
 

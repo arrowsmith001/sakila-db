@@ -1,6 +1,5 @@
 package com.arrowsmith.sakiladb.repositories;
 
-import com.arrowsmith.sakiladb.entities.Film;
 import com.arrowsmith.sakiladb.entities.Inventory;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;

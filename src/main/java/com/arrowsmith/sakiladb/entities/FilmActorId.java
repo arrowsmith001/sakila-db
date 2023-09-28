@@ -1,14 +1,17 @@
 package com.arrowsmith.sakiladb.entities;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
-import java.io.Serializable;
-import java.util.Objects;
 
 @Embeddable
+@ToString
+@Getter
+@Setter
 public class FilmActorId {
 
     @OnDelete(action = OnDeleteAction.RESTRICT)

@@ -35,12 +35,6 @@ class AddressControllerTests {
 	private AddressService addressService;
 
 
-	@Test
-	@DisplayName("Context Loads")
-	void contextLoads() {
-
-	}
-
 
 	@Test
 	@DisplayName("Get Address by Id")

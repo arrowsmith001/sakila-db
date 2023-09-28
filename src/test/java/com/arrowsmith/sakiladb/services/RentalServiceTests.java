@@ -29,12 +29,6 @@ class RentalServiceTests {
 	@InjectMocks
 	private RentalService rentalService;
 
-
-	@Test
-	void contextLoads() {
-
-	}
-
 	@Test
 	void getAllSuccess() {
 		rentalService.getAllRentals();

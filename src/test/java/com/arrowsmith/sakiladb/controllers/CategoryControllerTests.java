@@ -35,12 +35,6 @@ class CategoryControllerTests {
 	private CategoryService categoryService;
 
 
-	@Test
-	@DisplayName("Context Loads")
-	void contextLoads() {
-
-	}
-
 
 	@Test
 	@DisplayName("Get Category by Id")

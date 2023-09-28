@@ -31,11 +31,6 @@ class ActorServiceTests {
 
 
 	@Test
-	void contextLoads() {
-
-	}
-
-	@Test
 	void getAllSuccess() {
 		actorService.getAllActors();
 

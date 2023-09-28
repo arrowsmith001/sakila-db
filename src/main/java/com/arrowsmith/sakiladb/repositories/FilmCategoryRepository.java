@@ -1,7 +1,5 @@
 package com.arrowsmith.sakiladb.repositories;
 
-import com.arrowsmith.sakiladb.entities.FilmActor;
-import com.arrowsmith.sakiladb.entities.FilmActorId;
 import com.arrowsmith.sakiladb.entities.FilmCategory;
 import com.arrowsmith.sakiladb.entities.FilmCategoryId;
 import org.springframework.data.jpa.repository.JpaRepository;

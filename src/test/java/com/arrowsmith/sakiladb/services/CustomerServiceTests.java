@@ -29,12 +29,6 @@ class CustomerServiceTests {
 	@InjectMocks
 	private CustomerService customerService;
 
-
-	@Test
-	void contextLoads() {
-
-	}
-
 	@Test
 	void getAllSuccess() {
 		customerService.getAllCustomers();

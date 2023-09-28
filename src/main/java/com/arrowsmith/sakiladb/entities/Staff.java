@@ -5,8 +5,6 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.sql.Blob;
-
 @Entity
 @Table(name = "staff")
 @ToString
@@ -18,7 +16,6 @@ public class Staff {
     private Integer staff_id;
     private String first_name;
     private String last_name;
-    //private Blob picture;
     private String email;
     private Boolean active;
     private String username;

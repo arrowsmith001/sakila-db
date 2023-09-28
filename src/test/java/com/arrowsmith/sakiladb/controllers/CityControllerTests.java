@@ -35,11 +35,6 @@ class CityControllerTests {
 	private CityService cityService;
 
 
-	@Test
-	@DisplayName("Context Loads")
-	void contextLoads() {
-
-	}
 
 
 	@Test

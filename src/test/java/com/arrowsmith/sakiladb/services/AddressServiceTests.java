@@ -29,12 +29,6 @@ class AddressServiceTests {
 	@InjectMocks
 	private AddressService addressService;
 
-
-	@Test
-	void contextLoads() {
-
-	}
-
 	@Test
 	void getAllSuccess() {
 		addressService.getAllAddresses();

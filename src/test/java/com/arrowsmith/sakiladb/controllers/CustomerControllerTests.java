@@ -36,13 +36,6 @@ class CustomerControllerTests {
 
 
 	@Test
-	@DisplayName("Context Loads")
-	void contextLoads() {
-
-	}
-
-
-	@Test
 	@DisplayName("Get Customer by Id")
 	public void testGetCustomerSuccess() throws Exception {
 
@@ -132,12 +125,30 @@ class CustomerControllerTests {
 
 		mvc
 				.perform(MockMvcRequestBuilders.delete("/customer/" + id)
-				.contentType(MediaType.APPLICATION_JSON))
+						.contentType(MediaType.APPLICATION_JSON))
 				.andExpect(MockMvcResultMatchers.status().isOk())
 				.andReturn();
 
 
 		verify(customerService, times(1)).deleteCustomer(id);
+	}
+	@Test
+	@DisplayName("Get customer by email")
+	public void getCustomerByEmail() throws Exception {
+
+		final String email = "a@a.a";
+		final Credentials credentials = new Credentials();
+		credentials.email = email;
+
+		mvc
+				.perform(MockMvcRequestBuilders.delete("/customer/email")
+						.content(objectMapper.writeValueAsString(credentials))
+						.contentType(MediaType.APPLICATION_JSON))
+				.andExpect(MockMvcResultMatchers.status().isOk())
+				.andReturn();
+
+
+		verify(customerService, times(1)).getCustomerByEmail(email);
 	}
 
 

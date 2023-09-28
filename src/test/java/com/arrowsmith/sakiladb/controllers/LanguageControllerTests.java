@@ -36,13 +36,6 @@ class LanguageControllerTests {
 
 
 	@Test
-	@DisplayName("Context Loads")
-	void contextLoads() {
-
-	}
-
-
-	@Test
 	@DisplayName("Get Language by Id")
 	public void testGetLanguageSuccess() throws Exception {
 

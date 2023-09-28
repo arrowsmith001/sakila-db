@@ -29,12 +29,6 @@ class CategoryServiceTests {
 	@InjectMocks
 	private CategoryService categoryService;
 
-
-	@Test
-	void contextLoads() {
-
-	}
-
 	@Test
 	void getAllSuccess() {
 		categoryService.getAllCategories();

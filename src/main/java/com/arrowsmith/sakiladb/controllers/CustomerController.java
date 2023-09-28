@@ -5,9 +5,7 @@ import com.arrowsmith.sakiladb.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.Serializable;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @CrossOrigin(origins = {"http://localhost:3000", "https://main.d34jypsxbhc933.amplifyapp.com"})
@@ -19,8 +17,6 @@ public class CustomerController {
 
     @PostMapping(path="")
     public Customer saveCustomer(@RequestBody Customer customer) {
-
-        System.out.println(customer);
         return customerService.saveCustomer(customer); }
 
     @GetMapping("")

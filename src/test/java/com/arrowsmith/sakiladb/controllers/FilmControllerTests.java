@@ -35,12 +35,6 @@ class FilmControllerTests {
 	private FilmService filmService;
 
 
-	@Test
-	@DisplayName("Context Loads")
-	void contextLoads() {
-
-	}
-
 
 	@Test
 	@DisplayName("Get Film by Id")
@@ -196,6 +190,26 @@ class FilmControllerTests {
 
 
 		verify(filmService, times(1)).getFilmsByCategory(categoryId);
+
+	}
+
+	@Test
+	@DisplayName("Get Films by Search term")
+	public void getFilmsBySearchTermSuccess() throws Exception {
+
+		final String term = "";
+		final int limit = 0;
+
+		when(filmService.getFilmsBySearchTerm("", 0)).thenReturn(new ArrayList<>());
+
+		MvcResult result = mvc
+				.perform(MockMvcRequestBuilders.get("/film/search?term=" + term + "&limit=" + limit)
+						.contentType(MediaType.APPLICATION_JSON))
+				.andExpect(MockMvcResultMatchers.status().isOk())
+				.andReturn();
+
+
+		verify(filmService, times(1)).getFilmsBySearchTerm(term, limit);
 
 	}
 
