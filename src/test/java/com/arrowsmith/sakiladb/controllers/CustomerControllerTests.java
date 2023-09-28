@@ -141,7 +141,7 @@ class CustomerControllerTests {
 		credentials.email = email;
 
 		mvc
-				.perform(MockMvcRequestBuilders.delete("/customer/email")
+				.perform(MockMvcRequestBuilders.post("/customer/email")
 						.content(objectMapper.writeValueAsString(credentials))
 						.contentType(MediaType.APPLICATION_JSON))
 				.andExpect(MockMvcResultMatchers.status().isOk())
