@@ -5,30 +5,28 @@ import com.arrowsmith.sakiladb.repositories.LanguageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.sql.Timestamp;
-import java.time.Instant;
 import java.util.List;
 
 @Service
-<span class="fc" id="L13">public class LanguageService {</span>
+<span class="fc" id="L11">public class LanguageService {</span>
 
     @Autowired
     private LanguageRepository languageRepository;
 
     public Language saveLanguage(Language language) {
-<span class="fc" id="L19">        return languageRepository.save(language);</span>
+<span class="fc" id="L17">        return languageRepository.save(language);</span>
     }
 
     public List&lt;Language&gt; getAllLanguages() {
-<span class="fc" id="L23">        return languageRepository.findAll();</span>
+<span class="fc" id="L21">        return languageRepository.findAll();</span>
     }
 
     public Language getLanguageById(Integer id) {
-<span class="fc" id="L27">        return languageRepository.findById(id).orElse(null);</span>
+<span class="fc" id="L25">        return languageRepository.findById(id).orElse(null);</span>
     }
 
     public void deleteLanguage(Integer id) {
-<span class="fc" id="L31">        languageRepository.deleteById(id);</span>
-<span class="fc" id="L32">    }</span>
+<span class="fc" id="L29">        languageRepository.deleteById(id);</span>
+<span class="fc" id="L30">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

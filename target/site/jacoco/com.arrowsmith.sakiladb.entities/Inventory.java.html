@@ -14,9 +14,11 @@ import java.util.List;
 @Getter
 @Setter
 <span class="fc" id="L16">public class Inventory {</span>
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer inventory_id;
+    @Column(name = &quot;inventory_id&quot;)
+    private Integer inventoryId;
 
     @ManyToOne
     @JoinColumn(name = &quot;film_id&quot;)
@@ -26,13 +28,17 @@ import java.util.List;
     @JoinColumn(name = &quot;store_id&quot;)
     private Store store;
 
-    private java.sql.Timestamp last_update;
+    @Column(name = &quot;last_update&quot;)
+    private java.sql.Timestamp lastUpdate;
 
     @OneToMany(mappedBy = &quot;inventory&quot;)
     @JsonIgnore
     private List&lt;Rental&gt; rentals;
 
-<span class="fc" id="L35">    private Integer film_film_id = 0;</span>
-<span class="fc" id="L36">    private Integer inventories_inventory_id = 0;</span>
+<span class="fc" id="L38">    @Column(name = &quot;film_film_id&quot;)</span>
+<span class="fc" id="L39">    private Integer filmFilmId = 0;</span>
+
+<span class="fc" id="L41">    @Column(name = &quot;inventories_inventory_id&quot;)</span>
+<span class="fc" id="L42">    private Integer inventoriesInventoryId = 0;</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

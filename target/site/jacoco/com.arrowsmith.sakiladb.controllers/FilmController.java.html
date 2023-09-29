@@ -32,7 +32,7 @@ import java.util.List;
 
     @GetMapping(&quot;/search&quot;)
     public List&lt;Film&gt; getFilmsBySearchTerm(@RequestParam String term, @RequestParam Integer limit) {
-<span class="nc" id="L35">        return filmService.getFilmsBySearchTerm(term, limit);</span>
+<span class="fc" id="L35">        return filmService.getFilmsBySearchTerm(term, limit);</span>
     }
 
     @GetMapping(&quot;/random/{limit}&quot;)

@@ -16,11 +16,16 @@ import java.sql.Timestamp;
 <span class="nc" id="L16">public class Payment {</span>
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer payment_id;
+    @Column(name = &quot;payment_id&quot;)
+    private Integer paymentId;
 
     private BigDecimal amount;
-    private Timestamp payment_date;
-    private Timestamp last_update;
+
+    @Column(name = &quot;payment_date&quot;)
+    private Timestamp paymentDate;
+
+    @Column(name = &quot;last_update&quot;)
+    private Timestamp lastUpdate;
 
     @ManyToOne
     @JoinColumn(name = &quot;customer_id&quot;)

@@ -2,39 +2,37 @@
 
 import com.arrowsmith.sakiladb.entities.Customer;
 import com.arrowsmith.sakiladb.repositories.CustomerRepository;
-import com.arrowsmith.sakiladb.repositories.InventoryRepository;
-import com.arrowsmith.sakiladb.repositories.RentalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-<span class="fc" id="L13">public class CustomerService {</span>
+<span class="fc" id="L11">public class CustomerService {</span>
 
     @Autowired
     private CustomerRepository customerRepository;
 
-    public Customer saveCustomer(Customer Customer) {
-<span class="fc" id="L19">        return customerRepository.save(Customer);</span>
+    public Customer saveCustomer(Customer customer) {
+<span class="fc" id="L17">        return customerRepository.save(customer);</span>
     }
 
     public List&lt;Customer&gt; getAllCustomers() {
-<span class="fc" id="L23">        return customerRepository.findAll();</span>
+<span class="fc" id="L21">        return customerRepository.findAll();</span>
     }
 
     public Customer getCustomerById(Integer id) {
-<span class="fc" id="L27">        return customerRepository.findById(id).orElse(null);</span>
+<span class="fc" id="L25">        return customerRepository.findById(id).orElse(null);</span>
     }
 
     public void deleteCustomer(Integer id) {
-<span class="fc" id="L31">        customerRepository.deleteById(id);</span>
-<span class="fc" id="L32">    }</span>
+<span class="fc" id="L29">        customerRepository.deleteById(id);</span>
+<span class="fc" id="L30">    }</span>
 
 
 
     public Customer getCustomerByEmail(String email) {
-<span class="nc" id="L37">        return customerRepository.findByEmail(email);</span>
+<span class="nc" id="L35">        return customerRepository.findByEmail(email);</span>
 
     }
 }

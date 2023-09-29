@@ -15,16 +15,9 @@ import lombok.ToString;
     @EmbeddedId
     private FilmActorId id;
 
-    private java.sql.Timestamp last_update;
+    @Column(name = &quot;last_update&quot;)
+    private java.sql.Timestamp lastUpdate;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @MapsId(&quot;film_id&quot;)
-//    private Film film;
-//
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @MapsId(&quot;actor_id&quot;)
-//    private Actor actor;
-//
 
 }
 

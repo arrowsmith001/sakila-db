@@ -5,41 +5,37 @@ import com.arrowsmith.sakiladb.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.Serializable;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @CrossOrigin(origins = {&quot;http://localhost:3000&quot;, &quot;https://main.d34jypsxbhc933.amplifyapp.com&quot;})
 @RequestMapping(&quot;/customer&quot;)
-<span class="fc" id="L15">public class CustomerController {</span>
+<span class="fc" id="L13">public class CustomerController {</span>
 
     @Autowired
     private CustomerService customerService;
 
     @PostMapping(path=&quot;&quot;)
     public Customer saveCustomer(@RequestBody Customer customer) {
-
-<span class="fc" id="L23">        System.out.println(customer);</span>
-<span class="fc" id="L24">        return customerService.saveCustomer(customer); }</span>
+<span class="fc" id="L20">        return customerService.saveCustomer(customer); }</span>
 
     @GetMapping(&quot;&quot;)
-<span class="fc" id="L27">    public List&lt;Customer&gt; getAllCustomers() { return customerService.getAllCustomers(); }</span>
+<span class="fc" id="L23">    public List&lt;Customer&gt; getAllCustomers() { return customerService.getAllCustomers(); }</span>
 
     @GetMapping(&quot;/{id}&quot;)
     public Customer getCustomerById(@PathVariable Integer id) {
-<span class="fc" id="L31">        return customerService.getCustomerById(id);</span>
+<span class="fc" id="L27">        return customerService.getCustomerById(id);</span>
     }
 
     @DeleteMapping(&quot;/{id}&quot;)
     public void deleteCustomer(@PathVariable Integer id) {
-<span class="fc" id="L36">        customerService.deleteCustomer(id);</span>
-<span class="fc" id="L37">    }</span>
+<span class="fc" id="L32">        customerService.deleteCustomer(id);</span>
+<span class="fc" id="L33">    }</span>
 
 
     @PostMapping(&quot;/email&quot;)
     public Customer getCustomerByEmail(@RequestBody Credentials credentials){
-<span class="nc" id="L42">        return customerService.getCustomerByEmail(credentials.email);</span>
+<span class="fc" id="L38">        return customerService.getCustomerByEmail(credentials.getEmail());</span>
     }
 
 }

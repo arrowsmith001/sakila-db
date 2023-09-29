@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.sql.Blob;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name = &quot;staff&quot;)
@@ -15,15 +15,21 @@ import java.sql.Blob;
 <span class="nc" id="L15">public class Staff {</span>
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer staff_id;
-    private String first_name;
-    private String last_name;
-    //private Blob picture;
+    @Column(name = &quot;staff_id&quot;)
+    private Integer staffId;
+
+    @Column(name = &quot;first_name&quot;)
+    private String firstName;
+
+    @Column(name = &quot;last_name&quot;)
+    private String lastName;
     private String email;
     private Boolean active;
     private String username;
     private String password;
-    private java.sql.Timestamp last_update;
+
+    @Column(name = &quot;last_update&quot;)
+    private Timestamp lastUpdate;
 
     @ManyToOne
     @JoinColumn(name = &quot;address_id&quot;)

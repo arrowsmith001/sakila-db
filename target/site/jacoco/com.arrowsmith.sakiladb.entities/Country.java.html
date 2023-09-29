@@ -5,16 +5,24 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.sql.Timestamp;
+
 @Entity
 @Table(name = &quot;country&quot;)
 @ToString
 @Getter
 @Setter
-<span class="nc" id="L13">public class Country {</span>
+<span class="nc" id="L15">public class Country {</span>
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer country_id;
-    private String country;
-    private java.sql.Timestamp last_update;
+    @Column(name = &quot;country_id&quot;)
+    private Integer countryId;
+
+    @Column(name = &quot;country&quot;)
+    private String countryName;
+
+    @Column(name = &quot;last_update&quot;)
+    private Timestamp lastUpdate;
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

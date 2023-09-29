@@ -2,19 +2,26 @@
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
-import java.io.Serializable;
-import java.util.Objects;
 
 @Embeddable
-<span class="nc" id="L12">public class FilmActorId {</span>
+@ToString
+@Getter
+@Setter
+<span class="nc" id="L16">public class FilmActorId {</span>
 
+    @Column(name = &quot;film_id&quot;)
     @OnDelete(action = OnDeleteAction.RESTRICT)
-    private Integer film_id;
+    private Integer filmId;
+
+    @Column(name = &quot;actor_id&quot;)
     @OnDelete(action = OnDeleteAction.RESTRICT)
-    private Integer actor_id;
+    private Integer actorId;
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

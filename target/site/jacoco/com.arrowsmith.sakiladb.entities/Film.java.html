@@ -24,24 +24,34 @@ import java.util.List;
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer film_id;
+    @Column(name = &quot;film_id&quot;)
+    private Integer filmId;
     private String title;
     private String description;
 
 
-    private Date release_year; //private Integer release_year;
-    private Byte rental_duration; //private Integer rental_duration;
-    private BigDecimal rental_rate;
-    private Short length; //private Integer length;
-    private BigDecimal replacement_cost;
+    @Column(name = &quot;release_year&quot;)
+    private Date releaseYear;
 
-    //@Column(columnDefinition = &quot;enum (Types#CHAR)&quot;)
+    @Column(name = &quot;rental_duration&quot;)
+    private Byte rentalDuration;
+
+    @Column(name = &quot;rental_rate&quot;)
+    private BigDecimal rentalRate;
+
+    private Short length;
+
+    @Column(name = &quot;replacement_cost&quot;)
+    private BigDecimal replacementCost;
+
+
     private String rating;
 
-    //@Column(columnDefinition = &quot;set&quot;)
-    private String special_features;
+    @Column(name = &quot;special_features&quot;)
+    private String specialFeatures;
 
-    private Timestamp last_update; //private Date last_update;
+    @Column(name = &quot;last_update&quot;)
+    private Timestamp lastUpdate;
 
 
     @ManyToMany

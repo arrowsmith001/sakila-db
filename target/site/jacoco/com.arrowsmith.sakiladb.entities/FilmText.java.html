@@ -12,7 +12,9 @@ import lombok.ToString;
 @Setter
 <span class="nc" id="L13">public class FilmText {</span>
 
-    private Integer film_id;
+    @Column(name = &quot;film_id&quot;)
+    private Integer filmId;
+
     private String title;
     private String description;
 }

@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 import java.util.List;
 
@@ -14,13 +12,18 @@ import java.util.List;
 @ToString
 @Getter
 @Setter
-<span class="fc" id="L17">public class City</span>
+<span class="fc" id="L15">public class City</span>
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer city_id;
-    private String city;
-    private java.sql.Timestamp last_update;
+    @Column(name = &quot;city_id&quot;)
+    private Integer cityId;
+
+    @Column(name = &quot;city&quot;)
+    private String cityName;
+
+    @Column(name = &quot;last_update&quot;)
+    private java.sql.Timestamp lastUpdate;
 
     @OneToMany(mappedBy = &quot;city&quot;)
     private List&lt;Address&gt; address;

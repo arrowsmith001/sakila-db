@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.sql.Date;
 import java.sql.Timestamp;
 
 @Entity
@@ -13,13 +12,20 @@ import java.sql.Timestamp;
 @ToString
 @Getter
 @Setter
-<span class="fc" id="L16">public class Rental {</span>
+<span class="fc" id="L15">public class Rental {</span>
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer rental_id;
-    private Timestamp rental_date;
-    private Timestamp return_date;
-    private Timestamp last_update;
+    @Column(name = &quot;rental_id&quot;)
+    private Integer rentalId;
+
+    @Column(name = &quot;rental_date&quot;)
+    private Timestamp rentalDate;
+
+    @Column(name = &quot;return_date&quot;)
+    private Timestamp returnDate;
+
+    @Column(name = &quot;last_update&quot;)
+    private Timestamp lastUpdate;
 
     @ManyToOne
     @JoinColumn(name = &quot;customer_id&quot;)
@@ -33,7 +39,10 @@ import java.sql.Timestamp;
     @JoinColumn(name = &quot;inventory_id&quot;)
     private Inventory inventory;
 
-<span class="fc" id="L36">    private Integer inventory_inventory_id = 0;</span>
-<span class="fc" id="L37">    private Integer rentals_rental_id = 0;</span>
+<span class="fc" id="L42">    @Column(name = &quot;inventory_inventory_id&quot;)</span>
+<span class="fc" id="L43">    private Integer inventoryInventoryId = 0;</span>
+
+<span class="fc" id="L45">    @Column(name = &quot;rentals_rental_id&quot;)</span>
+<span class="fc" id="L46">    private Integer rentalsRentalId = 0;</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

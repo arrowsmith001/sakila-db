@@ -19,8 +19,8 @@ import java.util.List;
     @Autowired
     private RentalRepository rentalRepository;
 
-    public Film saveFilm(Film Film) {
-<span class="fc" id="L23">        return filmRepository.save(Film);</span>
+    public Film saveFilm(Film film) {
+<span class="fc" id="L23">        return filmRepository.save(film);</span>
     }
 
     public List&lt;Film&gt; getAllFilms() {
@@ -33,30 +33,29 @@ import java.util.List;
 
     public void deleteFilm(Integer id) {
 
+<span class="fc" id="L36">        filmActorRepository.deleteByFilmId(id);</span>
+<span class="fc" id="L37">        rentalRepository.deleteByInventoriesWithFilmId(id);</span>
+<span class="fc" id="L38">        inventoryRepository.deleteByFilmId(id);</span>
 
-<span class="fc" id="L37">        filmActorRepository.deleteByFilmId(id);</span>
-<span class="fc" id="L38">        rentalRepository.deleteByInventoriesWithFilmId(id);</span>
-<span class="fc" id="L39">        inventoryRepository.deleteByFilmId(id);</span>
-
-<span class="fc" id="L41">        filmRepository.deleteById(id);</span>
-<span class="fc" id="L42">    }</span>
+<span class="fc" id="L40">        filmRepository.deleteById(id);</span>
+<span class="fc" id="L41">    }</span>
 
 
     public List&lt;Film&gt; getFilmsByCategory(Integer categoryId) {
 
-<span class="fc" id="L47">        return filmRepository.findAllByCategory(categoryId);</span>
+<span class="fc" id="L46">        return filmRepository.findAllByCategory(categoryId);</span>
     }
 
     public List&lt;Film&gt; getRandomFilmSelection(Integer limit) {
-<span class="fc" id="L51">        return filmRepository.getRandomSelection(limit);</span>
+<span class="fc" id="L50">        return filmRepository.getRandomSelection(limit);</span>
     }
 
     public List&lt;Film&gt; getPopularFilms(Integer limit){
-<span class="fc" id="L55">        return filmRepository.getPopularFilms(limit);</span>
+<span class="fc" id="L54">        return filmRepository.getPopularFilms(limit);</span>
     }
 
     public List&lt;Film&gt; getFilmsBySearchTerm(String term, Integer limit) {
-<span class="nc" id="L59">        return filmRepository.getFilmsBySearchTerm(term, limit);</span>
+<span class="nc" id="L58">        return filmRepository.getFilmsBySearchTerm(term, limit);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

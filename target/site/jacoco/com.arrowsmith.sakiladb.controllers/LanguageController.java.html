@@ -3,37 +3,34 @@
 import com.arrowsmith.sakiladb.entities.Language;
 import com.arrowsmith.sakiladb.services.LanguageService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import javax.print.attribute.standard.Media;
 import java.util.List;
 
 @RestController
 @CrossOrigin(origins = {&quot;http://localhost:3000&quot;, &quot;https://main.d34jypsxbhc933.amplifyapp.com&quot;})
 @RequestMapping(path = &quot;/language&quot;)
-<span class="fc" id="L16">public class LanguageController {</span>
+<span class="fc" id="L13">public class LanguageController {</span>
 
     @Autowired
     private LanguageService languageService;
 
     @GetMapping(&quot;&quot;)
-<span class="fc" id="L22">    public List&lt;Language&gt; getAllLanguages() { return languageService.getAllLanguages(); }</span>
+<span class="fc" id="L19">    public List&lt;Language&gt; getAllLanguages() { return languageService.getAllLanguages(); }</span>
 
     @PostMapping(path = &quot;&quot;)
     public Language saveLanguage(@RequestBody Language language) {
-<span class="fc" id="L26">        return languageService.saveLanguage(language);</span>
+<span class="fc" id="L23">        return languageService.saveLanguage(language);</span>
     }
 
     @GetMapping(&quot;/{id}&quot;)
     public Language getLanguageById(@PathVariable Integer id) {
-<span class="fc" id="L31">        return languageService.getLanguageById(id);</span>
+<span class="fc" id="L28">        return languageService.getLanguageById(id);</span>
     }
 
     @DeleteMapping(&quot;/{id}&quot;)
     public void deleteLanguage(@PathVariable Integer id) {
-<span class="fc" id="L36">        languageService.deleteLanguage(id);</span>
-<span class="fc" id="L37">    }</span>
+<span class="fc" id="L33">        languageService.deleteLanguage(id);</span>
+<span class="fc" id="L34">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

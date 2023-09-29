@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Actor.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sakila-db</a> &gt; <a href="index.source.html" class="el_package">com.arrowsmith.sakiladb.entities</a> &gt; <span class="el_source">Actor.java</span></div><h1>Actor.java</h1><pre class="source lang-java linenums">package com.arrowsmith.sakiladb.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.hibernate.annotations.NaturalIdCache;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 import java.sql.Timestamp;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = &quot;actor&quot;)
 @ToString
 @Getter
 @Setter
-<span class="fc" id="L24">public class Actor {</span>
+<span class="fc" id="L17">public class Actor</span>
+{
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer actor_id;
+    @Column(name = &quot;actor_id&quot;)
+    private Integer actorId;
 
-    private String first_name;
-    private String last_name;
+    @Column(name = &quot;first_name&quot;)
+    private String firstName;
+
+    @Column(name = &quot;last_name&quot;)
+    private String lastName;
 
     @ManyToMany(mappedBy = &quot;actors&quot;)
     @JsonIgnoreProperties(&quot;actors&quot;)
     private List&lt;Film&gt; films;
 
 
-    private Timestamp last_update;
+    @Column(name = &quot;last_update&quot;)
+    private Timestamp lastUpdate;
 
 
 }
